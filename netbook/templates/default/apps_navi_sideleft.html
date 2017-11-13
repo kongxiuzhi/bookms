@@ -1,0 +1,9 @@
+﻿            {% block side_left %}
+            <input type="hidden" id="query_key" value="{{ qkey }}" />
+            <input type="hidden" id="query_value" value="{{ qvalue }}" />
+            <input type="hidden" id="order_key" value="{{ order }}" />
+            <div id="tools_accordion">
+                <h3>{{ _("Theme Select") }}</h3>
+                <div id="ui-theme-switcher">&nbsp;</div>
+            </div>
+            {% endblock %}

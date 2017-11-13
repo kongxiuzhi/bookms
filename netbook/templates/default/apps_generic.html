@@ -1,0 +1,112 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd">
+{% load i18n %}
+{% load static %}
+<html>
+<head>
+    <title>
+        {{ app_name }} > {% block title %}{% endblock %}
+    </title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    {% block meta %}
+    {% endblock %}
+
+    <!--<link id="css_theme" type="text/css" rel="stylesheet" href="{% get_static_prefix %}css/jQueryUI/{{ theme|default:'cupertino' }}/jquery-ui.min.css" />-->
+    <link id="css_theme" type="text/css" rel="stylesheet" href="{% get_static_prefix %}css/jQueryUI/{{ theme|default:"cupertino" }}/jquery-ui.min.css" />
+    <script type="text/javascript" src="{% get_static_prefix %}js/jQuery/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="{% get_static_prefix %}js/jQuery/jquery-ui-1.10.2.custom.min.js"></script>
+
+    <script type="text/javascript" src="{% get_static_prefix %}js/jQuery/jquery.cookie.js"></script>
+
+    <script type="text/javascript" src="{% get_static_prefix %}js/jQuery/jquery.jui_theme_switch.min.js"></script>
+
+    {% block dajax_script %}
+    {% endblock %}
+
+    <link type="text/css" rel="stylesheet" href="{% get_static_prefix %}default/css/apps.css" media="all"/>
+    <script type="text/javascript" src="{% get_static_prefix %}default/js/apps.js"></script>
+     {% block custom_js %}
+    {% endblock %}
+</head>
+<body class="ui-widget ui-widget-content">
+<div id="pageid_layer" style="display: none;">
+    <input id="theme_name" type="hidden" value="{{ theme|default:"cupertino" }}">
+    <input id="pageid_current" type="hidden" value="">
+    <input id="pageid_last" type="hidden" value="">
+</div>
+{% block CSSMenu %}
+{% endblock %}
+
+{% block Dialog %}
+    <div id="popup_confirm" title="{{ _('Confirm') }}" style="display: none;">
+        <div class="ui-dialog-content ui-helper-clearfix">
+            <span id="confirm_header">{{ _('Will processing below item(s):') }}</span>
+        </div>
+        <div class="ui-widget-content">
+            <span id="confirm_content"></span>
+        </div>
+        <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+            <div class="ui-dialog-buttonset">
+                <button id="confirm_btnCancel" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" type="button" role="button" aria-disabled="false">
+                    <span id="confirm_btnCancelText" class="ui-button-text">{{ _('CANCEL') }}</span>
+                </button>
+                <button id="confirm_btnOk" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" type="button" role="button" aria-disabled="false">
+                    <span id="confirm_btnOkText" class="ui-button-text">{{ _('OK') }}</span>
+                </button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% autoescape on %}
+
+{% block hdwiki %}
+    {% if debug == False %}
+    <!--MOMO-->
+    <script type="text/javascript">
+        var momourl = "http://wiki.netcharm.local:9999";
+        var momoid = "";
+        var momolength = "16";
+        var momotype = "2";
+    </script>
+    <script type="text/javascript" src="http://wiki.netcharm.local:9999/plugins/momo/momo.js"></script>
+    <!--MOMO-->
+    {% endif %}
+{% endblock %}
+
+    <div class="navigator ui-widget-header" id="navigator">
+        <ul>
+            <li class="action">
+                <a href="{{ app_root }}/">{{ _('HOME') }}</a>
+            </li>
+            &nbsp;
+            <li class="action" title="{{ _('Enter Word What You Want To Searching') }}">
+                <form action="{{ app_root }}/search" method="GET">
+                    {% csrf_token %}
+    {#                <label for="search_input">{{ _('Key Word') }}:</label>#}
+                    <label for="search_input"></label>
+                    <input id="search_input" type="text" name="q" value="{{ query|escape }}" size="28">
+                    <input id="search_submit" type="submit" value="{{ _('Search') }}" class="ui-widget">
+                </form>
+            </li>
+            &nbsp;
+            {% if path != "{{ app_root }}/" %}
+            <li class="action"><a onclick="history.back();" title="{{ _('Back To Last Page') }}">{{ _('BACK') }}</a></li>&nbsp;
+{#            <li class="action"><a onclick="window.location.replace(document.referrer);" title="{{ _('Back To Last Page') }}">{{ _('BACK') }}</a></li>&nbsp;#}
+            {% endif %}
+            {% block navigator %}
+            {% endblock %}
+        </ul>
+    </div>
+
+    <div id="wrap" class="wrap">
+        <div class="wrap_side_left">
+            {% include "default/apps_navi_sideleft.html" %}
+        </div>
+        <div class="wrap_main">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+{% endautoescape %}
+</body>
+</html>

@@ -1,0 +1,127 @@
+﻿            {% load mathfilters %}
+            <div class="actions">
+                <dl>
+                    <!--<dt class="ui-widget-header table-title">{{ _('Action') }}</a></dt>-->
+                    <dt class="ui-widget table-cell-value">
+                        <a class="action" href="{{ app_root }}/{{ bill.pk }}/remove" onclick="return remove_one($(this).attr('href'), '{{ bill.location }} - {{ bill.bill_date}}', '{{ _('Remove') }}');">
+                            {#                            <img src="{% get_static_prefix %}default/images/icon_deletelink.png" />#}
+                            {{ _('Remove') }}
+                        </a>
+                        <a class="action" href="{{ app_root }}/{{ bill.pk }}/edit">
+                            {#                            <img src="{% get_static_prefix %}default/images/icon_changelink.png" />#}
+                            {{ _('Edit') }}
+                        </a>
+                    </dt>
+                </dl>
+            </div>
+            <div>
+                <dl class="ui-widget-content table-row location">
+                    <dt class="ui-widget-header table-title"><a href="{{ path }}?f={{ qkey }}&v={{ qvalue }}&o=location">{{ _('Asset Location') }}</a></dt>
+                    <dt class="ui-widget-content table-cell-value location" title="{{ bill.location.fulladdress|default:'' }}">{{ bill }}</dt>
+                </dl>
+            </div>
+            <dl class="ui-widget-content table-row">
+                {% if order == '-bill_date'  %}
+                <dt class="ui-widget-header table-title"><a href="{{ path }}?f={{ qkey }}&v={{ qvalue }}&o=bill_date">{{ _('Bill Date') }}</a></dt>
+                {% else %}
+                <dt class="ui-widget-header table-title"><a href="{{ path }}?f={{ qkey }}&v={{ qvalue }}&o=-bill_date">{{ _('Bill Date') }}</a></dt>
+                {% endif %}
+                <dt class="ui-widget-content table-cell-value" title="
+<dl class='ui-widget'>
+    <dt class='ui-widget-header table-title'>{{ _('Electricity&Water') }}</dt>
+    <dd class='ui-widget-content table-cell-value'>{{ bill.total_fee_ew|default:''|floatformat:2 }}</dd>
+</dl>
+<dl>
+    <dt class='ui-widget-header table-title'>{{ _('Public') }}</dt>
+    <dd class='ui-widget-content table-cell-value'>{{ bill.total_fee_public|default:''|floatformat:2 }}</dd>
+</dl>
+<dl>
+    <dt class='ui-widget-header table-title'>{{ _('Property Fee') }}</dt>
+    <dd class='ui-widget-content table-cell-value'>{{ bill.property_cost|default:''|floatformat:2 }}</dd>
+</dl>
+<dl>
+    <dt class='ui-widget-header table-title'>{{ _('Total') }}</dt>
+    <dd class='ui-widget-content table-cell-value'>{{ bill.total_fee_all|default:''|floatformat:2 }}</dd>
+</dl>
+">{{ bill.bill_date }}</dt>
+                <dt class="ui-widget-header table-title">{{ _('Asset Acreage') }}</dt>
+                <dt class="ui-widget-content table-cell-value fee">{{ bill.location.acreage|default:0|floatformat:2 }}</dt>
+                <dt class="ui-widget-header table-title">{{ _('Property Fee') }}</dt>
+                <dd class="ui-widget-content table-cell-value fee" title="{{ _('UnitPrice') }}: {{ bill.property_unitprice|default:''|floatformat:2 }} ( {{ bill.real_property_unitprice|default:''|floatformat:2 }} )">{{ bill.property_cost|default:''|floatformat:2 }}</dd>
+            </dl>
+            <hr class="ui-widget-content"/>
+            <dl class="ui-widget-content table-row">
+                <dd>
+                    <dl class="ui-widget-content " >
+                        <dt class="ui-widget-header table-cell-header">{{ _('Last Electricity Count') }}</dt>
+                        <dd class="ui-widget-content table-cell-value">{{ bill.private_electricity_last|default:''|floatformat:2 }}</dd>
+                        <dt class="ui-widget-header table-cell-header">{{ _('Current Electricity Count') }}</dt>
+                        <dd class="ui-widget-content table-cell-value">{{ bill.private_electricity_current|default:''|floatformat:2 }}</dd>
+                        <dt class="ui-widget-header table-cell-header">{{ _('Real Electricity Usage') }}</dt>
+                        <!--<dd class="ui-widget-content table-cell-value">{{ bill.private_electricity_current|sub:bill.private_electricity_last|default:''|floatformat:2 }}</dd>-->
+                        <dd class="ui-widget-content table-cell-value">{{ bill.electricity_count|default:''|floatformat:2 }}</dd>
+                        <dt class="ui-widget-header table-cell-header">{{ _('Real Electricity Fee') }}</dt>
+                        <dd class="ui-widget-content table-cell-value fee" title="{{ _('UnitPrice') }}: {{ bill.electricity_unitprice|default:''|floatformat:2 }}">{{ bill.private_electricity_bill|default:''|floatformat:2 }}</dd>
+                    </dl>
+                </dd>
+                <dd>
+                    <dl>
+                        <dt class="ui-widget-header table-cell-header">{{ _('Last Water Count') }}</dt>
+                        <dd class="ui-widget-content table-cell-value">{{ bill.private_water_last|default:''|floatformat:2 }}</dd>
+                        <dt class="ui-widget-header table-cell-header">{{ _('Current Water Count') }}</dt>
+                        <dd class="ui-widget-content table-cell-value">{{ bill.private_water_current|default:''|floatformat:2 }}</dd>
+                        <dt class="ui-widget-header table-cell-header">{{ _('Real Water Usage') }}</dt>
+                        <!--<dd class="ui-widget-content table-cell-value">{{ bill.private_water_current|sub:bill.private_water_last|default:''|floatformat:2  }}</dd>-->
+                        <dd class="ui-widget-content table-cell-value">{{ bill.water_count|default:''|floatformat:2  }}</dd>
+                        <dt class="ui-widget-header table-cell-header">{{ _('Real Water Fee') }}</dt>
+                        <dd class="ui-widget-content table-cell-value fee" title="{{ _('UnitPrice') }}: {{ bill.water_unitprice|default:''|floatformat:2 }}">{{ bill.private_water_bill|default:''|floatformat:2 }}</dd>
+                    </dl>
+                </dd>
+                <dd>
+                    <dl title="{{ _('Public') }}: {{ bill.total_fee_public|default:''|floatformat:2 }}">
+                        <dt class="ui-widget-header table-cell-header">{{ _('Public Electricity Elevator Fee') }}</dt>
+                        <dd class="ui-widget-content table-cell-value fee">{{ bill.public_electricity_elevator|default:''|floatformat:2 }}</dd>
+                        <dt class="ui-widget-header table-cell-header">{{ _('Public Water Relay Fee') }}</dt>
+                        <dd class="ui-widget-content table-cell-value fee">{{ bill.public_water_relay|default:''|floatformat:2 }}</dd>
+                        <dt class="ui-widget-header table-cell-header">{{ _('Public Electricity Fee') }}</dt>
+                        <dd class="ui-widget-content table-cell-value fee">{{ bill.public_electricity|default:''|floatformat:2 }}</dd>
+                        <dt class="ui-widget-header table-cell-header">{{ _('Public Water Fee') }}</dt>
+                        <dd class="ui-widget-content table-cell-value fee">{{ bill.public_water|default:''|floatformat:2 }}</dd>
+                    </dl>
+                </dd>
+                <!--<dd>-->
+                    <!--<dl>-->
+                        <!--<dt class="ui-widget-header"><a href="{{ path }}?f={{ qkey }}&v={{ qvalue }}&o=-rating">{{ _('Property Fee') }}</a></dt>-->
+                        <!--<dd class="ui-widget-content table-cell-value">{{ bill.property_cost }}</dd>-->
+                        <!--<dt class="ui-widget-header"><a href="{{ path }}?f={{ qkey }}&v={{ qvalue }}&o=state">{{ _('Last Property Balance') }}</a></dt>-->
+                        <!--<dd class="ui-widget-content table-cell-value">{{ bill.property_balance_last }}</dd>-->
+                        <!--<dt class="ui-widget-header"><a href="{{ path }}?f={{ qkey }}&v={{ qvalue }}&o=location">{{ _('Current Property Balance') }}</a></dt>-->
+                        <!--<dd class="ui-widget-content table-cell-value">{{ bill.property_balance_current }}</dd>-->
+                        <!--<dt class="ui-widget-header">&nbsp;</dt>-->
+                        <!--<dd class="ui-widget-content table-cell-value">&nbsp;</dd>-->
+                    <!--</dl>-->
+                <!--</dd>-->
+                <dd>
+                    <!--<canvas id="chart_{{bill.pk}}" class="ui-widget-content" style="height: 213px;width: 420px">[No canvas support]</canvas>-->
+                    <div class="ui-widget-content">
+                        <canvas id="chart_pie_{{ bill.pk }}" height="210px" width="260px">[No canvas support]</canvas>
+                    </div>
+                </dd>
+                <dd>
+                    <div class="ui-widget-content">
+                        <canvas id="chart_bar_{{ bill.pk }}" height="210px" width="260px">[No canvas support]</canvas>
+                    </div>
+                </dd>
+            </dl>
+            <!--<hr class="ui-widget-content"/>-->
+            <script type="text/javascript">
+                var jsonData = {
+                    'labels': ["{{_('Private Electricity')}}", "{{_('Private Water')}}", "{{_('Public Electricity')}}", "{{_('Public Water')}}", "{{_('Elevator')}}", "{{_('Water Relay')}}", "{{_('Property')}}"],
+                    'tooltips': ["{{_('Private Electricity')}}", "{{_('Private Water')}}", "{{_('Public Electricity')}}", "{{_('Public Water')}}", "{{_('Elevator')}}", "{{_('Water Relay')}}", "{{_('Property')}}"],
+                    'data': [{{ bill.private_electricity_bill }}, {{ bill.private_water_bill }}, {{ bill.public_electricity }}, {{ bill.public_water }}, {{ bill.public_electricity_elevator }}, {{ bill.public_water_relay }}, {{ bill.property_cost }}],
+                };
+
+                //alert(jsonData);
+                drawChart_Pie("chart_pie_{{bill.pk}}", jsonData);
+                drawChart_Bar("chart_bar_{{ bill.pk }}", jsonData, true);
+            </script>

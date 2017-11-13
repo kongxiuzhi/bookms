@@ -1,0 +1,39 @@
+﻿{% extends "default/bills_generic.html" %}
+
+{% load i18n %}
+{% load static %}
+
+{% block title %}{{ _("Bill") }} -> {{ bill.title|default:_("Add") }}{% endblock %}
+
+{% block dajax_script %}
+    <script type="text/javascript" src="{% get_static_prefix %}js/dajax/jquery.dajax.core.js"></script>
+    {% load dajaxice_templatetags %}
+    {% dajaxice_js_import %}
+    <script type="text/javascript">
+        function adjust_ui()
+        {
+            fit_ui_datepicker('#id_bill_date');
+        }
+    </script>
+{% endblock %}
+
+{% block navigator %}
+{% endblock %}
+
+{#{% block side_left %}#}
+{#{% endblock %}#}
+
+{% block content %}
+<form id="bill_edit_form" enctype="multipart/form-data" action="." method="POST" accept-charset="utf-8">
+    {% csrf_token %}
+    <fieldset class="form_fields ui-widget-content">
+        {{ form.as_ul }}
+        <li>
+            <input class="form_submit" type="submit" value="{{ _("Save") }}" title="{{ _("Save Data to System") }}"/>
+        </li>
+    </fieldset>
+</form>
+<script type="text/javascript">
+    adjust_ui();    
+</script>
+{% endblock %}

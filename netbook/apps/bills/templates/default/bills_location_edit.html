@@ -1,0 +1,25 @@
+{% extends "default/bills_generic.html" %}
+{% load i18n %}
+{% block title %}{{ _("Bill Location") }} -> {{ location|default:_("Add") }}{% endblock %}
+
+{% block navigator %}
+
+{% endblock %}
+
+{#{% block side_left %}#}
+{#{% endblock %}#}
+
+{% block content %}
+    <form id="location_edit_form" enctype="multipart/form-data" action="." method="POST" accept-charset="utf-8">
+        {% csrf_token %}
+        <fieldset class="form_fields ui-widget-content">
+            {{ form.as_ul }}
+            <li>
+                <input class="form_submit" type="submit" value="{{ _("Save") }}" title="{{ _("Save Data to System") }}"/>
+            </li>
+        </fieldset>
+    </form>
+    <script type="text/javascript">
+        fit_ui_datepicker('#id_bought_date');
+    </script>
+{% endblock %}

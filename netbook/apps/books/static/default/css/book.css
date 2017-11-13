@@ -1,0 +1,293 @@
+/**
+ * Created by PyCharm.
+ * User: netcharm
+ * Date: 13-3-16
+ * Time: 下午7:22
+ * To change this template use File | Settings | File Templates.
+ */
+*
+{
+    font-size: 12px;
+    /*font-family: Tahoma;*/
+}
+
+a:link,
+a:active,
+a:hover,
+a:visited
+{
+    text-decoration: none;
+}
+
+body
+{
+    border: 0 !important;
+}
+
+#button_douban
+{
+    margin-left: 8px;
+}
+
+.action
+{
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    text-wrap: none;
+    word-wrap: none;
+}
+
+.ui-button-text
+{
+    text-wrap: none;
+    word-wrap: none;
+}
+
+.action input
+{
+    font-size: 12px;
+}
+
+.progressbar
+{
+    width: 670px;
+    /*float: right;*/
+    float: left;
+    /*margin-right: 90px;*/
+    margin-top: 1.1em;
+}
+
+.progressaction
+{
+    width: 8.5em;
+    float:left;
+    margin-top:1em;
+}
+
+.navigator
+{
+    height: 42px;
+    overflow: hidden;
+}
+
+.navigator > ul
+{
+    display: table;
+}
+
+.navigator > ul > li
+{
+    display: table-cell;
+    height: 32px;
+}
+
+.navigator > li
+{
+    padding-left: 28px;
+}
+
+.wrap
+{
+    margin-top: 4px;
+    position: relative;
+    border-width: 0px;
+}
+
+.wrap_side_left
+{
+    float: left;
+    width: 165px;
+    min-height: 100px;
+    overflow: auto;
+    padding-left: 2px;
+    margin-right: 5px;
+}
+
+.wrap_main
+{
+    min-width: 900px;
+    /*min-height: 400px;*/
+    margin-left: 172px;
+    padding-left: 5px;
+}
+
+.pagination
+{
+    float: left;
+    text-align: right;
+    width:  850px;
+    margin-left: 200px;
+    margin-top: -20px;
+    font-size: 14px;
+}
+.pagenumbers
+{
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+.step-links
+{
+    padding-left: 4px;
+    padding-right: 4px;
+    vertical-align: middle;
+    text-align: center;;
+}
+
+.list_title
+{
+    line-height: 28px;
+    font-size: 18px;
+}
+
+.list_items
+{
+    float: left;
+    font-size: 14px;
+}
+
+.books_list_label
+{
+    width: 120px ;
+    max-width: 120px;
+    min-width: 120px;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.books_list_isbn
+{
+    font-size: 0.8em;
+    width: 96px;
+    min-width: 96px;
+    max-width: 96px;
+    text-align: center;
+}
+.books_list_content
+{
+    width: 430px;
+    min-width: 430px;
+    max-width: 430px;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.books_list_rating
+{
+    width: 64px;
+    max-width: 64px;
+    min-width: 64px;
+    text-align: center;
+}
+.books_list_state
+{
+    width: 64px;
+    max-width: 64px;
+    min-width: 64px ;
+    text-align: center;
+}
+.books_list_location
+{
+    width: 96px;
+    max-width: 64px;
+    min-width: 96px ;
+    text-align: center;
+}
+.books_list_actions
+{
+    width: 140px;
+    min-width: 140px;
+    max-width: 140px;
+    text-align: center;
+    overflow: auto;
+    list-style: none outside none;
+    vertical-align: middle;
+}
+
+.book_detail_label
+{
+    width: 96px ;
+    min-width: 96px ;
+    max-width: 96px ;
+    vertical-align: top;
+}
+
+.book_detail_content
+{
+    text-align: left;
+}
+
+.title
+{
+    width: 120px ;
+    min-width: 120px ;
+    float: left;
+}
+
+.form_submit
+{
+    width: 200px;
+    height: 32px;
+    font-size: 20px;
+    text-align: center;
+    float: left;
+    /*margin-left: 300px;*/
+    margin-left: 25%;
+}
+
+.form_fields
+{
+    list-style: none outside none;
+    overflow: hidden;
+    padding: 8px 12px;
+    font-size: 12px;
+    width: 920px;
+    /*border: 0 !important;*/
+    font-family: "Bitstream Vera Sans Mono",Monaco,Consola,"Courier New",Courier,monospace;
+}
+
+fieldset li
+{
+    overflow: hidden;
+    padding: 8px 12px;
+    font-size: 12px;
+}
+
+fieldset label
+{
+    vertical-align: top;
+    display: inline-block;
+    width: 8em;
+    font-size: 12px;
+}
+
+input,
+select,
+fieldset img,
+fieldset input,
+fieldset select
+{
+    vertical-align: middle;
+    /*font-size: 14px;*/
+    /*max-width: 670px;*/
+}
+
+fieldset p
+{
+    font-size: 11px;
+    /*margin-left: 7em;*/
+    /*padding-left: 30px;*/
+}
+
+fieldset textarea
+{
+    font-size: 12px;
+    /*width: 670px;*/
+    min-width: 670px;
+    /*max-width: 670px;*/
+    height: 200px;
+    min-height: 64px;
+    text-align: left;
+    /*padding: 4px;*/
+    /*margin: 1px;*/
+}

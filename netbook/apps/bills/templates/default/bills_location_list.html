@@ -1,0 +1,62 @@
+{% extends "default/bills_generic.html" %}
+{% load i18n %}
+{% block title %}{{ _("Bill Locations List") }}{% endblock %}
+
+{% block navigator %}
+    <li class="action"><a href="/bills/location/add">{{ _("Add") }}{{ _("Bill Location") }}</a></li>
+{% endblock %}
+
+{#{% block side_left %}#}
+{#{% endblock %}#}
+
+{% block content %}
+
+<div class="list_title">{{ _("Bill Locations List") }}</div>
+{% if location_list %}
+    <table id="location_list" class="list_items">
+        <thead>
+        <tr>
+            <th class="bills_list_label">{{ _("Asset") }}</th>
+            <th class="bills_list_label">{{ _("Owner") }}</th>
+            <th class="bills_list_label">{{ _("Address") }}</th>
+            <th class="bills_list_label">{{ _("Acreage") }}</th>
+            <th class="bills_list_label">{{ _("Property Bank") }}</th>
+            <th class="bills_list_label">{{ _("Property Name") }}</th>
+            <th class="bills_list_label">{{ _("Property Account") }}</th>
+            <th class="bills_list_label">{{ _("Property Telephone") }}</th>
+            <th class="bills_list_label">{{ _("Property Contact") }}</th>
+
+            <th class="bills_list_actions">{{ _("Action") }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for location in location_list %}
+            <tr id="location_{{ location.pk }}">
+                <td class="bills_list_label" title="{{ location|default:_('(N/A)') }}">{{ location.description }}</td>
+                <td class="bills_list_label" title="{{ location|default:_('(N/A)') }}">{{ location.owner }}</td>
+                <td class="bills_list_label" title="{{ location|default:_('(N/A)') }}">{{ location.address }}</td>
+                <td class="bills_list_label" title="{{ location|default:_('(N/A)') }}">{{ location.acreage }}</td>
+                <td class="bills_list_label" title="{{ location|default:_('(N/A)') }}">{{ location.property_bank }}</td>
+                <td class="bills_list_label" title="{{ location|default:_('(N/A)') }}">{{ location.property_user }}</td>
+                <td class="bills_list_label" title="{{ location|default:_('(N/A)') }}">{{ location.property_account }}</td>
+                <td class="bills_list_label" title="{{ location|default:_('(N/A)') }}">{{ location.property_tele }}</td>
+                <td class="bills_list_label" title="{{ location|default:_('(N/A)') }}">{{ location.property_contact }}</td>
+
+                <td class="bills_list_actions" >
+                    <a class="action" href="/bills/location/{{ location.pk }}/remove" onclick="return remove_one($(this).attr('href'), '{{ location.pk }}', '{{ _("Remove") }}');">
+                        {{ _("Remove") }}
+                    </a>
+                    <a class="action" href="/bills/location/{{ location.pk }}/edit">
+                        {{ _("Edit") }}
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>{{ _("No any location be defined now!") }}</p>
+{% endif %}
+<br/>
+
+{% endblock %}

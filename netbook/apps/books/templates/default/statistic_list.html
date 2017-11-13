@@ -1,0 +1,47 @@
+{% extends "default/book_generic.html" %}
+{% load i18n %}
+{% block title %}{{ _("Report List") }}{% endblock %}
+
+{% block navigator %}
+    <li class="action"><a href="/books/report/add">{{ _("Add Report") }}</a></li>
+{% endblock %}
+
+{#{% block side_left %}#}
+{#{% endblock %}#}
+
+{% block content %}
+    <div class="list_title">{{ _("Report List") }}</div>
+    {% if report_list %}
+        <table id="report_list" class="list_items">
+            <thead>
+            <tr>
+                <th class="books_list_label">{{ _("Report") }}</th>
+                <th class="books_list_content">{{ _("Setting") }}</th>
+                <th class="books_list_actions">{{ _("Action") }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for report in report_list %}
+                <tr id=report_{{ report }}">
+                    <td class="books_list_label" title="{{ report|default:_("(N/A)") }}">
+                        <a href="/books/report/{{ report.name }}">{{ report.name|default:_("(N/A)") }}</a>
+                    </td>
+                    <td class="books_list_content" title="{{ _("Setting") }}">
+                        {{ _("Style") }} : {{ report.get_style_display|default:"&nbsp;" }} ; {{ _("Setting") }} : {{ report.setting|default:"&nbsp;" }}
+                    </td>
+                    <td class="books_list_actions" >
+                        <a class="action" href="/books/report/{{ report }}/remove" onclick="return remove_one($(this).attr('href'), '{{ report.name }}', '{{ _("Remove") }}');">
+                            {{ _("Remove") }}
+                        </a>
+                        <a class="action" href="/books/report/{{ report }}/edit">
+                            {{ _("Edit") }}
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>{{ _("No any report be defined now!") }}</p>
+    {% endif %}
+{% endblock %}

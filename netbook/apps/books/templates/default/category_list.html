@@ -1,0 +1,45 @@
+{% extends "default/book_generic.html" %}
+{% load i18n %}
+{% block title %}{{ _("Categories List") }}{% endblock %}
+
+{% block navigator %}
+    <!--suppress ALL -->
+    <li class="action"><a href="/books/category/add">{{ _("Add") }}{{ _("Book Category") }}</a></li>
+{% endblock %}
+
+{#{% block side_left %}#}
+{#{% endblock %}#}
+
+{% block content %}
+
+<div class="list_title">{{ _("Categories List") }}</div>
+{% if category_list %}
+    <table id="category_list" class="list_items">
+        <thead>
+            <tr>
+                <th class="books_list_label">{{ _("Book Category") }}</th>
+                <th class="books_list_actions">{{ _("Action") }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for category in category_list %}
+            <tr id="category_{{ category }}">
+                <td class="books_list_label" title="{{ category|default:_("(N/A)") }}">{{ category }}</td>
+                <td class="books_list_actions" >
+                    <a class="action" href="/books/category/{{ category }}/remove" onclick="return remove_one($(this).attr('href'), '{{ category }}', '{{ _("Remove") }}');">
+                        {{ _("Remove") }}
+                    </a>
+                    <a class="action" href="/books/category/{{ category }}/edit">
+                        {{ _("Edit") }}
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>{{ _("No any category be defined now!") }}</p>
+{% endif %}
+<br/>
+
+{% endblock %}

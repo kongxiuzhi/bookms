@@ -1,0 +1,245 @@
+{% load i18n %}
+{% load static %}
+{% load markup %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>
+        {{ _("Book Library") }} > {% block title %}{% endblock %}
+    </title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+    {% block meta %}
+
+    {% endblock %}
+
+    <link id="css_theme" type="text/css" rel="stylesheet" href="{% get_static_prefix %}css/jQueryUI/{{ theme|default:'cupertino' }}/jquery-ui.min.css" />
+    <script type="text/javascript" src="{% get_static_prefix %}js/jQuery/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="{% get_static_prefix %}js/jQuery/jquery-ui-1.10.2.custom.min.js"></script>
+
+    <script type="text/javascript" src="{% get_static_prefix %}js/jQuery/jquery.cookie.js"></script>
+
+    <script type="text/javascript" src="{% get_static_prefix %}js/jQuery/jquery.jui_theme_switch.min.js"></script>
+
+    {% block dajax_script %}
+    {% endblock %}
+
+{#    <link type="text/css" rel="stylesheet" href="{% get_static_prefix %}default/css/book.css" media="all"/>#}
+{#    <script type="text/javascript" src="{% get_static_prefix %}default/js/book.js"></script>#}
+    <link type="text/css" rel="stylesheet" href="{% static 'default/css/book.css' %}" media="all"/>
+    <script type="text/javascript" src="{% static 'default/js/book.js' %}"></script>
+    <script type="text/javascript">
+        //confirm('{{ path }}');
+        //changecss($.cookie("css_theme"));
+    </script>
+    {% block custom_js %}
+    {% endblock %}
+</head>
+<body class="ui-widget ui-widget-content">
+<div id="pageid_layer" style="display: none;">
+    <input id="theme_name" type="hidden" value="{{ theme|default:"cupertino" }}">
+    <input id="pageid_current" type="hidden" value="">
+    <input id="pageid_last" type="hidden" value="">
+</div>
+{% block CSSMenu %}
+{% endblock %}
+
+{% block Dialog %}
+    <div id="popup_confirm" title="{{ _("Confirm") }}" style="display: none;">
+        <div class="ui-dialog-content ui-helper-clearfix">
+            <span id="confirm_header">{{ _("Will processing below item(s):") }}</span>
+        </div>
+        <div class="ui-widget-content">
+            <span id="confirm_content"></span>
+        </div>
+        <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+            <div class="ui-dialog-buttonset">
+                <button id="confirm_btnCancel" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" type="button" role="button" aria-disabled="false">
+                    <span id="confirm_btnCancelText" class="ui-button-text">{{ _("CANCEL") }}</span>
+                </button>
+                <button id="confirm_btnOk" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" type="button" role="button" aria-disabled="false">
+                    <span id="confirm_btnOkText" class="ui-button-text">{{ _("OK") }}</span>
+                </button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% autoescape on %}
+
+{% block hdwiki %}
+    {% if debug == False %}
+    <!--MOMO-->
+    <script type="text/javascript">
+        var momourl = "http://wiki.netcharm.local:9999";
+        var momoid = "";
+        var momolength = "16";
+        var momotype = "2";
+    </script>
+    <script type="text/javascript" src="http://wiki.netcharm.local:9999/plugins/momo/momo.js"></script>
+    <!--MOMO-->
+    {% endif %}
+{% endblock %}
+
+    <div class="navigator ui-widget-header" id="navigator">
+        <a href="/" title="{{ _('APPs Launcher') }}">
+            <img src="{% get_static_prefix %}images/home.png" style="float: left; width: 36px; height: 36px;margin-top: 4px;margin-left: 4px;">
+        </a>
+        <ul>
+            <li class="action">
+    {#            <a href="/books/">{{ _("My Book Library") }}</a>#}
+                <a href="/books/">{{ _("HOME") }}</a>
+            </li>
+            &nbsp;
+            <li class="action" title="{{ _("Enter Word What You Want To Searching") }}">
+                <form action="/books/search" method="GET">
+                    {% csrf_token %}
+    {#                <label for="search_input">{{ _("Key Word") }}:</label>#}
+                    <label for="search_input"></label>
+                    <input id="search_input" type="text" name="q" value="{{ query|escape }}" size="28">
+                    <input id="search_submit" type="submit" value="{{ _("Search") }}" class="ui-widget">
+                </form>
+            </li>
+            &nbsp;
+            {% if path != "/books/" %}
+            <li class="action"><a onclick="history.back();" title="{{ _("Back To Last Page") }}">{{ _("BACK") }}</a></li>&nbsp;
+{#            <li class="action"><a onclick="window.location.replace(document.referrer);" title="{{ _("Back To Last Page") }}">{{ _("BACK") }}</a></li>&nbsp;#}
+            {% endif %}
+            {% block navigator %}
+            {% endblock %}
+        </ul>
+    </div>
+
+    <div id="wrap" class="wrap">
+        <div class="wrap_side_left">
+        {% block side_left %}
+            <input type="hidden" id="query_key" value="{{ qkey }}" />
+            <input type="hidden" id="query_value" value="{{ qvalue }}" />
+            <input type="hidden" id="order_key" value="{{ order }}" />
+            <div id="media_accordion">
+            </div>
+            <div id="filter_accordion">
+                <h3>{{ _("Filter") }}</h3>
+                <div>
+                    <a href="/books/">{{ _("Last In 20 Books") }}</a>
+                    <br/>
+                    <a href="/books/list/?o={{ order|default:"-pk" }}">{{ _("All Books") }}</a>
+                </div>
+                {% if state_list %}
+                <h3>{{ _("State") }}</h3>
+                <div id="filter_state">
+                    {% for state in state_list %}
+                        {% if qkey == "state" and qvalue|iriencode == state|iriencode %}
+                        <a href="/books/search/?f=state&v={{ state }}&o={{ order }}" class="ui-state-highlight">{{ state }}</a>
+                        {% else %}
+                        <a href="/books/search/?f=state&v={{ state }}&o={{ order }}">{{ state }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% if pubdate_list %}
+                <h3>{{ _("Date Published") }}</h3>
+                <div id="filter_year_pub">
+                    {% for pubdate in pubdate_list %}
+                        {% if qkey == "pubdate" and qvalue|iriencode == pubdate|iriencode %}
+                        <a href="/books/search/?f=pubdate&v={{ pubdate }}&o={{ order }}" class="ui-state-highlight">{{ pubdate }}</a>
+                        {% else %}
+                        <a href="/books/search/?f=pubdate&v={{ pubdate }}&o={{ order }}">{{ pubdate }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% if buydate_list %}
+                    <h3>{{ _("Date Bought") }}</h3>
+                    <div id="filter_year_buy">
+                        {% for buydate in buydate_list %}
+                            {% if qkey == "buydate" and qvalue|iriencode == buydate|iriencode %}
+                                <a href="/books/search/?f=buydate&v={{ buydate }}&o={{ order }}" class="ui-state-highlight">{{ buydate }}</a>
+                            {% else %}
+                                <a href="/books/search/?f=buydate&v={{ buydate }}&o={{ order }}">{{ buydate }}</a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                {% if category_list %}
+                <h3>{{ _("Book Category") }}</h3>
+                <div id="filter_category">
+                    {% for category in category_list %}
+                        {% if qkey == "Book Category" and qvalue|iriencode == category|iriencode %}
+                        <a href="/books/search/?f=category&v={{ category }}&o={{ order }}" class="ui-state-highlight">{{ category }}</a>
+                        {% else %}
+                        <a href="/books/search/?f=category&v={{ category }}&o={{ order }}">{{ category }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% if tags_list %}
+                <h3>{{ _("Reading Tags") }}</h3>
+                <div id="filter_tags">
+                    {% for tag in tags_list %}
+                        {% if qkey == "tag" and qvalue|iriencode == tag|iriencode %}
+                            <a href="/books/search/?f=tag&v={{ tag }}&o={{ order }}" class="ui-state-highlight">{{ tag }}</a>
+                        {% else %}
+                            <a href="/books/search/?f=tag&v={{ tag }}&o={{ order }}">{{ tag }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% if location_list %}
+                <h3>{{ _("Book Location") }}</h3>
+                <div id="filter_location">
+                    {% for location in location_list %}
+                        {% if qkey == "Book Location" and qvalue|iriencode == location|iriencode %}
+                        <a href="/books/search/?f=location&v={{ location }}&o={{ order }}" class="ui-state-highlight">{{ location }}</a>
+                        {% else %}
+                        <a href="/books/search/?f=location&v={{ location }}&o={{ order }}">{{ location }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% if media_list %}
+                <h3>{{ _("Media Type") }}</h3>
+                <div id="filter_media">
+                    {% for media in media_list %}
+                        {% if qkey == "media" and qvalue|iriencode == media|iriencode %}
+                        <a href="/books/search/?f=media&v={{ media }}&o={{ order }}" class="ui-state-highlight">{{ media }}</a>
+                        {% else %}
+                        <a href="/books/search/?f=media&v={{ media }}&o={{ order }}">{{ media }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <div id="list_accordion">
+                <h3>{{ _("Category List") }}</h3>
+                <div>
+                    <a href="/books/category">{{ _("Book Category") }}</a>
+                    <a href="/books/state">{{ _("State") }}</a>
+                    <a href="/books/location">{{ _("Book Location") }}</a>
+                    <a href="/books/media">{{ _("Media Type") }}</a>
+                </div>
+            </div>
+            <div id="tools_accordion">
+                <h3>{{ _("Tools") }}</h3>
+                <div>
+                    <a href="/books/config">{{ _("Config") }}</a>
+                    <a href="/books/report">{{ _("Report") }}</a>
+                    <br/>
+                    <a href="/books/export">{{ _("Export") }}</a>
+                    <a href="/books/import">{{ _("Import") }}</a>
+                </div>
+                <h3>{{ _("Theme Select") }}</h3>
+                <div id="ui-theme-switcher">&nbsp;</div>
+            </div>
+
+            {% endblock %}
+        </div>
+        <div class="wrap_main">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+{% endautoescape %}
+</body>
+</html>

@@ -1,0 +1,801 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-04 11:03+0800\n"
+"PO-Revision-Date: 2013-09-04 11:04+0800\n"
+"Last-Translator: netcharm <netcharm@163.com>\n"
+"Language-Team: netcharm <netcharm@163.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: dxgettext 1.2.2\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: _;STRINGTABLE\n"
+"X-Poedit-SearchPath-0: ..\\..\\..\n"
+
+#: .\models.py:15
+msgid "Key"
+msgstr "鍵值"
+
+#: .\models.py:16
+#: .\models.py:36
+msgid "Value"
+msgstr "賦值"
+
+#: .\models.py:26
+#: .\models.py:73
+msgid "etc."
+msgstr "範例:"
+
+#: .\models.py:28
+msgid "Description"
+msgstr "描述"
+
+#: .\models.py:29
+msgid "Real Estate Number"
+msgstr "房產證"
+
+#: .\models.py:30
+msgid "Land Use Number"
+msgstr "土地證"
+
+#: .\models.py:32
+msgid "Owner"
+msgstr "戶主"
+
+#: .\models.py:33
+msgid "ID Number"
+msgstr "證件號"
+
+#: .\models.py:34
+msgid "Bought Date"
+msgstr "購買日期"
+
+#: .\models.py:35
+msgid "Bought Price"
+msgstr "購買價格"
+
+#: .\models.py:37
+msgid "Country"
+msgstr "國家"
+
+#: .\models.py:38
+msgid "Province"
+msgstr "州/省"
+
+#: .\models.py:39
+msgid "City"
+msgstr "城市"
+
+#: .\models.py:40
+msgid "Address"
+msgstr "地址"
+
+#: .\models.py:41
+msgid "Latitude"
+msgstr "緯度"
+
+#: .\models.py:42
+msgid "Longitude"
+msgstr "經度"
+
+#: .\models.py:43
+msgid "Altitude"
+msgstr "海拔"
+
+#: .\models.py:44
+msgid "Acreage"
+msgstr "面積"
+
+#: .\models.py:45
+msgid "Telephone"
+msgstr "電話"
+
+#: .\models.py:46
+msgid "E-Mail"
+msgstr "電子郵件"
+
+#: .\models.py:47
+msgid "Postal"
+msgstr "郵政編碼"
+
+#: .\models.py:48
+msgid "Note"
+msgstr "備註"
+
+#: .\models.py:50
+msgid "Property Bank"
+msgstr "物業開戶銀行"
+
+#: .\models.py:51
+msgid "Property Name"
+msgstr "物業公司全稱"
+
+#: .\models.py:52
+msgid "Property Account"
+msgstr "物業銀行帳號"
+
+#: .\models.py:53
+msgid "Property Telephone"
+msgstr "物業聯繫電話"
+
+#: .\models.py:54
+msgid "Property EMail"
+msgstr "物業電子郵件"
+
+#: .\models.py:55
+msgid "Property Contact"
+msgstr "物業主聯繫人"
+
+#: .\models.py:57
+msgid "Property Unit Price"
+msgstr "物業收費單價"
+
+#: .\models.py:83
+#: .\templates\default\bill_item_edit.html.py:11
+msgid "Asset Location"
+msgstr "物業地點"
+
+#: .\models.py:85
+#: .\templates\default\bill_item.html.py:27
+#: .\templates\default\bill_item_edit.html.py:18
+msgid "Bill Date"
+msgstr "賬單日期"
+
+#: .\models.py:87
+msgid "Last Month Electricity Count"
+msgstr "上月電表讀數"
+
+#: .\models.py:88
+msgid "Current Month Electricity Count"
+msgstr "當月電表讀數"
+
+#: .\models.py:89
+msgid "Current Month Electricity Fee"
+msgstr "當月電費"
+
+#: .\models.py:91
+msgid "Last Month Water Count"
+msgstr "上月水表讀數"
+
+#: .\models.py:92
+msgid "Current Month Water Count"
+msgstr "當月水表讀數"
+
+#: .\models.py:93
+msgid "Current Month Water Fee"
+msgstr "當月水費"
+
+#: .\models.py:95
+#: .\templates\default\bill_item_edit.html.py:55
+msgid "Public Electricity Fee"
+msgstr "公共電費"
+
+#: .\models.py:96
+#: .\templates\default\bill_item_edit.html.py:57
+msgid "Public Water Fee"
+msgstr "公共水費"
+
+#: .\models.py:97
+#: .\templates\default\bill_item_edit.html.py:51
+msgid "Public Electricity Elevator Fee"
+msgstr "公共電梯費"
+
+#: .\models.py:98
+#: .\templates\default\bill_item_edit.html.py:53
+msgid "Public Water Relay Fee"
+msgstr "二次供水費"
+
+#: .\models.py:100
+#: .\templates\default\bill_item.html.py:49
+#: .\templates\default\bill_item.html.py:94
+#: .\templates\default\bill_item_edit.html.py:20
+msgid "Property Fee"
+msgstr "物業費"
+
+#: .\models.py:101
+msgid "Last Property Balance"
+msgstr "上月物業費餘額"
+
+#: .\models.py:102
+msgid "Current Property Balance"
+msgstr "當月物業費餘額"
+
+#: .\views.py:55
+msgid "My Bills"
+msgstr "我的賬單"
+
+#: .\views.py:146
+#: .\views.py:525
+#: .\views.py:616
+msgid "Unknown"
+msgstr "未知"
+
+#: .\views.py:573
+#: .\templates\default\bill_item.html.py:120
+msgid "Private Electricity"
+msgstr "家庭電費"
+
+#: .\views.py:573
+#: .\templates\default\bill_item.html.py:120
+msgid "Private Water"
+msgstr "家庭水費"
+
+#: .\views.py:574
+#: .\templates\default\bill_item.html.py:120
+msgid "Public Electricity"
+msgstr "公共電費"
+
+#: .\views.py:574
+#: .\templates\default\bill_item.html.py:120
+msgid "Public Water"
+msgstr "公共水費"
+
+#: .\views.py:575
+#: .\templates\default\bill_item.html.py:120
+msgid "Elevator"
+msgstr "電梯費"
+
+#: .\views.py:575
+#: .\templates\default\bill_item.html.py:120
+msgid "Water Relay"
+msgstr "二次供水"
+
+#: .\views.py:575
+#: .\templates\default\bill_item.html.py:120
+msgid "Property"
+msgstr "物業費"
+
+#: .\views.py:576
+msgid "Electricity Unitprice"
+msgstr "電費單價"
+
+#: .\views.py:576
+msgid "Electricity Count"
+msgstr "用電度數"
+
+#: .\views.py:577
+msgid "Water Unitprice"
+msgstr "水費單價"
+
+#: .\views.py:577
+msgid "Water Count"
+msgstr "用水度數"
+
+#: .\templates\default\bill_detail.html.py:11
+#: .\templates\default\bill_list.html.py:188
+#: .\templates\default\bill_list.html.py:190
+msgid "Add Bill"
+msgstr "新增賬單"
+
+#: .\templates\default\bill_detail.html.py:13
+msgid "Edit Bill"
+msgstr "修改賬單"
+
+#: .\templates\default\bill_detail.html.py:14
+#: .\templates\default\bill_item.html.py:6
+#: .\templates\default\bill_item.html.py:8
+#: .\templates\default\bills_config_list.html.py:26
+#: .\templates\default\bills_config_list.html.py:27
+#: .\templates\default\bills_location_list.html.py:46
+#: .\templates\default\bills_location_list.html.py:47
+msgid "Remove"
+msgstr "刪除"
+
+#: .\templates\default\bill_detail.html.py:14
+#: .\templates\default\bill_edit.html.py:6
+msgid "Bill"
+msgstr "賬單"
+
+#: .\templates\default\bill_detail.html.py:20
+msgid "Bill Detail"
+msgstr "賬單詳情"
+
+#: .\templates\default\bill_edit.html.py:6
+#: .\templates\default\bills_config_edit.html.py:3
+#: .\templates\default\bills_location_edit.html.py:3
+#: .\templates\default\bills_location_list.html.py:6
+msgid "Add"
+msgstr "新增"
+
+#: .\templates\default\bill_edit.html.py:32
+#: .\templates\default\bill_item_edit.html.py:65
+#: .\templates\default\bill_item_edit.html.py:66
+#: .\templates\default\bills_config_edit.html.py:14
+#: .\templates\default\bills_location_edit.html.py:18
+msgid "Save"
+msgstr "保存"
+
+#: .\templates\default\bill_edit.html.py:32
+#: .\templates\default\bill_item_edit.html.py:65
+#: .\templates\default\bill_item_edit.html.py:66
+#: .\templates\default\bills_config_edit.html.py:14
+#: .\templates\default\bills_location_edit.html.py:18
+msgid "Save Data to System"
+msgstr "保存數據到系統"
+
+#: .\templates\default\bill_item.html.py:4
+#: .\templates\default\bills_config_list.html.py:17
+#: .\templates\default\bills_location_list.html.py:29
+#: .\templates\default\bills_report_item.html.py:3
+msgid "Action"
+msgstr "操作"
+
+#: .\templates\default\bill_item.html.py:12
+#: .\templates\default\bills_config_list.html.py:30
+#: .\templates\default\bills_location_list.html.py:50
+msgid "Edit"
+msgstr "修改"
+
+#: .\templates\default\bill_item.html.py:31
+msgid "Electricity&Water"
+msgstr "家用水電費"
+
+#: .\templates\default\bill_item.html.py:35
+#: .\templates\default\bill_item.html.py:81
+#: .\templates\default\bills_report_list.html.py:261
+msgid "Public"
+msgstr "公共水電費"
+
+#: .\templates\default\bill_item.html.py:43
+msgid "Total"
+msgstr "總計費用"
+
+#: .\templates\default\bill_item.html.py:47
+#: .\templates\default\bill_item_edit.html.py:13
+msgid "Asset Acreage"
+msgstr "物業面積"
+
+#: .\templates\default\bill_item.html.py:50
+#: .\templates\default\bill_item.html.py:64
+#: .\templates\default\bill_item.html.py:77
+msgid "UnitPrice"
+msgstr "單價"
+
+#: .\templates\default\bill_item.html.py:56
+#: .\templates\default\bill_item_edit.html.py:27
+msgid "Last Electricity Count"
+msgstr "上月電表讀數"
+
+#: .\templates\default\bill_item.html.py:58
+#: .\templates\default\bill_item_edit.html.py:29
+msgid "Current Electricity Count"
+msgstr "當月電表讀數"
+
+#: .\templates\default\bill_item.html.py:60
+#: .\templates\default\bill_item_edit.html.py:31
+msgid "Real Electricity Usage"
+msgstr "實際用電度數"
+
+#: .\templates\default\bill_item.html.py:63
+#: .\templates\default\bill_item_edit.html.py:33
+msgid "Real Electricity Fee"
+msgstr "實際電費"
+
+#: .\templates\default\bill_item.html.py:69
+#: .\templates\default\bill_item_edit.html.py:39
+msgid "Last Water Count"
+msgstr "上月水表讀數"
+
+#: .\templates\default\bill_item.html.py:71
+#: .\templates\default\bill_item_edit.html.py:41
+msgid "Current Water Count"
+msgstr "當月水表讀數"
+
+#: .\templates\default\bill_item.html.py:73
+#: .\templates\default\bill_item_edit.html.py:43
+msgid "Real Water Usage"
+msgstr "實際用水度數"
+
+#: .\templates\default\bill_item.html.py:76
+#: .\templates\default\bill_item_edit.html.py:45
+msgid "Real Water Fee"
+msgstr "實際水費"
+
+#: .\templates\default\bill_list.html.py:9
+#: .\templates\default\bill_list.html.py:203
+#: .\templates\default\bills_report_list.html.py:9
+msgid "Bills List"
+msgstr "賬單列表"
+
+#: .\templates\default\bill_list.html.py:187
+#: .\templates\default\bill_list.html.py:260
+msgid "Add Bill To System"
+msgstr "添加賬單到系統中"
+
+#: .\templates\default\bill_list.html.py:192
+msgid "Export Highlighted Bills"
+msgstr "導出所選賬單信息"
+
+#: .\templates\default\bill_list.html.py:193
+#: .\templates\default\bills_navi_sideleft.html.py:61
+msgid "Export"
+msgstr "導出"
+
+#: .\templates\default\bill_list.html.py:193
+msgid "Export Bills"
+msgstr "導出賬單"
+
+#: .\templates\default\bill_list.html.py:208
+msgid "FIRST"
+msgstr "首頁"
+
+#: .\templates\default\bill_list.html.py:209
+#: .\templates\default\bill_list.html.py:212
+#: .\templates\default\bills_generic.html.py:37
+msgid "PREV"
+msgstr "上一頁"
+
+#: .\templates\default\bill_list.html.py:228
+#: .\templates\default\bill_list.html.py:231
+#: .\templates\default\bills_generic.html.py:36
+msgid "NEXT"
+msgstr "下一頁"
+
+#: .\templates\default\bill_list.html.py:229
+msgid "LAST"
+msgstr "末頁"
+
+#: .\templates\default\bill_list.html.py:245
+#: .\templates\default\bills_report_list.html.py:272
+#: .\templates\default\bills_report_list.html.py:286
+#: .\templates\default\bills_report_list.html.py:300
+msgid "No any bills has been found!"
+msgstr "未找到符合條件的賬單！"
+
+#: .\templates\default\bill_list.html.py:254
+#: .\templates\default\bills_navi_sideleft.html.py:37
+#: .\templates\default\bills_navi_sideleft.html.py:52
+msgid "Assets Location"
+msgstr "資產位置"
+
+#: .\templates\default\bills_config_edit.html.py:3
+#: .\templates\default\bills_navi_sideleft.html.py:58
+msgid "Config"
+msgstr "設定"
+
+#: .\templates\default\bills_config_list.html.py:3
+#: .\templates\default\bills_config_list.html.py:10
+msgid "Config List"
+msgstr "設定清單"
+
+#: .\templates\default\bills_config_list.html.py:6
+msgid "Add Config Setting"
+msgstr "新增設定項"
+
+#: .\templates\default\bills_config_list.html.py:15
+msgid "Config Name"
+msgstr "設定項名稱"
+
+#: .\templates\default\bills_config_list.html.py:16
+msgid "Config Value"
+msgstr "設定項賦值"
+
+#: .\templates\default\bills_config_list.html.py:23
+#: .\templates\default\bills_config_list.html.py:24
+#: .\templates\default\bills_location_list.html.py:35
+#: .\templates\default\bills_location_list.html.py:36
+#: .\templates\default\bills_location_list.html.py:37
+#: .\templates\default\bills_location_list.html.py:38
+#: .\templates\default\bills_location_list.html.py:39
+#: .\templates\default\bills_location_list.html.py:40
+#: .\templates\default\bills_location_list.html.py:41
+#: .\templates\default\bills_location_list.html.py:42
+#: .\templates\default\bills_location_list.html.py:43
+msgid "(N/A)"
+msgstr "(沒有數據)"
+
+#: .\templates\default\bills_config_list.html.py:38
+msgid "No any config be defined now!"
+msgstr "暫時還沒有定義設定！"
+
+#: .\templates\default\bills_generic.html.py:30
+msgid "January"
+msgstr "一月"
+
+#: .\templates\default\bills_generic.html.py:30
+msgid "February"
+msgstr "二月"
+
+#: .\templates\default\bills_generic.html.py:30
+msgid "March"
+msgstr "三月"
+
+#: .\templates\default\bills_generic.html.py:30
+msgid "April"
+msgstr "四月"
+
+#: .\templates\default\bills_generic.html.py:30
+#: .\templates\default\bills_generic.html.py:31
+msgid "May"
+msgstr "五月"
+
+#: .\templates\default\bills_generic.html.py:30
+msgid "June"
+msgstr "六月"
+
+#: .\templates\default\bills_generic.html.py:30
+msgid "July"
+msgstr "七月"
+
+#: .\templates\default\bills_generic.html.py:30
+msgid "August"
+msgstr "八月"
+
+#: .\templates\default\bills_generic.html.py:30
+msgid "September"
+msgstr "九月"
+
+#: .\templates\default\bills_generic.html.py:30
+msgid "October"
+msgstr "十月"
+
+#: .\templates\default\bills_generic.html.py:30
+msgid "November"
+msgstr "十一月"
+
+#: .\templates\default\bills_generic.html.py:30
+msgid "December"
+msgstr "十二月"
+
+#: .\templates\default\bills_generic.html.py:31
+msgid "Jan"
+msgstr "01月"
+
+#: .\templates\default\bills_generic.html.py:31
+msgid "Feb"
+msgstr "02月"
+
+#: .\templates\default\bills_generic.html.py:31
+msgid "Mar"
+msgstr "03月"
+
+#: .\templates\default\bills_generic.html.py:31
+msgid "Apr"
+msgstr "04月"
+
+#: .\templates\default\bills_generic.html.py:31
+msgid "Jun"
+msgstr "06月"
+
+#: .\templates\default\bills_generic.html.py:31
+msgid "Jul"
+msgstr "07月"
+
+#: .\templates\default\bills_generic.html.py:31
+msgid "Aug"
+msgstr "08月"
+
+#: .\templates\default\bills_generic.html.py:31
+msgid "Sep"
+msgstr "09月"
+
+#: .\templates\default\bills_generic.html.py:31
+msgid "Oct"
+msgstr "10月"
+
+#: .\templates\default\bills_generic.html.py:31
+msgid "Nov"
+msgstr "11月"
+
+#: .\templates\default\bills_generic.html.py:31
+msgid "Dec"
+msgstr "12月"
+
+#: .\templates\default\bills_generic.html.py:32
+msgid "Sunday"
+msgstr "星期日"
+
+#: .\templates\default\bills_generic.html.py:32
+msgid "Monday"
+msgstr "星期一"
+
+#: .\templates\default\bills_generic.html.py:32
+msgid "Tuesday"
+msgstr "星期二"
+
+#: .\templates\default\bills_generic.html.py:32
+msgid "Wednesday"
+msgstr "星期三"
+
+#: .\templates\default\bills_generic.html.py:32
+msgid "Thursday"
+msgstr "星期四"
+
+#: .\templates\default\bills_generic.html.py:32
+msgid "Friday"
+msgstr "星期五"
+
+#: .\templates\default\bills_generic.html.py:32
+msgid "Saturday"
+msgstr "星期六"
+
+#: .\templates\default\bills_generic.html.py:33
+msgid "Sun"
+msgstr "週日"
+
+#: .\templates\default\bills_generic.html.py:33
+msgid "Mon"
+msgstr "週一"
+
+#: .\templates\default\bills_generic.html.py:33
+msgid "Tue"
+msgstr "週二"
+
+#: .\templates\default\bills_generic.html.py:33
+msgid "Wed"
+msgstr "週三"
+
+#: .\templates\default\bills_generic.html.py:33
+msgid "Thu"
+msgstr "週四"
+
+#: .\templates\default\bills_generic.html.py:33
+msgid "Fri"
+msgstr "週五"
+
+#: .\templates\default\bills_generic.html.py:33
+msgid "Sat"
+msgstr "週六"
+
+#: .\templates\default\bills_generic.html.py:34
+msgid "Su"
+msgstr "週日"
+
+#: .\templates\default\bills_generic.html.py:34
+msgid "Mo"
+msgstr "一"
+
+#: .\templates\default\bills_generic.html.py:34
+msgid "Tu"
+msgstr "二"
+
+#: .\templates\default\bills_generic.html.py:34
+msgid "We"
+msgstr "三"
+
+#: .\templates\default\bills_generic.html.py:34
+msgid "Th"
+msgstr "四"
+
+#: .\templates\default\bills_generic.html.py:34
+msgid "Fr"
+msgstr "五"
+
+#: .\templates\default\bills_generic.html.py:34
+msgid "Sa"
+msgstr "六"
+
+#: .\templates\default\bills_generic.html.py:35
+msgid "Wk"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:40
+msgid "CE"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:70
+msgid "Confirm"
+msgstr "請確認"
+
+#: .\templates\default\bills_generic.html.py:72
+msgid "Will processing below item(s):"
+msgstr "將要處理下列條目:"
+
+#: .\templates\default\bills_generic.html.py:80
+msgid "CANCEL"
+msgstr "放棄"
+
+#: .\templates\default\bills_generic.html.py:83
+msgid "OK"
+msgstr "確認"
+
+#: .\templates\default\bills_generic.html.py:109
+msgid "HOME"
+msgstr "主頁"
+
+#: .\templates\default\bills_generic.html.py:112
+msgid "Enter Word What You Want To Searching"
+msgstr "輸入想要搜索的單詞"
+
+#: .\templates\default\bills_generic.html.py:118
+msgid "Search"
+msgstr "搜索"
+
+#: .\templates\default\bills_generic.html.py:123
+msgid "Back To Last Page"
+msgstr "返回之前訪問的頁面"
+
+#: .\templates\default\bills_generic.html.py:123
+msgid "BACK"
+msgstr "返回"
+
+#: .\templates\default\bills_location_edit.html.py:3
+#: .\templates\default\bills_location_list.html.py:6
+msgid "Bill Location"
+msgstr "賬單位置"
+
+#: .\templates\default\bills_location_list.html.py:3
+#: .\templates\default\bills_location_list.html.py:14
+msgid "Bill Locations List"
+msgstr "賬單物業列表"
+
+#: .\templates\default\bills_location_list.html.py:19
+msgid "Asset"
+msgstr "資產全稱"
+
+#: .\templates\default\bills_location_list.html.py:58
+msgid "No any location be defined now!"
+msgstr "暫時還沒有定義位置喔！"
+
+#: .\templates\default\bills_navi_sideleft.html.py:6
+msgid "Filter"
+msgstr "條件過濾"
+
+#: .\templates\default\bills_navi_sideleft.html.py:8
+msgid "Last In 20 Bills"
+msgstr "最近的20個賬單"
+
+#: .\templates\default\bills_navi_sideleft.html.py:10
+msgid "All Bills"
+msgstr "全部賬單"
+
+#: .\templates\default\bills_navi_sideleft.html.py:13
+msgid "Bill Year"
+msgstr "賬單年份"
+
+#: .\templates\default\bills_navi_sideleft.html.py:25
+msgid "Bill Month"
+msgstr "賬單月份"
+
+#: .\templates\default\bills_navi_sideleft.html.py:29
+#: .\templates\default\bills_navi_sideleft.html.py:31
+msgid "Month"
+msgstr "月"
+
+#: .\templates\default\bills_navi_sideleft.html.py:50
+msgid "Categories List"
+msgstr "分類列表"
+
+#: .\templates\default\bills_navi_sideleft.html.py:56
+msgid "Tools"
+msgstr "系統工具"
+
+#: .\templates\default\bills_navi_sideleft.html.py:59
+msgid "Report"
+msgstr "報表"
+
+#: .\templates\default\bills_navi_sideleft.html.py:62
+msgid "Import"
+msgstr "導入"
+
+#: .\templates\default\bills_navi_sideleft.html.py:64
+msgid "Theme Select"
+msgstr "主題選擇"
+
+#: .\templates\default\bills_report_item.html.py:6
+msgid "Refresh"
+msgstr "刷新"
+
+#: .\templates\default\bills_report_list.html.py:254
+#: .\templates\default\bills_report_list.html.py:259
+msgid "Bills Reports"
+msgstr "賬單報表："
+
+#: .\templates\default\bills_report_list.html.py:260
+msgid "Private"
+msgstr "個人的"
+
+#: .\templates\default\bills_report_list.html.py:262
+msgid "Other"
+msgstr "其他"
+

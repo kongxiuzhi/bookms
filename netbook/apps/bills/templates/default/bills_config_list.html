@@ -1,0 +1,40 @@
+{% extends "default/bills_generic.html" %}
+{% load i18n %}
+{% block title %}{{ _("Config List") }}{% endblock %}
+
+{% block navigator %}
+    <li class="action"><a href="{{ app_root }}/config/add">{{ _("Add Config Setting") }}</a></li>
+{% endblock %}
+
+{% block content %}
+    <div class="list_title">{{ _("Config List") }}</div>
+    {% if config_list %}
+        <table id="config_list" class="list_items">
+            <thead>
+            <tr>
+                <th class="bills_list_label">{{ _("Config Name") }}</th>
+                <th class="bills_list_content">{{ _("Config Value") }}</th>
+                <th class="bills_list_actions">{{ _("Action") }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for config in config_list %}
+                <tr id="config_{{ config }}">
+                    <td class="bills_list_label" title="{{ config.key|default:_("(N/A)") }}">{{ config.key }}</td>
+                    <td class="bills_list_label" title="{{ config.value|default:_("(N/A)") }}">{{ config.value }}</td>
+                    <td class="bills_list_actions" >
+                        <a class="action" href="{{ app_root }}/config/{{ config.key }}/remove" onclick="return remove_one($(this).attr('href'), '{{ config.key }} : {{ config.value }} ', '{{ _("Remove") }}');">
+                            {{ _("Remove") }}
+                        </a>
+                        <a class="action" href="{{ app_root }}/config/{{ config.key }}/edit">
+                            {{ _("Edit") }}
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>{{ _("No any config be defined now!") }}</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,367 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-05 01:26+0800\n"
+"PO-Revision-Date: 2013-09-05 01:42+0800\n"
+"Last-Translator: netcharm <netcharm@163.com>\n"
+"Language-Team: netcharm <netcharm@163.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: dxgettext 1.2.2\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: STRINGTABLE\n"
+"X-Poedit-SearchPath-0: ..\\..\\..\n"
+
+#: .\apps\models.py:15
+#: .\apps\bills\models.py:15
+msgid "Key"
+msgstr "鍵"
+
+#: .\apps\models.py:16
+#: .\apps\bike\models.py:21#:
+#: .\apps\bills\models.py:16
+#: .\apps\bills\models.py:36#:
+#: .\apps\books\models.py:16
+#: .\apps\books\models.py:134
+msgid "Value"
+msgstr "賦值"
+
+#: .\apps\models.py:25
+msgid "App Name"
+msgstr "應用名稱"
+
+#: .\apps\models.py:26
+#: .\apps\bike\models.py:49#:
+#: .\apps\bills\models.py:28
+#: .\templates\default\apps_item_edit.html.py:14
+msgid "Description"
+msgstr "描述"
+
+#: .\apps\models.py:29
+#: .\templates\default\apps_item_edit.html.py:18
+msgid "URL"
+msgstr "網址"
+
+#: .\apps\models.py:30
+#: .\templates\default\apps_item_edit.html.py:22
+msgid "Icon"
+msgstr "圖標"
+
+#: .\apps\settings.py:107
+#, fuzzy
+msgid "English"
+msgstr "English"
+
+#: .\apps\settings.py:108
+#, fuzzy
+msgid "Simplified Chinese"
+msgstr "Simplified Chinese"
+
+#: .\apps\settings.py:109
+#, fuzzy
+msgid "Traditional Chinese"
+msgstr "Traditional Chinese"
+
+#: .\apps\views.py:34
+msgid "My Apps"
+msgstr "我的應用"
+
+#: .\apps\views.py:125
+msgid "Unknown"
+msgstr "未知"
+
+#: .\templates\default\apps_item_edit.html.py:10
+msgid "Name"
+msgstr "名稱"
+
+#: .\templates\default\apps_generic.html.py:40
+msgid "Confirm"
+msgstr "請確認"
+
+#: .\templates\default\apps_generic.html.py:42
+msgid "Will processing below item(s):"
+msgstr "將要處理下列條目:"
+
+#: .\templates\default\apps_generic.html.py:50
+msgid "CANCEL"
+msgstr "放棄"
+
+#: .\templates\default\apps_generic.html.py:53
+msgid "OK"
+msgstr "確認"
+
+#: .\templates\default\apps_generic.html.py:79
+msgid "HOME"
+msgstr "主頁"
+
+#: .\templates\default\apps_generic.html.py:82
+msgid "Enter Word What You Want To Searching"
+msgstr "輸入想要搜索的單詞"
+
+#: .\templates\default\apps_generic.html.py:88
+msgid "Search"
+msgstr "搜索"
+
+#: .\templates\default\apps_generic.html.py:93
+msgid "Back To Last Page"
+msgstr "返回之前訪問的頁面"
+
+#: .\templates\default\apps_generic.html.py:93
+msgid "BACK"
+msgstr "返回"
+
+#: .\templates\default\apps_config_edit.html.py:3
+msgid "Config"
+msgstr "設定"
+
+#: .\templates\default\apps_navi_sideleft.html.py:6
+msgid "Theme Select"
+msgstr "主題選擇"
+
+#: .\templates\default\apps_config_edit.html.py:3
+msgid "Add"
+msgstr "新增"
+
+#: .\templates\default\apps_config_edit.html.py:14
+#: .\templates\default\apps_item_edit.html.py:27
+msgid "Save"
+msgstr "保存"
+
+#: .\templates\default\apps_config_edit.html.py:14
+#: .\templates\default\apps_item_edit.html.py:27
+msgid "Save Data to System"
+msgstr "保存數據到系統"
+
+#: .\templates\default\apps_config_list.html.py:26
+#: .\templates\default\apps_config_list.html.py:27
+#: .\templates\default\apps_item.html.py:5
+#: .\templates\default\apps_item.html.py:6
+msgid "Remove"
+msgstr "刪除"
+
+#: .\templates\default\apps_config_list.html.py:23
+#: .\templates\default\apps_config_list.html.py:24
+msgid "(N/A)"
+msgstr "(沒有數據)"
+
+#: .\templates\default\apps_config_list.html.py:17
+#: .\templates\default\apps_item.html.py:3
+msgid "Action"
+msgstr "操作"
+
+#: .\templates\default\apps_config_list.html.py:30
+#: .\templates\default\apps_item.html.py:9
+msgid "Edit"
+msgstr "修改"
+
+#: .\templates\default\apps_list.html.py:72
+#: .\templates\default\apps_list.html.py:74
+msgid "PREV"
+msgstr "上一頁"
+
+#: .\templates\default\apps_list.html.py:90
+#: .\templates\default\apps_list.html.py:93
+msgid "NEXT"
+msgstr "下一頁"
+
+#: .\templates\default\apps_list.html.py:91
+msgid "LAST"
+msgstr "末頁"
+
+#: .\templates\default\apps_config_list.html.py:3
+#: .\templates\default\apps_config_list.html.py:10
+msgid "Config List"
+msgstr "設定清單"
+
+#: .\templates\default\apps_config_list.html.py:6
+msgid "Add Config Setting"
+msgstr "新增設定項"
+
+#: .\templates\default\apps_config_list.html.py:15
+msgid "Config Name"
+msgstr "設定項名稱"
+
+#: .\templates\default\apps_config_list.html.py:16
+msgid "Config Value"
+msgstr "設定項賦值"
+
+#: .\templates\default\apps_config_list.html.py:38
+msgid "No any config be defined now!"
+msgstr "暫時還沒有定義設定喔！"
+
+#: .\templates\404.html.py:4
+#: .\templates\404.html.py:10
+msgid "Page not found"
+msgstr "未發現頁面"
+
+#: .\templates\404.html.py:12
+msgid "We're sorry, but the requested page could not be found."
+msgstr "很抱歉， 未找到所需頁面。"
+
+#: .\templates\500.html.py:6
+msgid "Home"
+msgstr "主頁"
+
+#: .\templates\500.html.py:7
+msgid "Server error"
+msgstr "伺服器錯誤"
+
+#: .\templates\500.html.py:11
+msgid "Server error (500)"
+msgstr "伺服器錯誤（500）"
+
+#: .\templates\500.html.py:14
+msgid "Server Error <em>(500)</em>"
+msgstr "伺服器錯誤<em>（500）</em>"
+
+#: .\templates\500.html.py:15
+msgid "There's been an error. It's been reported to the site administrators via email and should be fixed shortly. Thanks for your patience."
+msgstr "發現一個錯誤。已通過電子郵件報告給站點管理員稍後修復。感謝支持。"
+
+#: .\templates\default\apps_list.html.py:9
+msgid "APPs List"
+msgstr "應用列表"
+
+#: .\templates\default\apps_list.html.py:55
+msgid "Add Application To System"
+msgstr "加入應用到系統中"
+
+#: .\templates\default\apps_list.html.py:56
+msgid "Add App"
+msgstr "添加應用"
+
+#: .\templates\default\apps_list.html.py:66
+msgid "Apps List"
+msgstr "應用列表"
+
+#: .\templates\default\apps_list.html.py:107
+msgid "No any apps has been found!"
+msgstr "未發現任何應用！"
+
+#: .\templates\default\apps_list.html.py:114
+msgid "Add app To System"
+msgstr "加入應用到系統中"
+
+#~ msgid "Thanks for visiting my site."
+#~ msgstr "感謝訪問此站點."
+#~ msgid "Multi-Add"
+#~ msgstr "批量添加"
+#~ msgid "Multi-Remove"
+#~ msgstr "批量刪除"
+#~ msgid "Back"
+#~ msgstr "返回"
+#~ msgid "Filter"
+#~ msgstr "條件過濾"
+#~ msgid "Location"
+#~ msgstr "位置"
+#~ msgid "Category"
+#~ msgstr "分類"
+#~ msgid "Tools"
+#~ msgstr "系統工具"
+#~ msgid "Statistic"
+#~ msgstr "統計"
+#~ msgid "Report"
+#~ msgstr "報表"
+#~ msgid "Add Report"
+#~ msgstr "新增報表"
+#~ msgid "Edit Report"
+#~ msgstr "編輯報表"
+#~ msgid "Report Detail"
+#~ msgstr "報表詳情"
+#~ msgid "Report List"
+#~ msgstr "報表清單"
+#~ msgid "Setting"
+#~ msgstr "設定"
+#~ msgid "Template"
+#~ msgstr "模板"
+#~ msgid "No any report be defined now!"
+#~ msgstr "暫時還沒有定義報表喔！"
+#~ msgid "Import"
+#~ msgstr "導入"
+#~ msgid "Export"
+#~ msgstr "導出"
+#~ msgid "%s not a digit"
+#~ msgstr "輸入的值 '%s' 不完全是數字"
+#~ msgid "Tags"
+#~ msgstr "標籤"
+#~ msgid "etc."
+#~ msgstr "範例:"
+#~ msgid "Result"
+#~ msgstr "處理結果"
+#~ msgid "Failed"
+#~ msgstr "失敗"
+#~ msgid "No Error"
+#~ msgstr "沒有錯誤"
+#~ msgid "No Action"
+#~ msgstr "沒有操作"
+#~ msgid "Add Success"
+#~ msgstr "增加成功"
+#~ msgid "%s Exists"
+#~ msgstr "%s記錄已經存在"
+#~ msgid "Jan"
+#~ msgstr "01月"
+#~ msgid "Feb"
+#~ msgstr "02月"
+#~ msgid "Mar"
+#~ msgstr "03月"
+#~ msgid "Apr"
+#~ msgstr "04月"
+#~ msgid "May"
+#~ msgstr "05月"
+#~ msgid "Jun"
+#~ msgstr "06月"
+#~ msgid "Jul"
+#~ msgstr "07月"
+#~ msgid "Aug"
+#~ msgstr "08月"
+#~ msgid "Sep"
+#~ msgstr "09月"
+#~ msgid "Oct"
+#~ msgstr "10月"
+#~ msgid "Nov"
+#~ msgstr "11月"
+#~ msgid "Dec"
+#~ msgstr "12月"
+#~ msgid "Sun"
+#~ msgstr "週日"
+#~ msgid "Mon"
+#~ msgstr "週一"
+#~ msgid "Tue"
+#~ msgstr "週二"
+#~ msgid "Wed"
+#~ msgstr "週三"
+#~ msgid "Thu"
+#~ msgstr "週四"
+#~ msgid "Fri"
+#~ msgstr "週五"
+#~ msgid "Sat"
+#~ msgstr "週六"
+#~ msgid "Su"
+#~ msgstr "週日"
+#~ msgid "Mo"
+#~ msgstr "一"
+#~ msgid "Tu"
+#~ msgstr "二"
+#~ msgid "We"
+#~ msgstr "三"
+#~ msgid "Th"
+#~ msgstr "四"
+#~ msgid "Fr"
+#~ msgstr "五"
+#~ msgid "Sa"
+#~ msgstr "六"
+#~ msgid "Theme"
+#~ msgstr "主題"
+#~ msgid "Theme Switcher"
+#~ msgstr "主題切換"
+

@@ -1,0 +1,158 @@
+﻿{% extends "default/book_generic.html" %}
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+
+    {% block title %}
+        {{ _("Books List") }}
+    {% endblock %}
+
+    {% block navigator %}
+        <li class="action" title="{{ _("Add Book To System") }}">
+            <a href="/books/add">{{ _("Add Book") }}</a>
+        </li>
+        <li class="action" title="{{ _("Add Books To System") }}">
+            <a href="/books/add-multi">{{ _("Multi-Add") }}</a>
+        </li>
+        <li class="action" title="{{ _("Remove Highlighted Books From System") }}">
+            <a href="#" onclick="return remove_multi('{{ _("Remove") }}');" >{{ _("Multi-Remove") }}</a>
+        </li>
+        <li class="action" title="{{ _("Change Highlighted Books Reading State") }}" id="popup_state_list">
+            <a href="#" onclick="return popup_state_list();" >{{ _("Multi-Change State") }}</a>
+        </li>
+        <li class="action" title="{{ _("Change Highlighted Books Location") }}" id="popup_location_list">
+            <a href="#" onclick="return popup_location_list();" >{{ _("Multi-Change Location") }}</a>
+        </li>
+        <li class="action" title="{{ _("Change Highlighted Books Category") }}" id="popup_category_list">
+            <a href="#" onclick="return popup_category_list();" >{{ _("Multi-Change Category") }}</a>
+        </li>
+        <li class="action" title="{{ _("Change Highlighted Books Media Type") }}" id="popup_media_list">
+            <a href="#" onclick="return popup_media_list();" >{{ _("Multi-Change Media") }}</a>
+        </li>
+        <li class="action" title="{{ _("Add Tags To Highlighted Books") }}" id="popup_tag_list">
+            <a href="#" onclick="return popup_tag_list();" >{{ _("Multi-Change Tags") }}</a>
+        </li>
+        <li class="action" title="{{ _("Export Highlighted Books") }}">
+            <a href="#" onclick="return export_multi('{{ _("Export") }}');" >{{ _("Export Books") }}</a>
+        </li>
+        <form id="form_multi" action="" method="POST">
+            {% csrf_token %}
+            <input id="ids" type="hidden"/>
+        </form>
+    {% endblock %}
+
+    {% block content %}
+
+    <div class="list_title">{{ _("Books List") }} ( {{ book_list.count|default:book_list.paginator.count }} )</div>
+
+    {% if book_list.has_other_pages %}
+    <div class="pagination">
+        {% if book_list.has_previous %}
+            <a class="step-links ui-widget-content" href="?q={{ query }}&f={{ qkey }}&v={{ qvalue }}&o={{ order|default:"-pk" }}&page={{ 1 }}">{{ _("|<") }}</a>
+            <a class="step-links ui-widget-content" href="?q={{ query }}&f={{ qkey }}&v={{ qvalue }}&o={{ order|default:"-pk" }}&page={{ book_list.previous_page_number }}">{{ _("PREV") }}</a>
+        {% else %}
+{#            <span class="step-links ui-widget-content ui-state-disabled">{{ _("FIRST") }}</span>#}
+            <span class="step-links ui-widget-content ui-state-disabled">{{ _("PREV") }}</span>
+        {% endif %}
+
+        <span class="pagenumbers">
+        {% for i in book_list.paginator.page_range %}
+            {% if i == book_list.number %}
+                <!-- Do something special for this page -->
+                <span class="step-links ui-widget-content ui-state-highlight">{{ i }}</span>
+            {% else %}
+                <!-- All the other pages -->
+                <a class="step-links ui-widget-content" href="?q={{ query }}&f={{ qkey }}&v={{ qvalue }}&o={{ order|default:"-pk" }}&page={{ i }}">{{ i }}</a>
+            {% endif %}
+        {% endfor %}
+        </span>
+
+        {% if book_list.has_next %}
+            <a class="step-links ui-widget-content" href="?q={{ query }}&f={{ qkey }}&v={{ qvalue }}&o={{ order|default:"-pk" }}&page={{ book_list.next_page_number }}">{{ _("NEXT") }}</a>
+            <a class="step-links ui-widget-content" href="?q={{ query }}&f={{ qkey }}&v={{ qvalue }}&o={{ order|default:"-pk" }}&page={{ book_list.paginator.num_pages }}">{{ _(">|") }}</a>
+        {% else %}
+            <span class="step-links ui-widget-content ui-state-disabled">{{ _("NEXT") }}</span>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    {% if book_list %}
+    <div class="list_items">
+        <table id="book_list">
+            <thead>
+                <tr>
+    {#                <th class="books_list_label"><a href="/books/search/?f={{ qkey }}&v={{ qvalue }}&o=title">{{ _("Title") }}</a></th>#}
+                    <th class="books_list_label"><a href="{{ path }}?f={{ qkey }}&v={{ qvalue }}&o=title">{{ _("Title") }}</a></th>
+                    <th class="books_list_isbn"><a href="{{ path }}?f={{ qkey }}&v={{ qvalue }}&o=isbn13">{{ _("ISBN") }}</a></th>
+                    <th class="books_list_content">{{ _("Summary") }}</th>
+                    <th class="books_list_rating"><a href="{{ path }}?f={{ qkey }}&v={{ qvalue }}&o=-rating">{{ _("Rating") }}</a></th>
+                    <th class="books_list_state"><a href="{{ path }}?f={{ qkey }}&v={{ qvalue }}&o=state">{{ _("State") }}</a></th>
+                    <th class="books_list_location"><a href="{{ path }}?f={{ qkey }}&v={{ qvalue }}&o=location">{{ _("Book Location") }}</a></th>
+                    <th class="books_list_actions">{{ _("Action") }}</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for book in book_list %}
+                <tr id="book_{{ book.isbn13 }}">
+                    <td class="books_list_label" title="{{ book.title|default:_("(N/A)") }}"><a href="/books/{{ book.isbn13 }}">{{ book.title|default:_("(N/A)") }}</a></td>
+                    <td class="books_list_isbn">{{ book.isbn13|default:_("(N/A)") }}</td>
+                    <td class="books_list_content" title="{{ book.summary|default:_("(N/A)") }}"><div class="books_list_content">{{ book.summary|default:_("(N/A)") }}</div></td>
+                    <td class="books_list_rating" >{{ book.rating|default:0 }}</td>
+                    <td class="books_list_state" >{{ book.state|default:0 }}</td>
+                    <td class="books_list_location" >{{ book.location|default:_("(N/A)") }}</td>
+                    <td class="books_list_actions" >
+                        <a class="action" href="/books/{{ book.isbn13 }}/remove" onclick="return remove_one($(this).attr('href'), '{{ book.title }}', '{{ _("Remove") }}');">
+                            {#                            <img src="{% get_static_prefix %}default/images/icon_deletelink.png" />#}
+                            {{ _("Remove") }}
+                        </a>
+                        <a class="action" href="/books/{{ book.isbn13 }}/edit">
+                            {#                            <img src="{% static "default/images/icon_changelink.png" %}" />#}
+                            {{ _("Edit") }}
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <p>{{ _("No any book be founded!") }}</p>
+    {% endif %}
+
+{% endblock %}
+
+{% block CSSMenu %}
+    {% if book_list %}
+        <input type="hidden" id="new_values" value=""/>
+        <div id="popup_state" title="{{ _("State") }}" style="display: none;">
+            {% for state in state_list %}
+                <a class="action" onclick="return change_state_multi('{{ state }}');">{{ state }}</a>
+            {% endfor %}
+        </div>
+        <div id="popup_tag" title="{{ _("Reading Tags") }}" style="display: none;">
+            {% for tag in tags_list %}
+                <a class="action" href="#" onclick="return change_tag_multi('{{ tag }}');">{{ tag }}</a>
+            {% endfor %}
+            <br/><br/>
+            <label for="tags_new">{{ _("Reading Tags") }}:</label>
+            <input type="text" id="tags_new" name="tags_new" value="" onblur="$('#new_values').val($(this).val());"/>
+            <a class="action" href="#" onclick="return change_tag_multi($('#new_values').val());">{{ _("Add") }}</a>
+        </div>
+        <div id="popup_media" title="{{ _("Media") }}" style="display: none;">
+            {% for media in media_list %}
+                <a class="action" href="#" onclick="return change_media_multi('{{ media }}');">{{ media }}</a>
+            {% endfor %}
+        </div>
+        <div id="popup_location" title="{{ _("Book Location") }}" style="display: none;">
+            {% for location in location_list %}
+                <a class="action" href="#" onclick="return change_location_multi('{{ location }}');">{{ location }}</a>
+            {% endfor %}
+        </div>
+        <div id="popup_category" title="{{ _("Book Category") }}" style="display: none;">
+            {% for category in category_list %}
+                <a class="action" href="#" onclick="return change_category_multi('{{ category }}');">{{ category }}</a>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
+

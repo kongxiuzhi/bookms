@@ -1,0 +1,41 @@
+{% extends "default/book_generic.html" %}
+{% load i18n %}
+{% block title %}{{ _("State List") }}{% endblock %}
+
+{% block navigator %}
+    <li class="action"><a href="/books/state/add">{{ _("Add State") }}</a></li>
+{% endblock %}
+
+{#{% block side_left %}#}
+{#{% endblock %}#}
+
+{% block content %}
+    <div class="list_title">{{ _("State List") }}</div>
+    {% if state_list %}
+        <table id="state_list" class="list_items">
+            <thead>
+            <tr>
+                <th class="books_list_label">{{ _("State") }}</th>
+                <th class="books_list_actions">{{ _("Action") }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for state in state_list %}
+                <tr id="state_{{ state }}">
+                    <td class="books_list_label" title="{{ state|default:_("(N/A)") }}">{{ state }}</td>
+                    <td class="books_list_actions" >
+                        <a class="action" href="/books/state/{{ state }}/remove" onclick="return remove_one($(this).attr('href'), '{{ state }}', '{{ _("Remove") }}');">
+                            {{ _("Remove") }}
+                        </a>
+                        <a class="action" href="/books/state/{{ state }}/edit">
+                            {{ _("Edit") }}
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>{{ _("No any state be defined now!") }}</p>
+    {% endif %}
+{% endblock %}

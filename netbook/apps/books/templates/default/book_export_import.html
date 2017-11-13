@@ -1,0 +1,91 @@
+{% extends "default/book_generic.html" %}
+{% load i18n %}
+{% block title %}{{ _("Export") }}/{{ _("Import") }}{% endblock %}
+
+{% block dajax_script %}
+    <script type="text/javascript" src="{% get_static_prefix %}js/dajax/jquery.dajax.core.js"></script>
+    {% load dajaxice_templatetags %}
+    {% dajaxice_js_import %}
+    <script type="text/javascript">
+        var timer;
+        var err_count = 0;
+
+        function adjust_button_export()
+        {
+            //
+            // Init progressbar when download books info from douban
+            //
+            $( "#ajax_progressbar" ).progressbar({
+                value: 0,
+                max: 100
+            });
+            return false;
+        }
+
+        function export_books()
+        {
+            err_count = 0;
+            window.clearTimeout(timer);
+            $( "#ajax_progressbar" ).progressbar("value", 0);
+
+            $('#id_ajax_finished').val(0);
+            $('#id_ajax_progress').val('');
+            timer = window.setTimeout( get_progress, 250 );
+
+            Dajaxice.apps.books.export_books(Dajax.process);
+
+            return false;
+        }
+
+        function get_progress()
+        {
+            Dajaxice.apps.books.get_progress(Dajax.process);
+            var ajax_finished = parseInt($('#id_ajax_finished').val());
+            if((ajax_finished >= 100))
+            {
+                window.clearTimeout(timer);
+                $( "#ajax_progressbar" ).progressbar("value", 100);
+            }
+            else
+            {
+                timer = window.setTimeout( get_progress, 250 );
+                $( "#ajax_progressbar" ).progressbar("value", ajax_finished);
+                //$( "#ajax_progressbar" ).progressbar(ajax_finished);
+            }
+
+            return false;
+        }
+    </script>
+{% endblock %}
+
+{% block navigator %}
+
+{% endblock %}
+
+{#{% block side_left %}#}
+{#{% endblock %}#}
+
+{% block content %}
+    <div id="button_export_layer">
+    </div>
+    <form id="export_import_form" enctype="multipart/form-data" action="." method="POST" accept-charset="utf-8">
+        {% csrf_token %}
+        <fieldset class="form_fields ui-widget-content">
+            <li>
+                <input id="local_filename" type="file" />
+            </li>
+            <li>
+                <div id="ajax_progressbar" class="progressbar"></div>
+            </li>
+            <li>
+                <a id="button_douban" class="action" onclick="export_books();" title="{{ _("Export books to local") }}">{{ _("Export") }}</a>
+            </li>
+{#            <li>#}
+{#                <input class="form_submit" type="submit" value="{{ _("Save") }}" title="{{ _("Save Data to System") }}"/>#}
+{#            </li>#}
+        </fieldset>
+    </form>
+    <script type="text/javascript">
+        adjust_button_export();
+    </script>
+{% endblock %}

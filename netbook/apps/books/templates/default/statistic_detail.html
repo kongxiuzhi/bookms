@@ -1,0 +1,219 @@
+{% extends "default/book_generic.html" %}
+{% load i18n %}
+{% load static %}
+{% if report %}
+{% block title %}{{ report.name }}{% endblock %}
+{% endif %}
+
+{% block dajax_script %}
+{% endblock %}
+
+{% block custom_js %}
+    <script type="text/javascript" src="{% get_static_prefix %}js/RGraph/libraries/RGraph.common.core.js" ></script>
+    <script type="text/javascript" src="{% get_static_prefix %}js/RGraph/libraries/RGraph.common.tooltips.js" ></script>
+    <script type="text/javascript" src="{% get_static_prefix %}js/RGraph/libraries/RGraph.common.dynamic.js" ></script>
+    <script type="text/javascript" src="{% get_static_prefix %}js/RGraph/libraries/RGraph.common.effects.js" ></script>
+    <script type="text/javascript" src="{% get_static_prefix %}js/RGraph/libraries/RGraph.common.resizing.js" ></script>
+    <script type="text/javascript" src="{% get_static_prefix %}js/RGraph/libraries/RGraph.common.zoom.js" ></script>
+    <script type="text/javascript" src="{% get_static_prefix %}js/RGraph/libraries/RGraph.common.context.js" ></script>
+    <script type="text/javascript" src="{% get_static_prefix %}js/RGraph/libraries/RGraph.pie.js" ></script>
+    <script type="text/javascript" src="{% get_static_prefix %}js/RGraph/libraries/RGraph.bar.js" ></script>
+
+    <script type="text/javascript">
+        function randomColors (num)
+        {
+            var colors = [];
+
+            for (var i=0; i<num; i+=1) {
+                var num1 = RGraph.random(0,255);
+                var num2 = RGraph.random(0,255);
+                var num3 = RGraph.random(0,255);
+
+                colors.push('rgb('+num1+', '+num2+', '+num3+')');
+            }
+
+            return colors;
+        }
+
+        function drawChart_Bar(id, data, log)
+        {
+            var ldata = new Array();
+
+            for (var i=0; i<data.data.length; ++i) {
+                ldata[i] = data.data[i]
+                if(data.data[i]!=0 && log)
+                {
+                    ldata[i] = Math.log(data.data[i]);
+                }
+            }
+
+            var bar = new RGraph.Bar(id, ldata);
+
+            bar.Set('chart.tooltips', data.tooltips);
+            bar.Set('chart.tooltips.event', 'onmousemove');
+//                bar.Set('chart.colors', ['#EC0033']);
+            bar.Set('chart.colors', randomColors(data.data.length));
+            bar.Set('chart.strokestyle', 'white');
+            bar.Set('chart.linewidth', 2);
+            bar.Set('chart.shadow', true);
+            bar.Set('chart.shadow.offsetx', 2);
+            bar.Set('chart.shadow.offsety', 2);
+            bar.Set('chart.shadow.blur', 3);
+
+            bar.Set('chart.text.size', 7);
+
+            RGraph.Effects.Bar.Grow(bar);
+
+            var ymax = Math.max.apply(null, ldata);
+            bar.Set('chart.ymax', ymax+1);
+
+            if(log)
+            {
+                function power(obj, num)
+                {
+                    return Math.pow(Math.E, num).toFixed(0); // An example of formatting
+                }
+                bar.Set('chart.scale.formatter', power);
+            }
+
+            var total = 0;
+            for (var i=0; i<data.data.length; ++i) {
+                total = total+data.data[i];
+            }
+
+            for (var i=0; i<data.data.length; ++i) {
+                var percent = (data.data[i] / total * 100).toFixed(2);
+                bar.Get('chart.tooltips')[i] = data.labels[i] + ': ' + data.data[i] + ', ' + percent + '%';
+                //bar.Get('chart.data')[i] = Math.log(data.data[i]).toFixed(2);
+            }
+
+            bar.Draw();
+        }
+
+        function drawChart_Pie(id, data)
+        {
+            var pie = new RGraph.Pie(id, data.data);
+
+            pie.Set('chart.tooltips', data.tooltips);
+            pie.Set('chart.tooltips.event', 'onmousemove');
+            //pie.Set('chart.colors', ['#EC0033','#A0D300','#FFCD00','#00B869','#999999','#FF7300','#666666']);
+            pie.Set('chart.colors', randomColors(data.data.length));
+            pie.Set('chart.strokestyle', 'white');
+            pie.Set('chart.linewidth', 4);
+            pie.Set('chart.shadow', true);
+            pie.Set('chart.shadow.offsetx', 6);
+            pie.Set('chart.shadow.offsety', 6);
+            pie.Set('chart.shadow.blur', 8);
+            pie.Set('chart.exploded', 8);
+            pie.Set('chart.gutter.left', 2);
+            pie.Set('chart.gutter.right', 2);
+            pie.Set('chart.gutter.top', 16);
+            pie.Set('chart.gutter.bottom', 16);
+            pie.Set('chart.text.size', 7);
+            pie.Set('chart.text.font', 'consolas');
+
+            RGraph.Effects.Pie.RoundRobin(pie, {frames:60});
+
+            pie.onclick = function (e, shape)
+            {
+                var index = shape.index;
+                var obj = shape.object;
+
+                // Reset all the segments to 10
+                obj.Set('chart.exploded', 10);
+
+                obj.Explode(index, 15);
+
+                e.stopPropagation();
+            }
+
+            var total = 0;
+            for (var i=0; i<data.data.length; ++i) {
+                total = total+data.data[i];
+            }
+
+            for (var i=0; i<data.data.length; ++i) {
+                var percent = (data.data[i] / total * 100).toFixed(2);
+                //alert(data.data[i]+ ', ' + total+ ', ' + percent);
+                //pie.Get('tooltips')[i] = pie.Get('labels')[i] + ': ' + data.data[i] + ', ' + percent + '%';
+                pie.Get('chart.tooltips')[i] = data.labels[i] + ': ' + data.data[i] + ', ' + percent + '%';
+                //pie.Get('labels')[i] = percent + '%';
+                //pie.Get('labels')[i] = '';
+            }
+
+            pie.Draw();
+        }
+
+        function updateChart( id, name, callback)
+        {
+            jQuery.ajax({
+                url: '/books/report/data?name='.concat(name),
+                type: 'get',
+                //dataType: 'text/html',
+                dataType: 'text',
+                success:function(data)
+                {
+                    //var jsonData = $.parseJSON(data);//.parseJSON();
+                    var jsonData = eval('(' + data + ')');
+                    callback(id, jsonData);
+                }
+            });
+        }
+    </script>
+{% endblock %}
+
+{% block navigator %}
+    <!--suppress ALL -->
+    <li class="action"><a href="/books/report/add">{{ _("Add Report") }}</a></li>
+    {% if report %}
+    <li class="action"><a href="/books/report/{{ report.name }}/edit">{{ _("Edit Report") }}</a></li>
+{#    <li class="action"><a href="/books/report/{{ report.name }}/remove" onclick="return remove_one($(this).attr('href'), '{{ report.name }}', '{{ _("Remove") }}', 'history.back();');">{{ _("Remove") }}{{ _("Book") }}</a></li>#}
+    {% endif %}
+{% endblock %}
+{% block content %}
+    <div id="report_setting">
+        <form id="form_report_setting" enctype="multipart/form-data" action="." method="POST" accept-charset="utf-8">
+
+
+        </form>
+
+    </div>
+    <div class="list_title">{{ _("Report Detail") }}</div>
+    <div>
+    {% if report %}
+        {% if report_list %}
+        <table id="report_list" class="list_items">
+            <thead>
+            <tr>
+                <th class="books_list_label">{{ _("Group") }}</th>
+                <th class="books_list_content">{{ _("Category List") }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for report in report_list %}
+                <tr id=report_{{ report }}">
+                <td class="books_list_label" title="{{ report.field|default:_("(N/A)") }}">
+                    {{ report.field|default:_("(N/A)") }}
+                </td>
+                <td class="books_list_content" title="{{ _("Setting") }}">
+                    {{ _("Style") }} : {{ report.get_style_display|default:"&nbsp;" }} ; {{ _("Setting") }} : {{ report.setting|default:"&nbsp;" }}
+                </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+
+        {% block RGraph %}
+        <canvas id="chart_bar" width="800" height="480">[No canvas support]</canvas>
+        <canvas id="chart_pie" width="800" height="480">[No canvas support]</canvas>
+        <script type="text/javascript">
+            updateChart('chart_bar', '{{ report.name }}', drawChart_Bar);
+            updateChart('chart_pie', '{{ report.name }}', drawChart_Pie);
+        </script>
+        {% endblock %}
+    {% endif %}
+    </div>
+
+{% endblock %}
+

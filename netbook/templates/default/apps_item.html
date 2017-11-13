@@ -1,0 +1,23 @@
+﻿            <div>
+                <dl class="ui-widget-content table-row">
+                    <dt class="ui-widget-content table-cell-value" title="{{ app.description|default:'' }}">
+                        <a href="{{ app.url }}" id="app_{{ app.pk }}">
+                            <img src="{{ app.icon }}" class="app_icon" id="app_{{ app.pk }}_icon"/>
+                            {{ app }}
+                        </a>
+                    </dt>
+                </dl>
+            </div>
+            <div class="actions">
+                <dl>
+                    <!--<dt class="ui-widget-header table-title">{{ _('Action') }}</a></dt>-->
+                    <dt class="ui-widget table-cell-value">
+                        <a class="action" href="{{ app_root }}/{{ app.pk }}/remove/" onclick="return remove_one($(this).attr('href'), '{{ app.description }} - {{ app.url}}', '{{ _('Remove') }}');">
+                            {{ _('Remove') }}
+                        </a>
+                        <a class="action" onclick="return dialogEx('#dialog_add_app', {{ app.pk }});">
+                            {{ _('Edit') }}
+                        </a>
+                    </dt>
+                </dl>
+            </div>

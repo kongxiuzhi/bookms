@@ -1,0 +1,67 @@
+﻿            {% block side_left %}
+            <input type="hidden" id="query_key" value="{{ qkey }}" />
+            <input type="hidden" id="query_value" value="{{ qvalue }}" />
+            <input type="hidden" id="order_key" value="{{ order|default:'-bill_date' }}" />
+            <div id="filter_accordion">
+                <h3>{{ _("Filter") }}</h3>
+                <div>
+                    <a href="{{ app_root }}/">{{ _("Last In 20 Bills") }}</a>
+                    <br/>
+                    <a href="{{ app_root }}/list/?o={{ order|default:'-bill_date' }}">{{ _("All Bills") }}</a>
+                </div>
+                {% if bill_year_list %}
+                <h3>{{ _("Bill Year") }}</h3>
+                <div id="filter_year">
+                    {% for billdate in bill_year_list %}
+                    {% if qkey == "bill_year" and qvalue|iriencode == billyear|iriencode %}
+                    <a href="{{ app_root }}/search/?f=bill_year&v={{ billdate }}&o={{ order }}" class="ui-state-highlight">{{ billdate }}</a>
+                    {% else %}
+                    <a href="{{ app_root }}/search/?f=bill_year&v={{ billdate }}&o={{ order }}">{{ billdate }}</a>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% if bill_month_list %}
+                <h3>{{ _("Bill Month") }}</h3>
+                <div id="filter_month">
+                    {% for billdate in bill_month_list %}
+                    {% if qkey == "bill_month" and qvalue|iriencode == billdate|iriencode %}
+                    <a href="{{ app_root }}/search/?f=bill_month&v={{ billdate }}&o={{ order }}" class="ui-state-highlight">{{ billdate }}{{ _('Month') }}</a>
+                    {% else %}
+                    <a href="{{ app_root }}/search/?f=bill_month&v={{ billdate }}&o={{ order }}">{{ billdate }}{{ _('Month') }}</a>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% if location_list %}
+                <h3>{{ _("Assets Location") }}</h3>
+                <div id="filter_location">
+                    {% for location in location_list %}
+                    {% if qkey == "location" and qvalue|iriencode == location|iriencode %}
+                    <a href="{{ app_root }}/search/?f=location&v={{ location.city }}&o={{ order }}" class="ui-state-highlight">{{ location.city }}</a>
+                    {% else %}
+                    <a href="{{ app_root }}/search/?f=location&v={{ location.city }}&o={{ order }}">{{ location.city }}</a>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <div id="list_accordion">
+                <h3>{{ _("Categories List") }}</h3>
+                <div>
+                    <a href="{{ app_root }}/location">{{ _("Assets Location") }}</a>
+                </div>
+            </div>
+            <div id="tools_accordion">
+                <h3>{{ _("Tools") }}</h3>
+                <div>
+                    <a href="{{ app_root }}/config">{{ _("Config") }}</a>
+                    <a href="{{ app_root }}/report">{{ _("Report") }}</a>
+                    <br/>
+                    <a href="{{ app_root }}/export">{{ _("Export") }}</a>
+                    <a href="{{ app_root }}/import">{{ _("Import") }}</a>
+                </div>
+                <h3>{{ _("Theme Select") }}</h3>
+                <div id="ui-theme-switcher">&nbsp;</div>
+            </div>
+            {% endblock %}

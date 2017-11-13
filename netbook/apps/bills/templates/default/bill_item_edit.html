@@ -1,0 +1,175 @@
+﻿{% load i18n %}
+{% load static %}
+
+<form id="bill_edit_form" enctype="multipart/form-data" action="{{ app_root }}/api/add/bill/" method="POST" accept-charset="utf-8">
+    {% csrf_token %}
+    <fieldset class="ui-widget-content">
+
+        <div>
+            <dl class="ui-widget-content table-row location">
+                {{ form.location.errors }}
+                <dt class="ui-widget-header table-title">{{ _('Asset Location') }}</dt>
+                <dt class="ui-widget-content table-cell-value">{{ form_add.location|default:'' }}</dt>
+                <dt class="ui-widget-header table-title">{{ _('Asset Acreage') }}</dt>
+                <dt class="ui-widget-content table-cell-value fee" id="id_acreage"></dt>
+            </dl>
+        </div>
+        <dl class="ui-widget-content table-row">
+            <dt class="ui-widget-header table-title">{{ _('Bill Date') }}</dt>
+            <dt class="ui-widget-content table-cell-value">{{ form_add.bill_date|addstyle:"text-align: center;" }}</dt>
+            <dt class="ui-widget-header table-title">{{ _('Property Fee') }}</dt>
+            <dd class="ui-widget-content table-cell-value fee">{{ form_add.property_cost|default:''|addstyle:"text-align: center;" }}</dd>
+        </dl>
+        <hr class="ui-widget-content"/>
+        <dl class="ui-widget-content table-row">
+            <dd>
+                <dl class="ui-widget-content " >
+                    <dt class="ui-widget-header table-cell-header">{{ _('Last Electricity Count') }}</dt>
+                    <dd class="ui-widget-content table-cell-value">{{ form_add.private_electricity_last|default:''|addstyle:"text-align: center;" }}</dd>
+                    <dt class="ui-widget-header table-cell-header">{{ _('Current Electricity Count') }}</dt>
+                    <dd class="ui-widget-content table-cell-value">{{ form_add.private_electricity_current|default:''|addstyle:"text-align: center;" }}</dd>
+                    <dt class="ui-widget-header table-cell-header">{{ _('Real Electricity Usage') }}</dt>
+                    <dd class="ui-widget-content table-cell-value" id="id_electricity_count">{{ form_add.electricity_count|default:'' }}</dd>
+                    <dt class="ui-widget-header table-cell-header">{{ _('Real Electricity Fee') }}</dt>
+                    <dd class="ui-widget-content table-cell-value fee">{{ form_add.private_electricity_bill|default:''|addstyle:"text-align: center;" }}</dd>
+                </dl>
+            </dd>
+            <dd>
+                <dl>
+                    <dt class="ui-widget-header table-cell-header">{{ _('Last Water Count') }}</dt>
+                    <dd class="ui-widget-content table-cell-value">{{ form_add.private_water_last|default:''|addstyle:"text-align: center;" }}</dd>
+                    <dt class="ui-widget-header table-cell-header">{{ _('Current Water Count') }}</dt>
+                    <dd class="ui-widget-content table-cell-value">{{ form_add.private_water_current|default:''|addstyle:"text-align: center;" }}</dd>
+                    <dt class="ui-widget-header table-cell-header">{{ _('Real Water Usage') }}</dt>
+                    <dd class="ui-widget-content table-cell-value" id="id_water_count">{{ form_add.water_count|default:'' }}</dd>
+                    <dt class="ui-widget-header table-cell-header">{{ _('Real Water Fee') }}</dt>
+                    <dd class="ui-widget-content table-cell-value fee" >{{ form_add.private_water_bill|default:''|addstyle:"text-align: center;" }}</dd>
+                </dl>
+            </dd>
+            <dd>
+                <dl>
+                    <dt class="ui-widget-header table-cell-header">{{ _('Public Electricity Elevator Fee') }}</dt>
+                    <dd class="ui-widget-content table-cell-value fee">{{ form_add.public_electricity_elevator|default:''|addstyle:"text-align: center;" }}</dd>
+                    <dt class="ui-widget-header table-cell-header">{{ _('Public Water Relay Fee') }}</dt>
+                    <dd class="ui-widget-content table-cell-value fee">{{ form_add.public_water_relay|default:''|addstyle:"text-align: center;" }}</dd>
+                    <dt class="ui-widget-header table-cell-header">{{ _('Public Electricity Fee') }}</dt>
+                    <dd class="ui-widget-content table-cell-value fee">{{ form_add.public_electricity|default:''|addstyle:"text-align: center;" }}</dd>
+                    <dt class="ui-widget-header table-cell-header">{{ _('Public Water Fee') }}</dt>
+                    <dd class="ui-widget-content table-cell-value fee">{{ form_add.public_water|default:''|addstyle:"text-align: center;" }}</dd>
+                </dl>
+            </dd>
+        </dl>
+
+        <!--{{ form.as_ul }}-->
+        <li>
+            <!--<input class="form_submit" type="submit" value="{{ _('Save') }}" title="{{ _('Save Data to System') }}" id="id_postform"/>-->
+            <input class="form_submit" type="button" value="{{ _('Save') }}" title="{{ _('Save Data to System') }}" id="id_postjson"/>
+        </li>
+    </fieldset>
+</form>
+<script type="text/javascript">
+//    adjust_ui();
+    var locs = {
+    {% if location_list %}
+    {% for loc in location_list %}
+        'pk{{ loc.pk }}': [{{ loc.acreage }}, {{ loc.property_cost }}],
+    {% endfor %}
+    {% endif %}
+    }
+
+    $('#id_location').bind('change', function(){
+        $('#id_acreage').text(eval('locs.pk'+this.value)[0]);
+        $('#id_property_cost').val(eval('locs.pk'+this.value)[1].toFixed(2));
+    });
+
+
+    $('#id_private_electricity_last').bind('input', function(){
+        var count = $('#id_private_electricity_current').val() - $('#id_private_electricity_last').val();
+        $('#id_electricity_count').text(count);
+    });
+
+    $('#id_private_electricity_current').bind('input', function(){
+        var count = $('#id_private_electricity_current').val() - $('#id_private_electricity_last').val();
+        $('#id_electricity_count').text(count);
+    });
+
+    $('#id_private_water_last').bind('input', function(){
+        var count = $('#id_private_water_current').val() - $('#id_private_water_last').val();
+        $('#id_water_count').text(count);
+        //alert(count);
+    });
+
+    $('#id_private_water_current').bind('input', function(){
+        var count = $('#id_private_water_current').val() - $('#id_private_water_last').val();
+        $('#id_water_count').text(count);
+        //alert(count);
+    });
+
+    $('#id_postform').bind('click', function(){
+
+
+    });
+
+    $('#id_postjson').button();
+
+    $('#id_postjson').bind('click', function(){
+        var csrfmiddlewaretoken            = $('input[name="csrfmiddlewaretoken"]').val();
+        var id_location                    = $('#id_location').val();
+        var id_bill_date                   = $('#id_bill_date').val();
+        var id_property_cost               = $('#id_property_cost').val();
+        var id_private_electricity_last    = $('#id_private_electricity_last').val();
+        var id_private_electricity_current = $('#id_private_electricity_current').val();
+        var id_private_electricity_bill    = $('#id_private_electricity_bill').val();
+        var id_private_water_last          = $('#id_private_water_last').val();
+        var id_private_water_current       = $('#id_private_water_current').val();
+        var id_private_water_bill          = $('#id_private_water_bill').val();
+        var id_public_electricity          = $('#id_public_electricity').val();
+        var id_public_water                = $('#id_public_water').val();
+        var id_public_electricity_elevator = $('#id_public_electricity_elevator').val();
+        var id_public_water_relay          = $('#id_public_water_relay').val();
+
+        //var dataString = 'name='+ name + '&email=' + email + '&phone=' + phone;
+        var dataString =    'csrfmiddlewaretoken='          + csrfmiddlewaretoken +
+                            '&location='                    + id_location +
+                            '&bill_date='                   + id_bill_date +
+                            '&property_cost='               + id_property_cost +
+                            '&private_electricity_last='    + id_private_electricity_last +
+                            '&private_electricity_current=' + id_private_electricity_current +
+                            '&private_electricity_bill='    + id_private_electricity_bill +
+                            '&private_water_last='          + id_private_water_last +
+                            '&private_water_current='       + id_private_water_current +
+                            '&private_water_bill='          + id_private_water_bill +
+                            '&public_electricity='          + id_public_electricity +
+                            '&public_water='                + id_public_water +
+                            '&public_electricity_elevator=' + id_public_electricity_elevator +
+                            '&public_water_relay='          + id_public_water_relay +
+                            '&property_balance_last='       +
+                            '&property_balance_current=';
+
+        //alert(dataString);
+
+        $.ajax({
+            type: "POST",
+            url: "{{ app_root }}/api/add/bill/",
+            data: dataString,
+            success: function(data) {
+                if(data=='fail')
+                {
+
+                }
+                else
+                {
+                    //var content = $.parseJSON(data).content;
+                    //alert(data);
+                    $('#bill_list').prepend('<li class="ui-widget-content list_item">'+data+'</li>');
+                    $('#list_count').text(parseInt($('#list_count').text())+1);
+
+                    fit_ui_action_button();
+                }
+            }
+        });
+        return false;
+    });
+
+    fit_ui_datepicker('#id_bill_date');
+</script>

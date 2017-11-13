@@ -1,0 +1,119 @@
+﻿{% extends "default/apps_generic.html" %}
+
+{% load i18n %}
+{% load static %}
+
+{% get_current_language as LANGUAGE_CODE %}
+
+    {% block title %}
+        {{ _('APPs List') }}
+    {% endblock %}
+
+    {% block custom_js %}
+    <script type="text/javascript">
+        function dialogEx(id, appid)
+        {
+            var popup_options = {
+                    autoOpen: true,
+                    closeOnEscape: true,
+                    maxWidth: 320,
+                    minWidth: 200,
+                    maxHeight: 320,
+                    minHeight: 200,
+                    modal: true
+                };
+
+            var popup_dialog = $(id);
+            popup_dialog.dialog(popup_options);
+            popup_dialog.dialog('open');
+
+            //alert(appid);
+            if(appid)
+            {
+                $.getJSON('{{ app_root }}/api/app/' + appid + '/get/', function(data) {
+                    $('#id_appid').val(data.appid);
+                    $('#id_name').val(data.name);
+                    $('#id_description').val(data.description);
+                    $('#id_url').val(data.url);
+                    $('#id_icon').val(data.icon);
+                });
+            }
+            else
+            {
+                $('#id_name').val('');
+                $('#id_description').val('');
+                $('#id_url').val('');
+                $('#id_icon').val('');
+            }
+
+            return false;
+        }
+    </script>
+    {% endblock %}
+
+    {% block navigator %}
+        <li class="action" title="{{ _('Add Application To System') }}">
+            <a onclick="return dialogEx('#dialog_add_app');">{{ _('Add App') }}</a>
+        </li>
+        <form id="form_multi" action="" method="POST">
+            {% csrf_token %}
+            <input id="ids" type="hidden"/>
+        </form>
+    {% endblock %}
+
+    {% block content %}
+
+    <div class="list_title">{{ _('Apps List') }} <i>( <i id="list_count">{{ app_list.count|default:app_list.paginator.count }}</i> )</i></div>
+
+    {% if app_list.has_other_pages %}
+    <div class="pagination">
+        {% if app_list.has_previous %}
+            <a class="step-links ui-widget-content" href="?o={{ order|default:'-pk' }}&page={{ 1 }}">{{ _('FIRST') }}</a>
+            <a class="step-links ui-widget-content" href="?o={{ order|default:'-pk' }}&page={{ app_list.previous_page_number }}">{{ _('PREV') }}</a>
+        {% else %}
+            <span class="step-links ui-widget-content ui-state-disabled">{{ _('PREV') }}</span>
+        {% endif %}
+
+        <span class="pagenumbers">
+        {% for i in app_list.paginator.page_range %}
+            {% if i == app_list.number %}
+                <!-- Do something special for this page -->
+                <span class="step-links ui-widget-content ui-state-highlight">{{ i }}</span>
+            {% else %}
+                <!-- All the other pages -->
+                <a class="step-links ui-widget-content" href="?o={{ order|default:'-pk' }}&page={{ i }}">{{ i }}</a>
+            {% endif %}
+        {% endfor %}
+        </span>
+
+        {% if app_list.has_next %}
+            <a class="step-links ui-widget-content" href="?o={{ order|default:'-pk' }}&page={{ app_list.next_page_number }}">{{ _('NEXT') }}</a>
+            <a class="step-links ui-widget-content" href="?o={{ order|default:'-pk' }}&page={{ app_list.paginator.num_pages }}">{{ _('LAST') }}</a>
+        {% else %}
+            <span class="step-links ui-widget-content ui-state-disabled">{{ _('NEXT') }}</span>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="list_items">
+        <ul id="app_list">
+            {% if app_list %}
+            {% for app in app_list %}
+            <div class="app_item">
+                <li class="ui-widget list_item app_item">
+                    {% include "default/apps_item.html" %}
+                </li>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p>{{ _('No any apps has been found!') }}</p>
+            {% endif %}
+        </ul>
+    </div>
+    {% endblock %}
+
+    {% block CSSMenu %}
+    <div id="dialog_add_app" title="{{ _('Add app To System') }}" style="display: none;">
+        {% include "default/apps_item_edit.html" %}
+    </div>
+    {% endblock %}

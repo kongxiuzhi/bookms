@@ -1,0 +1,44 @@
+{% extends "default/book_generic.html" %}
+{% load i18n %}
+{% block title %}{{ _("Book Locations List") }}{% endblock %}
+
+{% block navigator %}
+    <li class="action"><a href="/books/location/add">{{ _("Add") }}{{ _("Book Location") }}</a></li>
+{% endblock %}
+
+{#{% block side_left %}#}
+{#{% endblock %}#}
+
+{% block content %}
+
+<div class="list_title">{{ _("Locations List") }}</div>
+{% if location_list %}
+    <table id="location_list" class="list_items">
+        <thead>
+        <tr>
+            <th class="books_list_label">{{ _("Book Location") }}</th>
+            <th class="books_list_actions">{{ _("Action") }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for location in location_list %}
+            <tr id="location_{{ category }}">
+                <td class="books_list_label" title="{{ location|default:_("(N/A)") }}">{{ location }}</td>
+                <td class="books_list_actions" >
+                    <a class="action" href="/books/location/{{ location }}/remove" onclick="return remove_one($(this).attr('href'), '{{ location }}', '{{ _("Remove") }}');">
+                        {{ _("Remove") }}
+                    </a>
+                    <a class="action" href="/books/location/{{ location }}/edit">
+                        {{ _("Edit") }}
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>{{ _("No any location be defined now!") }}</p>
+{% endif %}
+<br/>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "default/book_generic.html" %}
+{% load i18n %}
+{% block title %}{{ _("Media List") }}{% endblock %}
+
+{% block navigator %}
+    <li class="action"><a href="/books/media/add">{{ _("Add Media Type") }}</a></li>
+{% endblock %}
+
+{#{% block side_left %}#}
+{#{% endblock %}#}
+
+{% block content %}
+    <div class="list_title">{{ _("Media List") }}</div>
+    {% if media_list %}
+        <table id="media_list" class="list_items">
+            <thead>
+            <tr>
+                <th class="books_list_label">{{ _("Media Type") }}</th>
+                <th class="books_list_actions">{{ _("Action") }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for media in media_list %}
+                <tr id="media_{{ media }}">
+                    <td class="books_list_label" title="{{ media|default:_("(N/A)") }}">{{ media }}</td>
+                    <td class="books_list_actions" >
+                        <a class="action" href="/books/media/{{ media }}/remove" onclick="return remove_one($(this).attr('href'), '{{ media }}', '{{ _("Remove") }}');">
+                            {{ _("Remove") }}
+                        </a>
+                        <a class="action" href="/books/media/{{ media }}/edit">
+                            {{ _("Edit") }}
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>{{ _("No any state be defined now!") }}</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,1046 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-13 23:13+0800\n"
+"PO-Revision-Date: 2013-09-04 11:04+0800\n"
+"Last-Translator: netcharm <netcharm@163.com>\n"
+"Language-Team: netcharm <netcharm@163.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: dxgettext 1.2.2\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: _;STRINGTABLE\n"
+"X-Poedit-SearchPath-0: ..\\..\\..\n"
+
+#: netbook/apps/bills/models.py:17
+msgid "Key"
+msgstr "键值"
+
+#: netbook/apps/bills/models.py:18 netbook/apps/bills/models.py:35
+msgid "Value"
+msgstr "赋值"
+
+#: netbook/apps/bills/models.py:25 netbook/apps/bills/models.py:74
+msgid "etc."
+msgstr "范例:"
+
+#: netbook/apps/bills/models.py:27
+msgid "Description"
+msgstr "描述"
+
+#: netbook/apps/bills/models.py:28
+msgid "Real Estate Number"
+msgstr "房产证"
+
+#: netbook/apps/bills/models.py:29
+msgid "Land Use Number"
+msgstr "土地证"
+
+#: netbook/apps/bills/models.py:31
+#: netbook/apps/bills/templates/default/bills_location_list.html:20
+msgid "Owner"
+msgstr "户主"
+
+#: netbook/apps/bills/models.py:32
+msgid "ID Number"
+msgstr "证件号"
+
+#: netbook/apps/bills/models.py:33
+msgid "Bought Date"
+msgstr "购买日期"
+
+#: netbook/apps/bills/models.py:34
+msgid "Bought Price"
+msgstr "购买价格"
+
+#: netbook/apps/bills/models.py:36
+msgid "Country"
+msgstr "国家"
+
+#: netbook/apps/bills/models.py:37
+msgid "Province"
+msgstr "州/省"
+
+#: netbook/apps/bills/models.py:38
+msgid "City"
+msgstr "城市"
+
+#: netbook/apps/bills/models.py:39
+#: netbook/apps/bills/templates/default/bills_location_list.html:21
+msgid "Address"
+msgstr "地址"
+
+#: netbook/apps/bills/models.py:40
+msgid "Latitude"
+msgstr "纬度"
+
+#: netbook/apps/bills/models.py:41
+msgid "Longitude"
+msgstr "经度"
+
+#: netbook/apps/bills/models.py:42
+msgid "Altitude"
+msgstr "海拔"
+
+#: netbook/apps/bills/models.py:43
+#: netbook/apps/bills/templates/default/bills_location_list.html:22
+msgid "Acreage"
+msgstr "面积"
+
+#: netbook/apps/bills/models.py:44
+msgid "Telephone"
+msgstr "电话"
+
+#: netbook/apps/bills/models.py:45
+msgid "E-Mail"
+msgstr "电子邮件"
+
+#: netbook/apps/bills/models.py:46
+msgid "Postal"
+msgstr "邮政编码"
+
+#: netbook/apps/bills/models.py:47
+msgid "Note"
+msgstr "备注"
+
+#: netbook/apps/bills/models.py:49
+#: netbook/apps/bills/templates/default/bills_location_list.html:23
+msgid "Property Bank"
+msgstr "物业开户银行"
+
+#: netbook/apps/bills/models.py:50
+#: netbook/apps/bills/templates/default/bills_location_list.html:24
+msgid "Property Name"
+msgstr "物业公司全称"
+
+#: netbook/apps/bills/models.py:51
+#: netbook/apps/bills/templates/default/bills_location_list.html:25
+msgid "Property Account"
+msgstr "物业银行帐号"
+
+#: netbook/apps/bills/models.py:52
+#: netbook/apps/bills/templates/default/bills_location_list.html:26
+msgid "Property Telephone"
+msgstr "物业联系电话"
+
+#: netbook/apps/bills/models.py:53
+msgid "Property EMail"
+msgstr "物业电子邮件"
+
+#: netbook/apps/bills/models.py:54
+#: netbook/apps/bills/templates/default/bills_location_list.html:27
+msgid "Property Contact"
+msgstr "物业主联系人"
+
+#: netbook/apps/bills/models.py:56
+msgid "Property Unit Price"
+msgstr "物业收费单价"
+
+#: netbook/apps/bills/models.py:84
+#: netbook/apps/bills/templates/default/bill_item.html:19
+#: netbook/apps/bills/templates/default/bill_item_edit.html:11
+msgid "Asset Location"
+msgstr "物业地点"
+
+#: netbook/apps/bills/models.py:86
+#: netbook/apps/bills/templates/default/bill_item.html:25
+#: netbook/apps/bills/templates/default/bill_item.html:27
+#: netbook/apps/bills/templates/default/bill_item_edit.html:18
+msgid "Bill Date"
+msgstr "账单日期"
+
+#: netbook/apps/bills/models.py:88
+msgid "Last Month Electricity Count"
+msgstr "上月电表读数"
+
+#: netbook/apps/bills/models.py:89
+msgid "Current Month Electricity Count"
+msgstr "当月电表读数"
+
+#: netbook/apps/bills/models.py:90
+msgid "Current Month Electricity Fee"
+msgstr "当月电费"
+
+#: netbook/apps/bills/models.py:92
+msgid "Last Month Water Count"
+msgstr "上月水表读数"
+
+#: netbook/apps/bills/models.py:93
+msgid "Current Month Water Count"
+msgstr "当月水表读数"
+
+#: netbook/apps/bills/models.py:94
+msgid "Current Month Water Fee"
+msgstr "当月水费"
+
+#: netbook/apps/bills/models.py:96
+#: netbook/apps/bills/templates/default/bill_item.html:86
+#: netbook/apps/bills/templates/default/bill_item_edit.html:55
+msgid "Public Electricity Fee"
+msgstr "公共电费"
+
+#: netbook/apps/bills/models.py:97
+#: netbook/apps/bills/templates/default/bill_item.html:88
+#: netbook/apps/bills/templates/default/bill_item_edit.html:57
+msgid "Public Water Fee"
+msgstr "公共水费"
+
+#: netbook/apps/bills/models.py:98
+#: netbook/apps/bills/templates/default/bill_item.html:82
+#: netbook/apps/bills/templates/default/bill_item_edit.html:51
+msgid "Public Electricity Elevator Fee"
+msgstr "公共电梯费"
+
+#: netbook/apps/bills/models.py:99
+#: netbook/apps/bills/templates/default/bill_item.html:84
+#: netbook/apps/bills/templates/default/bill_item_edit.html:53
+msgid "Public Water Relay Fee"
+msgstr "二次供水费"
+
+#: netbook/apps/bills/models.py:101
+#: netbook/apps/bills/templates/default/bill_item.html:39
+#: netbook/apps/bills/templates/default/bill_item.html:49
+#: netbook/apps/bills/templates/default/bill_item.html:94
+#: netbook/apps/bills/templates/default/bill_item_edit.html:20
+msgid "Property Fee"
+msgstr "物业费"
+
+#: netbook/apps/bills/models.py:102
+#: netbook/apps/bills/templates/default/bill_item.html:96
+msgid "Last Property Balance"
+msgstr "上月物业费余额"
+
+#: netbook/apps/bills/models.py:103
+#: netbook/apps/bills/templates/default/bill_item.html:98
+msgid "Current Property Balance"
+msgstr "当月物业费余额"
+
+#: netbook/apps/bills/templates/default/bill_detail.html:11
+#: netbook/apps/bills/templates/default/bill_list.html:188
+#: netbook/apps/bills/templates/default/bill_list.html:190
+msgid "Add Bill"
+msgstr "新增账单"
+
+#: netbook/apps/bills/templates/default/bill_detail.html:13
+msgid "Edit Bill"
+msgstr "修改账单"
+
+#: netbook/apps/bills/templates/default/bill_detail.html:14
+#: netbook/apps/bills/templates/default/bill_item.html:6
+#: netbook/apps/bills/templates/default/bill_item.html:8
+#: netbook/apps/bills/templates/default/bills_config_list.html:26
+#: netbook/apps/bills/templates/default/bills_config_list.html:27
+#: netbook/apps/bills/templates/default/bills_location_list.html:46
+#: netbook/apps/bills/templates/default/bills_location_list.html:47
+msgid "Remove"
+msgstr "删除"
+
+#: netbook/apps/bills/templates/default/bill_detail.html:14
+#: netbook/apps/bills/templates/default/bill_edit.html:6
+msgid "Bill"
+msgstr "账单"
+
+#: netbook/apps/bills/templates/default/bill_detail.html:20
+msgid "Bill Detail"
+msgstr "账单详情"
+
+#: netbook/apps/bills/templates/default/bill_edit.html:6
+#: netbook/apps/bills/templates/default/bills_config_edit.html:3
+#: netbook/apps/bills/templates/default/bills_location_edit.html:3
+#: netbook/apps/bills/templates/default/bills_location_list.html:6
+msgid "Add"
+msgstr "新增"
+
+#: netbook/apps/bills/templates/default/bill_edit.html:32
+#: netbook/apps/bills/templates/default/bill_item_edit.html:65
+#: netbook/apps/bills/templates/default/bill_item_edit.html:66
+#: netbook/apps/bills/templates/default/bills_config_edit.html:14
+#: netbook/apps/bills/templates/default/bills_location_edit.html:18
+msgid "Save"
+msgstr "保存"
+
+#: netbook/apps/bills/templates/default/bill_edit.html:32
+#: netbook/apps/bills/templates/default/bill_item_edit.html:65
+#: netbook/apps/bills/templates/default/bill_item_edit.html:66
+#: netbook/apps/bills/templates/default/bills_config_edit.html:14
+#: netbook/apps/bills/templates/default/bills_location_edit.html:18
+msgid "Save Data to System"
+msgstr "保存数据到系统"
+
+#: netbook/apps/bills/templates/default/bill_item.html:4
+#: netbook/apps/bills/templates/default/bills_config_list.html:17
+#: netbook/apps/bills/templates/default/bills_location_list.html:29
+#: netbook/apps/bills/templates/default/bills_report_item.html:3
+msgid "Action"
+msgstr "操作"
+
+#: netbook/apps/bills/templates/default/bill_item.html:12
+#: netbook/apps/bills/templates/default/bills_config_list.html:30
+#: netbook/apps/bills/templates/default/bills_location_list.html:50
+msgid "Edit"
+msgstr "修改"
+
+#: netbook/apps/bills/templates/default/bill_item.html:31
+msgid "Electricity&Water"
+msgstr "家用水电费"
+
+#: netbook/apps/bills/templates/default/bill_item.html:35
+#: netbook/apps/bills/templates/default/bill_item.html:81
+#: netbook/apps/bills/templates/default/bills_report_list.html:262
+msgid "Public"
+msgstr "公共水电费"
+
+#: netbook/apps/bills/templates/default/bill_item.html:43
+msgid "Total"
+msgstr "总计费用"
+
+#: netbook/apps/bills/templates/default/bill_item.html:47
+#: netbook/apps/bills/templates/default/bill_item_edit.html:13
+msgid "Asset Acreage"
+msgstr "物业面积"
+
+#: netbook/apps/bills/templates/default/bill_item.html:50
+#: netbook/apps/bills/templates/default/bill_item.html:64
+#: netbook/apps/bills/templates/default/bill_item.html:77
+msgid "UnitPrice"
+msgstr "单价"
+
+#: netbook/apps/bills/templates/default/bill_item.html:56
+#: netbook/apps/bills/templates/default/bill_item_edit.html:27
+msgid "Last Electricity Count"
+msgstr "上月电表读数"
+
+#: netbook/apps/bills/templates/default/bill_item.html:58
+#: netbook/apps/bills/templates/default/bill_item_edit.html:29
+msgid "Current Electricity Count"
+msgstr "当月电表读数"
+
+#: netbook/apps/bills/templates/default/bill_item.html:60
+#: netbook/apps/bills/templates/default/bill_item_edit.html:31
+msgid "Real Electricity Usage"
+msgstr "实际用电度数"
+
+#: netbook/apps/bills/templates/default/bill_item.html:63
+#: netbook/apps/bills/templates/default/bill_item_edit.html:33
+msgid "Real Electricity Fee"
+msgstr "实际电费"
+
+#: netbook/apps/bills/templates/default/bill_item.html:69
+#: netbook/apps/bills/templates/default/bill_item_edit.html:39
+msgid "Last Water Count"
+msgstr "上月水表读数"
+
+#: netbook/apps/bills/templates/default/bill_item.html:71
+#: netbook/apps/bills/templates/default/bill_item_edit.html:41
+msgid "Current Water Count"
+msgstr "当月水表读数"
+
+#: netbook/apps/bills/templates/default/bill_item.html:73
+#: netbook/apps/bills/templates/default/bill_item_edit.html:43
+msgid "Real Water Usage"
+msgstr "实际用水度数"
+
+#: netbook/apps/bills/templates/default/bill_item.html:76
+#: netbook/apps/bills/templates/default/bill_item_edit.html:45
+msgid "Real Water Fee"
+msgstr "实际水费"
+
+#: netbook/apps/bills/templates/default/bill_item.html:119
+#: netbook/apps/bills/templates/default/bill_item.html:120
+#: netbook/apps/bills/views.py:578
+msgid "Private Electricity"
+msgstr "家庭电费"
+
+#: netbook/apps/bills/templates/default/bill_item.html:119
+#: netbook/apps/bills/templates/default/bill_item.html:120
+#: netbook/apps/bills/views.py:578
+msgid "Private Water"
+msgstr "家庭水费"
+
+#: netbook/apps/bills/templates/default/bill_item.html:119
+#: netbook/apps/bills/templates/default/bill_item.html:120
+#: netbook/apps/bills/views.py:579
+msgid "Public Electricity"
+msgstr "公共电费"
+
+#: netbook/apps/bills/templates/default/bill_item.html:119
+#: netbook/apps/bills/templates/default/bill_item.html:120
+#: netbook/apps/bills/views.py:579
+msgid "Public Water"
+msgstr "公共水费"
+
+#: netbook/apps/bills/templates/default/bill_item.html:119
+#: netbook/apps/bills/templates/default/bill_item.html:120
+#: netbook/apps/bills/views.py:580
+msgid "Elevator"
+msgstr "电梯费"
+
+#: netbook/apps/bills/templates/default/bill_item.html:119
+#: netbook/apps/bills/templates/default/bill_item.html:120
+#: netbook/apps/bills/views.py:580
+msgid "Water Relay"
+msgstr "二次供水"
+
+#: netbook/apps/bills/templates/default/bill_item.html:119
+#: netbook/apps/bills/templates/default/bill_item.html:120
+#: netbook/apps/bills/views.py:580
+msgid "Property"
+msgstr "物业费"
+
+#: netbook/apps/bills/templates/default/bill_list.html:9
+#: netbook/apps/bills/templates/default/bill_list.html:203
+#: netbook/apps/bills/templates/default/bills_report_list.html:9
+msgid "Bills List"
+msgstr "账单列表"
+
+#: netbook/apps/bills/templates/default/bill_list.html:187
+#: netbook/apps/bills/templates/default/bill_list.html:260
+msgid "Add Bill To System"
+msgstr "添加账单到系统中"
+
+#: netbook/apps/bills/templates/default/bill_list.html:192
+msgid "Export Highlighted Bills"
+msgstr "导出所选账单信息"
+
+#: netbook/apps/bills/templates/default/bill_list.html:193
+#: netbook/apps/bills/templates/default/bills_navi_sideleft.html:61
+msgid "Export"
+msgstr "导出"
+
+#: netbook/apps/bills/templates/default/bill_list.html:193
+msgid "Export Bills"
+msgstr "导出账单"
+
+#: netbook/apps/bills/templates/default/bill_list.html:208
+msgid "FIRST"
+msgstr "首页"
+
+#: netbook/apps/bills/templates/default/bill_list.html:209
+#: netbook/apps/bills/templates/default/bill_list.html:212
+#: netbook/apps/bills/templates/default/bills_generic.html:37
+msgid "PREV"
+msgstr "上一页"
+
+#: netbook/apps/bills/templates/default/bill_list.html:228
+#: netbook/apps/bills/templates/default/bill_list.html:231
+#: netbook/apps/bills/templates/default/bills_generic.html:36
+msgid "NEXT"
+msgstr "下一页"
+
+#: netbook/apps/bills/templates/default/bill_list.html:229
+msgid "LAST"
+msgstr "末页"
+
+#: netbook/apps/bills/templates/default/bill_list.html:245
+#: netbook/apps/bills/templates/default/bills_report_list.html:273
+#: netbook/apps/bills/templates/default/bills_report_list.html:287
+#: netbook/apps/bills/templates/default/bills_report_list.html:301
+msgid "No any bills has been found!"
+msgstr "未找到符合条件的账单！"
+
+#: netbook/apps/bills/templates/default/bill_list.html:254
+#: netbook/apps/bills/templates/default/bills_navi_sideleft.html:37
+#: netbook/apps/bills/templates/default/bills_navi_sideleft.html:52
+msgid "Assets Location"
+msgstr "资产位置"
+
+#: netbook/apps/bills/templates/default/bills_config_edit.html:3
+#: netbook/apps/bills/templates/default/bills_navi_sideleft.html:58
+msgid "Config"
+msgstr "设定"
+
+#: netbook/apps/bills/templates/default/bills_config_list.html:3
+#: netbook/apps/bills/templates/default/bills_config_list.html:10
+msgid "Config List"
+msgstr "设定清单"
+
+#: netbook/apps/bills/templates/default/bills_config_list.html:6
+msgid "Add Config Setting"
+msgstr "新增设定项"
+
+#: netbook/apps/bills/templates/default/bills_config_list.html:15
+msgid "Config Name"
+msgstr "设定项名称"
+
+#: netbook/apps/bills/templates/default/bills_config_list.html:16
+msgid "Config Value"
+msgstr "设定项赋值"
+
+#: netbook/apps/bills/templates/default/bills_config_list.html:23
+#: netbook/apps/bills/templates/default/bills_config_list.html:24
+#: netbook/apps/bills/templates/default/bills_location_list.html:35
+#: netbook/apps/bills/templates/default/bills_location_list.html:36
+#: netbook/apps/bills/templates/default/bills_location_list.html:37
+#: netbook/apps/bills/templates/default/bills_location_list.html:38
+#: netbook/apps/bills/templates/default/bills_location_list.html:39
+#: netbook/apps/bills/templates/default/bills_location_list.html:40
+#: netbook/apps/bills/templates/default/bills_location_list.html:41
+#: netbook/apps/bills/templates/default/bills_location_list.html:42
+#: netbook/apps/bills/templates/default/bills_location_list.html:43
+msgid "(N/A)"
+msgstr "(没有数据)"
+
+#: netbook/apps/bills/templates/default/bills_config_list.html:38
+msgid "No any config be defined now!"
+msgstr "暂时还没有定义设定！"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:30
+msgid "January"
+msgstr "一月"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:30
+msgid "February"
+msgstr "二月"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:30
+msgid "March"
+msgstr "三月"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:30
+msgid "April"
+msgstr "四月"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:30
+#: netbook/apps/bills/templates/default/bills_generic.html:31
+msgid "May"
+msgstr "五月"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:30
+msgid "June"
+msgstr "六月"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:30
+msgid "July"
+msgstr "七月"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:30
+msgid "August"
+msgstr "八月"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:30
+msgid "September"
+msgstr "九月"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:30
+msgid "October"
+msgstr "十月"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:30
+msgid "November"
+msgstr "十一月"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:30
+msgid "December"
+msgstr "十二月"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:31
+msgid "Jan"
+msgstr "01月"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:31
+msgid "Feb"
+msgstr "02月"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:31
+msgid "Mar"
+msgstr "03月"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:31
+msgid "Apr"
+msgstr "04月"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:31
+msgid "Jun"
+msgstr "06月"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:31
+msgid "Jul"
+msgstr "07月"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:31
+msgid "Aug"
+msgstr "08月"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:31
+msgid "Sep"
+msgstr "09月"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:31
+msgid "Oct"
+msgstr "10月"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:31
+msgid "Nov"
+msgstr "11月"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:31
+msgid "Dec"
+msgstr "12月"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:32
+msgid "Sunday"
+msgstr "星期日"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:32
+msgid "Monday"
+msgstr "星期一"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:32
+msgid "Tuesday"
+msgstr "星期二"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:32
+msgid "Wednesday"
+msgstr "星期三"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:32
+msgid "Thursday"
+msgstr "星期四"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:32
+msgid "Friday"
+msgstr "星期五"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:32
+msgid "Saturday"
+msgstr "星期六"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:33
+msgid "Sun"
+msgstr "周日"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:33
+msgid "Mon"
+msgstr "周一"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:33
+msgid "Tue"
+msgstr "周二"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:33
+msgid "Wed"
+msgstr "周三"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:33
+msgid "Thu"
+msgstr "周四"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:33
+msgid "Fri"
+msgstr "周五"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:33
+msgid "Sat"
+msgstr "周六"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:34
+msgid "Su"
+msgstr "周日"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:34
+msgid "Mo"
+msgstr "一"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:34
+msgid "Tu"
+msgstr "二"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:34
+msgid "We"
+msgstr "三"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:34
+msgid "Th"
+msgstr "四"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:34
+msgid "Fr"
+msgstr "五"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:34
+msgid "Sa"
+msgstr "六"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:35
+msgid "Wk"
+msgstr ""
+
+#: netbook/apps/bills/templates/default/bills_generic.html:40
+msgid "CE"
+msgstr ""
+
+#: netbook/apps/bills/templates/default/bills_generic.html:70
+msgid "Confirm"
+msgstr "请确认"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:72
+msgid "Will processing below item(s):"
+msgstr "将要处理下列条目:"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:80
+msgid "CANCEL"
+msgstr "放弃"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:83
+msgid "OK"
+msgstr "确认"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:107
+msgid "APPs Launcher"
+msgstr ""
+
+#: netbook/apps/bills/templates/default/bills_generic.html:108
+msgid "APPs"
+msgstr ""
+
+#: netbook/apps/bills/templates/default/bills_generic.html:113
+msgid "HOME"
+msgstr "主页"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:116
+msgid "Enter Word What You Want To Searching"
+msgstr "输入想要搜索的单词"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:122
+msgid "Search"
+msgstr "搜索"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:127
+msgid "Back To Last Page"
+msgstr "返回之前访问的页面"
+
+#: netbook/apps/bills/templates/default/bills_generic.html:127
+msgid "BACK"
+msgstr "返回"
+
+#: netbook/apps/bills/templates/default/bills_location_edit.html:3
+#: netbook/apps/bills/templates/default/bills_location_list.html:6
+msgid "Bill Location"
+msgstr "账单位置"
+
+#: netbook/apps/bills/templates/default/bills_location_list.html:3
+#: netbook/apps/bills/templates/default/bills_location_list.html:14
+msgid "Bill Locations List"
+msgstr "账单物业列表"
+
+#: netbook/apps/bills/templates/default/bills_location_list.html:19
+msgid "Asset"
+msgstr "资产全称"
+
+#: netbook/apps/bills/templates/default/bills_location_list.html:58
+msgid "No any location be defined now!"
+msgstr "暂时还没有定义位置喔！"
+
+#: netbook/apps/bills/templates/default/bills_navi_sideleft.html:6
+msgid "Filter"
+msgstr "条件过滤"
+
+#: netbook/apps/bills/templates/default/bills_navi_sideleft.html:8
+msgid "Last In 20 Bills"
+msgstr "最近的20个账单"
+
+#: netbook/apps/bills/templates/default/bills_navi_sideleft.html:10
+msgid "All Bills"
+msgstr "全部账单"
+
+#: netbook/apps/bills/templates/default/bills_navi_sideleft.html:13
+msgid "Bill Year"
+msgstr "账单年份"
+
+#: netbook/apps/bills/templates/default/bills_navi_sideleft.html:25
+msgid "Bill Month"
+msgstr "账单月份"
+
+#: netbook/apps/bills/templates/default/bills_navi_sideleft.html:29
+#: netbook/apps/bills/templates/default/bills_navi_sideleft.html:31
+msgid "Month"
+msgstr "月"
+
+#: netbook/apps/bills/templates/default/bills_navi_sideleft.html:50
+msgid "Categories List"
+msgstr "分类列表"
+
+#: netbook/apps/bills/templates/default/bills_navi_sideleft.html:56
+msgid "Tools"
+msgstr "系统工具"
+
+#: netbook/apps/bills/templates/default/bills_navi_sideleft.html:59
+msgid "Report"
+msgstr "报表"
+
+#: netbook/apps/bills/templates/default/bills_navi_sideleft.html:62
+msgid "Import"
+msgstr "导入"
+
+#: netbook/apps/bills/templates/default/bills_navi_sideleft.html:64
+msgid "Theme Select"
+msgstr "主题选择"
+
+#: netbook/apps/bills/templates/default/bills_report_item.html:6
+msgid "Refresh"
+msgstr "刷新"
+
+#: netbook/apps/bills/templates/default/bills_report_list.html:255
+#: netbook/apps/bills/templates/default/bills_report_list.html:260
+msgid "Bills Reports"
+msgstr "账单报表："
+
+#: netbook/apps/bills/templates/default/bills_report_list.html:261
+msgid "Private"
+msgstr "个人的"
+
+#: netbook/apps/bills/templates/default/bills_report_list.html:263
+msgid "Other"
+msgstr "其他"
+
+#: netbook/apps/bills/views.py:60
+msgid "My Bills"
+msgstr "我的账单"
+
+#: netbook/apps/bills/views.py:151 netbook/apps/bills/views.py:530
+#: netbook/apps/bills/views.py:621
+msgid "Unknown"
+msgstr "未知"
+
+#: netbook/apps/bills/views.py:581
+msgid "Electricity Unitprice"
+msgstr "电费单价"
+
+#: netbook/apps/bills/views.py:581
+msgid "Electricity Count"
+msgstr "用电度数"
+
+#: netbook/apps/bills/views.py:582
+msgid "Water Unitprice"
+msgstr "水费单价"
+
+#: netbook/apps/bills/views.py:582
+msgid "Water Count"
+msgstr "用水度数"
+
+#~ msgid "Category"
+#~ msgstr "类别"
+
+#~ msgid "State"
+#~ msgstr "状态"
+
+#~ msgid "Assets Category"
+#~ msgstr "资产分类"
+
+#~ msgid "No any category be defined now!"
+#~ msgstr "暂时还没有定义分类！"
+
+#~ msgid "Bill State"
+#~ msgstr "账单状态"
+
+#~ msgid "State List"
+#~ msgstr "账单状态列表"
+
+#~ msgid "Add State"
+#~ msgstr "新增状态"
+
+#~ msgid "No any state be defined now!"
+#~ msgstr "暂时还没有定义状态！"
+
+#~ msgid "Summary of Fee"
+#~ msgstr "概要"
+
+#, fuzzy
+#~ msgid "Reading Tags"
+#~ msgstr "可选的标签"
+
+#~ msgid "Multi-Add"
+#~ msgstr "批量添加"
+
+#~ msgid "Title"
+#~ msgstr "标题"
+
+#~ msgid "Subtitle"
+#~ msgstr "副标题"
+
+#, fuzzy
+#~ msgid "Author"
+#~ msgstr "Author"
+
+#~ msgid "Date Bought"
+#~ msgstr "购买日期"
+
+#, fuzzy
+#~ msgid "Tags"
+#~ msgstr "可选的标签"
+
+#, fuzzy
+#~ msgid "Rating"
+#~ msgstr "评分"
+
+#, fuzzy
+#~ msgid "Reading Start"
+#~ msgstr "Start Date"
+
+#, fuzzy
+#~ msgid "Reading Finished"
+#~ msgstr "Error reading %s"
+
+#, fuzzy
+#~ msgid "Read Pages"
+#~ msgstr "Read Error"
+
+#~ msgid "Bill Category"
+#~ msgstr "账单分类"
+
+#, fuzzy
+#~ msgid "Face"
+#~ msgstr "Font Face"
+
+#~ msgid "Asset Area"
+#~ msgstr "资产面积"
+
+#~ msgid "Last Private Electricity Count"
+#~ msgstr "上月电表读数"
+
+#~ msgid "Real Private Electricity Usage"
+#~ msgstr "实际用电度数"
+
+#~ msgid "Add Bills To System"
+#~ msgstr "批量添加账单到系统中"
+
+#~ msgid "Remove Highlighted Bills From System"
+#~ msgstr "批量删除高亮选中账单"
+
+#~ msgid "Multi-Remove"
+#~ msgstr "批量删除"
+
+#~ msgid "Change Highlighted Bills Reading State"
+#~ msgstr "批量修改高亮选中账单的账单状态"
+
+#~ msgid "Multi-Change State"
+#~ msgstr "批量改状态"
+
+#~ msgid "Change Highlighted Bills Location"
+#~ msgstr "批量修改高亮选中账单的所在位置"
+
+#~ msgid "Multi-Change Location"
+#~ msgstr "批量改位置"
+
+#~ msgid "Change Highlighted Bills Category"
+#~ msgstr "批量修改高亮选中账单的分类信息"
+
+#~ msgid "Multi-Change Category"
+#~ msgstr "批量改分类"
+
+#~ msgid "Add Tags To Highlighted Bills"
+#~ msgstr "批量给高亮选中的账单添加阅读标签"
+
+#~ msgid "Multi-Change Tags"
+#~ msgstr "批量加标签"
+
+#~ msgid "Property User"
+#~ msgstr "物业"
+
+#, fuzzy
+#~ msgid "Month Electricity Fee"
+#~ msgstr "文本格式的月份"
+
+#, fuzzy
+#~ msgid "Month Water Fee"
+#~ msgstr "文本格式的月份"
+
+#, fuzzy
+#~ msgid "Media"
+#~ msgstr "当前媒体"
+
+#, fuzzy
+#~ msgid "Face_L"
+#~ msgstr "Font Face"
+
+#, fuzzy
+#~ msgid "Face_M"
+#~ msgstr "Font Face"
+
+#, fuzzy
+#~ msgid "Face_S"
+#~ msgstr "Font Face"
+
+#, fuzzy
+#~ msgid "Location"
+#~ msgstr "地点"
+
+#~ msgid "Thanks for visiting my site."
+#~ msgstr "感谢访问此站点."
+
+#~ msgid "Bill Library"
+#~ msgstr "个人账单管理"
+
+#~ msgid "Change Highlighted Bills Media Type"
+#~ msgstr "批量修改高亮选中账单的媒介类型"
+
+#~ msgid "Back"
+#~ msgstr "返回"
+
+#~ msgid "Statistic"
+#~ msgstr "统计"
+
+#~ msgid "Add Report"
+#~ msgstr "新增报表"
+
+#~ msgid "Report Detail"
+#~ msgstr "报表详情"
+
+#~ msgid "Report List"
+#~ msgstr "报表清单"
+
+#~ msgid "Template"
+#~ msgstr "模板"
+
+#~ msgid "No any report be defined now!"
+#~ msgstr "暂时还没有定义报表喔！"
+
+#~ msgid "Assets Locations List"
+#~ msgstr "资产位置列表"
+
+#~ msgid "%s length less 10"
+#~ msgstr "输入的值 '%s' 长度小于10位"
+
+#~ msgid "%s length less 13"
+#~ msgstr "输入的值 '%s' 长度小于13位"
+
+#~ msgid "%s not a digit"
+#~ msgstr "输入的值 '%s' 不完全是数字"
+
+#~ msgid "Add Asset Category"
+#~ msgstr "新增资产分类"
+
+#~ msgid "Add Asset Location"
+#~ msgstr "新增资产位置"
+
+#~ msgid "Result"
+#~ msgstr "处理结果"
+
+#~ msgid "No Error"
+#~ msgstr "没有错误"
+
+#~ msgid "No Action"
+#~ msgstr "没有操作"
+
+#~ msgid "%s Exists"
+#~ msgstr "%s记录已经存在"
+
+#~ msgid "Theme"
+#~ msgstr "主题"
+
+#~ msgid "Theme Switcher"
+#~ msgstr "主题切换"
+
+#~ msgid "Name"
+#~ msgstr "名称"

@@ -1,0 +1,179 @@
+{% extends "default/book_generic.html" %}
+
+{% load i18n %}
+{% load static %}
+
+{% block title %}{{ _("Book") }} -> {{ _("Multi Add") }}{% endblock %}
+
+{% block dajax_script %}
+    <script type="text/javascript" src="{% get_static_prefix %}js/dajax/jquery.dajax.core.js"></script>
+    {% load dajaxice_templatetags %}
+    {% dajaxice_js_import %}
+    <script type="text/javascript">
+        var timer;
+        var err_count = 0;
+
+        function adjust_button_douban()
+        {
+            //$("#id_isbn13s").parent().append($("#button_douban"));
+            //$("#id_isbn13s").parent().append($("#douban_progressbar"));
+            $("#id_isbn13s").parent().append($("#button_douban_layer"));
+
+            //
+            // Init progressbar when download books info from douban
+            //
+            $( "#douban_progressbar" ).progressbar({
+                value: 0,
+                max: 100
+            });
+
+            $( "#waiting_remote_progressbar" ).progressbar({
+                value: false
+            });
+
+            return false;
+        }
+
+        function from_douban_multi()
+        {
+            err_count = 0;
+            window.clearTimeout(timer);
+            $( "#douban_progressbar" ).progressbar("value", 0);
+
+            $('#id_ajax_finished').val(0);
+            $('#id_ajax_progress').val('');
+            timer = window.setTimeout( get_progress, 250 );
+
+            var isbn13s = $('#id_isbn13s').val().split(/\s+/), list="";
+            var loc = $('#id_location').val();
+            var cat = $('#id_category').val();
+            var med = $('#id_media').val();
+            Dajaxice.apps.books.from_douban_multi(Dajax.process, { "book_ids":isbn13s,"book_location":loc, "book_category":cat, "book_media":med });
+
+            return false;
+        }
+
+        function get_progress()
+        {
+            Dajaxice.apps.books.get_progress(Dajax.process);
+            var ajax_finished = parseInt($('#id_ajax_finished').val());
+            if((ajax_finished >= 100))
+            {
+                window.clearTimeout(timer);
+                $( "#douban_progressbar" ).progressbar("value", 100);
+            }
+            else
+            {
+                timer = window.setTimeout( get_progress, 250 );
+                $( "#douban_progressbar" ).progressbar("value", ajax_finished);
+                //$( "#douban_progressbar" ).progressbar(ajax_finished);
+            }
+
+            return false;
+        }
+
+        function wait_remote_scan()
+        {
+            $("#waiting_remote_progressbar").css("display", "block");
+            err_count = 0;
+            window.clearTimeout(timer);
+
+            timer = window.setTimeout( checking_remote_scan, 250 );
+
+            return false;
+        }
+
+        function checking_remote_scan()
+        {
+            if(err_count > 200)
+            {
+                window.clearTimeout(timer);
+                $("#waiting_remote_progressbar").css("display", "none");
+
+                return false;
+            }
+
+            $.getJSON('/books/api/test/', function(data) {
+
+                // alert(data.status);
+                if( data.status == 'ok' )
+                {
+                    window.clearTimeout(timer);
+                    $("#waiting_remote_progressbar").css("display", "none");
+                    //alert(data.isbnlist);
+                    $("#id_isbn13s").val( data.isbnlist );
+                }
+                else
+                {
+                    // $("#icon_waiting").css("display", "inline");
+                    timer = window.setTimeout( checking_remote_scan, 250 );
+                    err_count += 1;
+                }
+            });
+
+            return false;
+        }
+
+    </script>
+{% endblock %}
+
+{% block navigator %}
+{% endblock %}
+
+{#{% block side_left %}#}
+{#{% endblock %}#}
+
+{% block content %}
+    <div id="button_douban_layer">
+        <div class="actions progressaction">
+            <a id="button_douban" class="action" onclick="from_douban_multi();" title="{{ _("Get Information from douban.com") }}">{{ _("Douban") }}</a>
+        </div>
+        <div id="douban_progressbar" class="progressbar"></div>
+    </div>
+
+    <form  enctype="multipart/form-data" action="." method="POST" id="book_multi_add_form" accept-charset="utf-8">
+         {% csrf_token %}
+         <fieldset class="form_fields ui-widget-content">
+            <ul>
+                <li>
+                    <label for="id_location">{{ _("Book Location") }}:</label>
+                    {{ location }}
+                    <input type="hidden" id="id_location">
+                    <label for="id_category">{{ _("Book Category") }}:</label>
+                    {{ category }}
+                    <input type="hidden" id="id_category">
+                    <label for="id_media">{{ _("Media") }}:</label>
+                    {{ media }}
+                    <input type="hidden" id="id_media">
+                </li>
+                <li>
+                    <label for="id_isbn13s">{{ _("ISBN13") }}:
+                        <div class="action" onclick="wait_remote_scan();" title="{{ _("Get isbn from remote barcode scanner") }}">{{ _("Remote Scan") }}</div>
+                        <div id="qrcode" style="margin-top:8px;margin-bottom:8px;" ></div>
+                        <div id="waiting_remote_progressbar" style="display: none;"></div>
+                        <!--<img src="{% get_static_prefix %}images/waiting.gif" id="icon_waiting" style="display: inline;"/>-->
+                    </label>
+                    <textarea id="id_isbn13s" rows="40" cols="20"></textarea>
+                </li>
+                <li>
+                    <input type="hidden" id="id_ajax_finished" value="0" onchange="$('#douban_progressbar').progressbar('value', $(this).val());"/>
+                    <label for="id_ajax_progress">{{ _("Result") }}:</label>
+                    <textarea id="id_ajax_progress" rows="40" cols="20"></textarea>
+                </li>
+                <li>
+                    <label for="id_result_failed">{{ _("Failed") }}{{ _("Result") }}:</label>
+                    <textarea id="id_result_failed" rows="40" cols="20"></textarea>
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+    <script type="text/javascript">
+        adjust_button_douban();
+    </script>
+    <script type="text/javascript" src="{% get_static_prefix %}js/qrcodejs/qrcode.js"></script>
+    <script type="text/javascript">
+        var url = window.location.protocol + "//" + window.location.host + "/books/api/test/";
+        var qrcode = new QRCode(document.getElementById("qrcode"), { width:96, height:96} );
+        qrcode.makeCode(url);
+    </script>
+{% endblock %}

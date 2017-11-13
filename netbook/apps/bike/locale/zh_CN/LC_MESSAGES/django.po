@@ -1,0 +1,544 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-13 23:13+0800\n"
+"PO-Revision-Date: 2013-08-14 22:51+0800\n"
+"Last-Translator: netcharm <netcharm@163.com>\n"
+"Language-Team: netcharm <netcharm@163.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: dxgettext 1.2.2\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: STRINGTABLE\n"
+"X-Poedit-SearchPath-0: ..\\..\\..\n"
+
+#: netbook/apps/bike/models.py:19 netbook/apps/bike/models.py:27
+#: netbook/apps/bike/models.py:38 netbook/apps/bike/models.py:52
+msgid "Name"
+msgstr "名称"
+
+#: netbook/apps/bike/models.py:20
+msgid "Value"
+msgstr "赋值"
+
+#: netbook/apps/bike/models.py:28
+msgid "Password"
+msgstr ""
+
+#: netbook/apps/bike/models.py:36
+msgid "etc."
+msgstr "范例:"
+
+#: netbook/apps/bike/models.py:39
+msgid "Brand"
+msgstr ""
+
+#: netbook/apps/bike/models.py:40
+msgid "Model"
+msgstr ""
+
+#: netbook/apps/bike/models.py:41
+msgid "Factory"
+msgstr ""
+
+#: netbook/apps/bike/models.py:42
+msgid "Year"
+msgstr ""
+
+#: netbook/apps/bike/models.py:43
+msgid "Description"
+msgstr ""
+
+#: netbook/apps/bike/models.py:44
+msgid "Memo"
+msgstr ""
+
+#: netbook/apps/bike/models.py:53
+msgid "Speed Avg."
+msgstr ""
+
+#: netbook/apps/bike/models.py:54
+msgid "Speed Min."
+msgstr ""
+
+#: netbook/apps/bike/models.py:55
+msgid "Speed Max."
+msgstr ""
+
+#: netbook/apps/bike/models.py:56
+msgid "Price Bought"
+msgstr "购买价"
+
+#: netbook/apps/bike/models.py:68
+msgid "Category"
+msgstr "图书分类"
+
+#~ msgid "My Book Library"
+#~ msgstr "我的个人图书馆"
+
+#~ msgid "Thanks for visiting my site."
+#~ msgstr "感谢访问此站点."
+
+#~ msgid "HOME"
+#~ msgstr "主页"
+
+#~ msgid "Book"
+#~ msgstr "图书"
+
+#~ msgid "Search"
+#~ msgstr "搜索"
+
+#~ msgid "Enter Word What You Want To Searching"
+#~ msgstr "输入想要搜索的单词"
+
+#~ msgid "BACK"
+#~ msgstr "返回"
+
+#~ msgid "Back To Last Page"
+#~ msgstr "返回之前访问的页面"
+
+#~ msgid "Book Library"
+#~ msgstr "个人图书馆"
+
+#~ msgid "Books List"
+#~ msgstr "所选图书清单"
+
+#~ msgid "No any book be founded!"
+#~ msgstr "未找到符合条件的图书喔！"
+
+#~ msgid "Book Detail"
+#~ msgstr "图书详情"
+
+#~ msgid "Action"
+#~ msgstr "操作"
+
+#~ msgid "Add"
+#~ msgstr "新增"
+
+#~ msgid "Add Book"
+#~ msgstr "新增图书"
+
+#~ msgid "Edit Book"
+#~ msgstr "修改图书"
+
+#~ msgid "Multi-Add"
+#~ msgstr "批量添加"
+
+#~ msgid "Multi-Remove"
+#~ msgstr "批量删除"
+
+#~ msgid "Multi-Change State"
+#~ msgstr "批量改状态"
+
+#~ msgid "Multi-Change Location"
+#~ msgstr "批量改位置"
+
+#~ msgid "Multi-Change Category"
+#~ msgstr "批量改分类"
+
+#~ msgid "Add Book To System"
+#~ msgstr "添加图书到系统中"
+
+#~ msgid "Add Books To System"
+#~ msgstr "批量添加图书到系统中"
+
+#~ msgid "Remove Highlighted Books From System"
+#~ msgstr "批量删除高亮选中图书"
+
+#~ msgid "Change Highlighted Books Reading State"
+#~ msgstr "批量修改高亮选中图书的阅读状态"
+
+#~ msgid "Change Highlighted Books Location"
+#~ msgstr "批量修改高亮选中图书的所在位置"
+
+#~ msgid "Change Highlighted Books Category"
+#~ msgstr "批量修改高亮选中图书的分类信息"
+
+#~ msgid "Change Highlighted Books Media Type"
+#~ msgstr "批量修改高亮选中图书的媒介类型"
+
+#~ msgid "Add Tags To Highlighted Books"
+#~ msgstr "批量给高亮选中的图书添加阅读标签"
+
+#~ msgid "Edit"
+#~ msgstr "修改"
+
+#~ msgid "Back"
+#~ msgstr "返回"
+
+#~ msgid "Remove"
+#~ msgstr "删除"
+
+#~ msgid "(N/A)"
+#~ msgstr "(没有数据)"
+
+#~ msgid "Save"
+#~ msgstr "保存"
+
+#~ msgid "All Books"
+#~ msgstr "全部图书"
+
+#~ msgid "Last In 20 Books"
+#~ msgstr "最新加入的20本书"
+
+#~ msgid "Filter"
+#~ msgstr "条件过滤"
+
+#~ msgid "Media"
+#~ msgstr "媒介类型"
+
+#~ msgid "Media Type"
+#~ msgstr "媒介类型"
+
+#~ msgid "Media List"
+#~ msgstr "媒介类型清单"
+
+#~ msgid "Add Media Type"
+#~ msgstr "新增媒介类型"
+
+#~ msgid "Multi-Change Media"
+#~ msgstr "批量改媒介"
+
+#~ msgid "Reading Tags"
+#~ msgstr "阅读标签"
+
+#~ msgid "Multi-Change Tags"
+#~ msgstr "批量加标签"
+
+#~ msgid "List"
+#~ msgstr "分类列表"
+
+#~ msgid "Tools"
+#~ msgstr "系统工具"
+
+#~ msgid "Statistic"
+#~ msgstr "统计"
+
+#~ msgid "Report"
+#~ msgstr "报表"
+
+#~ msgid "Add Report"
+#~ msgstr "新增报表"
+
+#~ msgid "Edit Report"
+#~ msgstr "编辑报表"
+
+#~ msgid "Report Detail"
+#~ msgstr "报表详情"
+
+#~ msgid "Report List"
+#~ msgstr "报表清单"
+
+#~ msgid "Setting"
+#~ msgstr "设定"
+
+#~ msgid "Template"
+#~ msgstr "模板"
+
+#~ msgid "No any report be defined now!"
+#~ msgstr "暂时还没有定义报表喔！"
+
+#~ msgid "Import"
+#~ msgstr "导入"
+
+#~ msgid "Export"
+#~ msgstr "导出"
+
+#~ msgid "Save Data to System"
+#~ msgstr "保存数据到系统"
+
+#~ msgid "Locations List"
+#~ msgstr "图书位置列表"
+
+#~ msgid "No any location be defined now!"
+#~ msgstr "暂时还没有定义位置喔！"
+
+#~ msgid "Categories List"
+#~ msgstr "分类列表"
+
+#~ msgid "No any category be defined now!"
+#~ msgstr "暂时还没有定义分类喔！"
+
+#~ msgid "State List"
+#~ msgstr "图书状态列表"
+
+#~ msgid "No any state be defined now!"
+#~ msgstr "暂时还没有定义状态喔！"
+
+#~ msgid "%s length less 10"
+#~ msgstr "输入的值 '%s' 长度小于10位"
+
+#~ msgid "%s length less 13"
+#~ msgstr "输入的值 '%s' 长度小于13位"
+
+#~ msgid "%s not a digit"
+#~ msgstr "输入的值 '%s' 不完全是数字"
+
+#~ msgid "ISBN10"
+#~ msgstr "10位条码"
+
+#~ msgid "ISBN13"
+#~ msgstr "13位条码"
+
+#~ msgid "Face"
+#~ msgstr "图书封面图"
+
+#~ msgid "Face_L"
+#~ msgstr "较大封面图"
+
+#~ msgid "Face_M"
+#~ msgstr "中等封面图"
+
+#~ msgid "Face_S"
+#~ msgstr "较小封面图"
+
+#~ msgid "Title"
+#~ msgstr "标题"
+
+#~ msgid "Subtitle"
+#~ msgstr "副标题"
+
+#~ msgid "Pages"
+#~ msgstr "页码"
+
+#~ msgid "Author"
+#~ msgstr "作者"
+
+#~ msgid "Translator"
+#~ msgstr "译者"
+
+#~ msgid "Publisher"
+#~ msgstr "出版社"
+
+#~ msgid "Price"
+#~ msgstr "定价"
+
+#~ msgid "Binding"
+#~ msgstr "装帧"
+
+#~ msgid "Pubdate"
+#~ msgstr "出版日期"
+
+#~ msgid "Date Published"
+#~ msgstr "出版日期"
+
+#~ msgid "Boughtdate"
+#~ msgstr "购买日期"
+
+#~ msgid "Date Bought"
+#~ msgstr "购买日期"
+
+#~ msgid "Author_Intro"
+#~ msgstr "作者简介"
+
+#~ msgid "Author Intro"
+#~ msgstr "作者简介"
+
+#~ msgid "Summary"
+#~ msgstr "内容简介"
+
+#~ msgid "Tags"
+#~ msgstr "豆瓣标签"
+
+#~ msgid "Rating"
+#~ msgstr "豆瓣评分"
+
+#~ msgid "Read Pages"
+#~ msgstr "已读页码"
+
+#~ msgid "State"
+#~ msgstr "阅读状态"
+
+#~ msgid "Add State"
+#~ msgstr "新增阅读状态"
+
+#~ msgid "Reading Start"
+#~ msgstr "阅读起始日期"
+
+#~ msgid "Reading Finished"
+#~ msgstr "阅读完成日期"
+
+#~ msgid "Add Category"
+#~ msgstr "新增图书分类"
+
+#~ msgid "Location"
+#~ msgstr "图书位置"
+
+#~ msgid "Add Location"
+#~ msgstr "新增图书位置"
+
+#~ msgid "Pages Be Read"
+#~ msgstr "当前阅读到的页码"
+
+#~ msgid "Read"
+#~ msgstr "阅读"
+
+#~ msgid "Result"
+#~ msgstr "处理结果"
+
+#~ msgid "Failed"
+#~ msgstr "失败"
+
+#~ msgid "No Error"
+#~ msgstr "没有错误"
+
+#~ msgid "No Action"
+#~ msgstr "没有操作"
+
+#~ msgid "Add Success"
+#~ msgstr "增加成功"
+
+#~ msgid "Douban"
+#~ msgstr "豆瓣"
+
+#~ msgid "Get Information from douban.com"
+#~ msgstr "从豆瓣获取图书信息"
+
+#~ msgid "No Douban result"
+#~ msgstr "豆瓣没有此书信息"
+
+#~ msgid "Fuzzy with Douban result(%s)"
+#~ msgstr "与豆瓣返回的不一致(%s)"
+
+#~ msgid "%s Exists"
+#~ msgstr "%s记录已经存在"
+
+#~ msgid "PREV"
+#~ msgstr "上一页"
+
+#~ msgid "NEXT"
+#~ msgstr "下一页"
+
+#~ msgid "Confirm"
+#~ msgstr "请确认"
+
+#~ msgid "CANCEL"
+#~ msgstr "放弃"
+
+#~ msgid "OK"
+#~ msgstr "确认"
+
+#~ msgid "Will processing below item(s):"
+#~ msgstr "将要处理下列条目:"
+
+#~ msgid "Jan"
+#~ msgstr "01月"
+
+#~ msgid "Feb"
+#~ msgstr "02月"
+
+#~ msgid "Mar"
+#~ msgstr "03月"
+
+#~ msgid "Apr"
+#~ msgstr "04月"
+
+#~ msgid "May"
+#~ msgstr "05月"
+
+#~ msgid "Jun"
+#~ msgstr "06月"
+
+#~ msgid "Jul"
+#~ msgstr "07月"
+
+#~ msgid "Aug"
+#~ msgstr "08月"
+
+#~ msgid "Sep"
+#~ msgstr "09月"
+
+#~ msgid "Oct"
+#~ msgstr "10月"
+
+#~ msgid "Nov"
+#~ msgstr "11月"
+
+#~ msgid "Dec"
+#~ msgstr "12月"
+
+#~ msgid "Sun"
+#~ msgstr "周日"
+
+#~ msgid "Mon"
+#~ msgstr "周一"
+
+#~ msgid "Tue"
+#~ msgstr "周二"
+
+#~ msgid "Wed"
+#~ msgstr "周三"
+
+#~ msgid "Thu"
+#~ msgstr "周四"
+
+#~ msgid "Fri"
+#~ msgstr "周五"
+
+#~ msgid "Sat"
+#~ msgstr "周六"
+
+#~ msgid "Su"
+#~ msgstr "周日"
+
+#~ msgid "Mo"
+#~ msgstr "一"
+
+#~ msgid "Tu"
+#~ msgstr "二"
+
+#~ msgid "We"
+#~ msgstr "三"
+
+#~ msgid "Th"
+#~ msgstr "四"
+
+#~ msgid "Fr"
+#~ msgstr "五"
+
+#~ msgid "Sa"
+#~ msgstr "六"
+
+#~ msgid "Theme"
+#~ msgstr "主题"
+
+#~ msgid "Theme Select"
+#~ msgstr "主题选择"
+
+#~ msgid "Theme Switcher"
+#~ msgstr "主题切换"
+
+#~ msgid "Config"
+#~ msgstr "设定"
+
+#~ msgid "Add Config Setting"
+#~ msgstr "新增设定项"
+
+#~ msgid "Config List"
+#~ msgstr "设定清单"
+
+#~ msgid "No any config be defined now!"
+#~ msgstr "暂时还没有定义设定喔！"
+
+#~ msgid "Config Name"
+#~ msgstr "设定项名称"
+
+#~ msgid "Config Value"
+#~ msgstr "设定项赋值"
+
+#~ msgid "Export Highlighted Books"
+#~ msgstr "导出所选图书信息"
+
+#~ msgid "Export Books"
+#~ msgstr "导出图书"

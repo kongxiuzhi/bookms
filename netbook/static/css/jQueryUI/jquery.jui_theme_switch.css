@@ -1,0 +1,14 @@
+.switcher_container {
+    padding: 5px;
+    max-width: 160px;
+    overflow: hidden;
+}
+
+.switcher_list {
+    padding: 2px;
+    max-width: 160px;    
+}
+
+.switcher_label {
+    margin-right: 5px;
+}

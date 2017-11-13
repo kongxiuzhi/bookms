@@ -1,0 +1,80 @@
+﻿{% load i18n %}
+{% load static %}
+
+<form id="app_edit_form" enctype="multipart/form-data" action="{{ app_root }}/api/app/add/" method="POST" accept-charset="utf-8">
+    {% csrf_token %}
+    <fieldset class="ui-widget-content">
+        <input type="hidden" value="{{ form_add.pk }}" id="id_appid"/>
+
+        <dl class="ui-widget-content table-row">
+            <dt class="ui-widget-header table-title">{{ _('Name') }}</dt>
+            <dt class="ui-widget-content table-cell-value">{{ form_add.name }}</dt>
+        </dl>
+        <dl class="ui-widget-content table-row">
+            <dt class="ui-widget-header table-title">{{ _('Description') }}</dt>
+            <dt class="ui-widget-content table-cell-value">{{ form_add.description }}</dt>
+        </dl>
+        <dl class="ui-widget-content table-row">
+            <dt class="ui-widget-header table-title">{{ _('URL') }}</dt>
+            <dt class="ui-widget-content table-cell-value">{{ form_add.url }}</dt>
+        </dl>
+        <dl class="ui-widget-content table-row">
+            <dt class="ui-widget-header table-title">{{ _('Icon') }}</dt>
+            <dt class="ui-widget-content table-cell-value">{{ form_add.icon }}</dt>
+        </dl>
+
+        <li>
+            <input class="form_submit" type="button" value="{{ _('Save') }}" title="{{ _('Save Data to System') }}" id="id_postjson" style="margin-left: 10%;"/>
+        </li>
+    </fieldset>
+</form>
+<script type="text/javascript">
+//    adjust_ui();
+
+    $('#id_postjson').button();
+
+    $('#id_postjson').bind('click', function(){
+        var csrfmiddlewaretoken = $('input[name="csrfmiddlewaretoken"]').val();
+        var id_name             = $('#id_name').val();
+        var id_description      = $('#id_description').val();
+        var id_url              = $('#id_url').val();
+        var id_icon             = $('#id_icon').val();
+        var id_appid            = $('#id_appid').val();
+
+        var dataString = 'csrfmiddlewaretoken=' + csrfmiddlewaretoken +
+                '&name='        + id_name +
+                '&description=' + id_description +
+                '&url='         + id_url +
+                '&icon='        + id_icon;
+
+        //alert(id_appid);
+        var posturl = null;
+
+        if(id_appid)
+        {
+            posturl = "{{ app_root }}/api/app/" + id_appid + "/edit/";
+            $.post(posturl, dataString, function(data) {
+                var app = $('#app_'+id_appid);
+                app.text(id_description);
+                app.attr('title', id_description);
+                app.attr('href', id_url);
+                $('#app_'+id_appid+'_icon').attr('src', id_icon);
+            });
+        }
+        else
+        {
+            posturl = "{{ app_root }}/api/app/add/";
+            $.post(posturl, dataString, function(data) {
+                $('#app_list').prepend('<li class="ui-widget-content list_item">'+data+'</li>');
+
+                var list_count = $('#list_count')
+                list_count.text(parseInt(list_count.text())+1);
+
+                fit_ui_action_button();
+            });
+        }
+
+        return false;
+    });
+
+</script>

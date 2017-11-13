@@ -1,0 +1,26 @@
+﻿            <div class="actions">
+                <dl>
+                    <!--<dt class="ui-widget-header table-title">{{ _('Action') }}</a></dt>-->
+                    <dt class="ui-widget table-cell-value">
+                        <a class="action" onclick="return loadChart({{ report.pk }}, '{{ report.mode }}');">
+                            {{ _('Refresh') }}
+                        </a>
+                    </dt>
+                </dl>
+            </div>
+            <dl class="ui-widget-content">
+                <dd>
+                    <div class="ui-widget-content" style="float: left;">
+                        <canvas id="chart_report_{{ report.pk }}" height="240px" width="320px">[No canvas support]</canvas>
+                    </div>
+                    <!--{% if report.pk < 2 %}-->
+                    <!--<div class="ui-widget-content" style="float: left;">-->
+                        <!--<canvas id="chart_report_{{ report.pk }}_extra" height="240px" width="320px">[No canvas support]</canvas>-->
+                    <!--</div>-->
+                    <!--{% endif %}-->
+                </dd>
+            </dl>
+            <!--<hr class="ui-widget-content"/>-->
+            <script type="text/javascript">
+                loadChart({{ report.pk }});
+            </script>

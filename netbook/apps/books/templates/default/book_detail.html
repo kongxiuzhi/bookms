@@ -1,0 +1,141 @@
+﻿{% extends "default/book_generic.html" %}
+{% load i18n %}
+{% load markup %}
+
+{% if book %}
+{% block title %}{{ book.title }}{% endblock %}
+{% endif %}
+
+{% block navigator %}
+        <!--suppress ALL -->
+        <li class="action"><a href="/books/add-multi">{{ _("Multi-Add") }}</a></li>
+        <li class="action"><a href="/books/add">{{ _("Add Book") }}</a></li>
+    {% if book %}
+        <li class="action"><a href="/books/{{ book.isbn13 }}/edit">{{ _("Edit Book") }}</a></li>
+        <li class="action"><a href="/books/{{ book.isbn13 }}/remove" onclick="return remove_one($(this).attr('href'), '{{ book.title }}', '{{ _("Remove") }}', '');">{{ _("Remove") }}{{ _("Book") }}</a></li>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+<div class="list_title">{{ _("Book Detail") }}</div>
+<div>
+    {% if book %}
+    <table id="book_detail" class="list_items">
+        <tbody>
+            <tr>
+                <td class="book_detail_label">{{ _("Title") }}</td>
+                <td class="book_detail_content">{{ book.title|escape|default:"&nbsp;" }}</td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("Subtitle") }}</td>
+                <td class="book_detail_content">{{ book.subtitle|escape|default:"&nbsp;" }}</td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("Author") }}</td>
+                <td class="book_detail_content">{{ book.author|escape|default:"&nbsp;" }}</td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("Translator") }}</td>
+                <td class="book_detail_content">{{ book.translator|escape|default:"&nbsp;" }}</td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("ISBN") }}</td>
+                <td class="book_detail_content">{{ book.isbn13|default:"&nbsp;" }}</td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("Price") }}</td>
+                <td class="book_detail_content">{{ book.price|floatformat:"2"|default:"&nbsp;" }}</td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("Price Bought") }}</td>
+                <td class="book_detail_content">{{ book.boughtprice|floatformat:"2"|default:"&nbsp;" }}</td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("Pages") }}</td>
+                <td class="book_detail_content">{{ book.pages|default:"&nbsp;" }}</td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("Binding") }}</td>
+                <td class="book_detail_content">{{ book.binding|escape|default:"&nbsp;" }}</td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("Publisher") }}</td>
+                <td class="book_detail_content">{{ book.publisher|escape|default:"&nbsp;" }}</td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("Pubdate") }}</td>
+                <td class="book_detail_content">{{ book.pubdate|date:'Y-m-d'|default:"&nbsp;" }}</td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("Date Bought") }}</td>
+                <td class="book_detail_content">{{ book.boughtdate|date:'Y-m-d'|default:"&nbsp;" }}</td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("Summary") }}</td>
+                <td class="book_detail_content">{{ book.summary|escape|default:"&nbsp;" }}</td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("Tags") }}</td>
+                <td class="book_detail_content">{{ book.tags|escape|default:"&nbsp;" }}</td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("Rating") }}</td>
+                <td class="book_detail_content">{{ book.rating|default:0 }}</td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("State") }}</td>
+                <td class="book_detail_content">{{ book.state|escape|default:"&nbsp;" }}</td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("Reading Start") }}</td>
+                <td class="book_detail_content">{{ book.read_start|default:"&nbsp;" }}</td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("Reading Finished") }}</td>
+                <td class="book_detail_content">{{ book.read_end|default:"&nbsp;" }}</td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("Reading Tags") }}</td>
+                <td class="book_detail_content">{{ book.read_tags|default:"&nbsp;" }}</td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("Read Pages") }}</td>
+                <td class="book_detail_content">{{ book.read_pages|default:"&nbsp;" }}</td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("Media") }}</td>
+                <td class="book_detail_content">{{ book.media|default:"&nbsp;" }}</td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("Book Category") }}</td>
+                <td class="book_detail_content">{{ book.category|default:"&nbsp;" }}</td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("Book Location") }}</td>
+                <td class="book_detail_content">{{ book.location|default:"&nbsp;" }}</td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("Memo") }}</td>
+                <td class="book_detail_content">{{ book.memo|default:"&nbsp;" }}</td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("Face") }}</td>
+                <td class="book_detail_content">
+                    <img src="{{ bookface.face_l|default:book.face_l|default:_("(N/A)") }}" />{{ _("Face_L") }}
+                    <img src="{{ bookface.face_m|default:book.face_m|default:_("(N/A)") }}" />{{ _("Face_M") }}
+                    <img src="{{ bookface.face_s|default:book.face_s|default:_("(N/A)") }}" />{{ _("Face_S") }}
+                </td>
+            </tr>
+            <tr>
+                <td class="book_detail_label">{{ _("Note") }}</td>
+                <td class="book_detail_content">{{ booknote|markdown:"safe" }}</td>
+            </tr>
+        </tbody>
+    </table>
+    {% endif %}
+</div>
+
+{% endblock %}
+
+

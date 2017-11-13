@@ -1,0 +1,18 @@
+{% extends "default/book_generic.html" %}
+{% load i18n %}
+{% block title %}{{ _("Config") }} -> {{ config.name|default:_("Add") }}{% endblock %}
+
+{% block navigator %}
+{% endblock %}
+
+{% block content %}
+    <form id="config_edit_form"enctype="multipart/form-data" action="." method="POST" accept-charset="utf-8">
+        {% csrf_token %}
+        <fieldset class="form_fields ui-widget-content">
+            {{ form.as_ul }}
+            <li>
+                <input class="form_submit" type="submit" value="{{ _("Save") }}" title="{{ _("Save Data to System") }}"/>
+            </li>
+        </fieldset>
+    </form>
+{% endblock %}

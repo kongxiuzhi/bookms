@@ -1,0 +1,420 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-13 23:13+0800\n"
+"PO-Revision-Date: 2013-09-05 01:42+0800\n"
+"Last-Translator: netcharm <netcharm@163.com>\n"
+"Language-Team: netcharm <netcharm@163.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: dxgettext 1.2.2\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: STRINGTABLE\n"
+"X-Poedit-SearchPath-0: ..\\..\\..\n"
+
+#: netbook/apps/models.py:15
+msgid "Key"
+msgstr "键"
+
+#: netbook/apps/models.py:16
+msgid "Value"
+msgstr "赋值"
+
+#: netbook/apps/models.py:25
+msgid "App Name"
+msgstr "应用名称"
+
+#: netbook/apps/models.py:26 netbook/templates/default/apps_item_edit.html:14
+msgid "Description"
+msgstr "描述"
+
+#: netbook/apps/models.py:29 netbook/templates/default/apps_item_edit.html:18
+msgid "URL"
+msgstr "网址"
+
+#: netbook/apps/models.py:30 netbook/templates/default/apps_item_edit.html:22
+msgid "Icon"
+msgstr "图标"
+
+#: netbook/apps/models.py:31
+msgid "Order"
+msgstr ""
+
+#: netbook/apps/settings.py:111
+#, fuzzy
+msgid "English"
+msgstr "English"
+
+#: netbook/apps/settings.py:112
+#, fuzzy
+msgid "Simplified Chinese"
+msgstr "Simplified Chinese"
+
+#: netbook/apps/settings.py:113
+#, fuzzy
+msgid "Traditional Chinese"
+msgstr "Traditional Chinese"
+
+#: netbook/apps/views.py:34
+msgid "My Apps"
+msgstr "我的应用"
+
+#: netbook/apps/views.py:125
+msgid "Unknown"
+msgstr "未知"
+
+#: netbook/templates/404.html:4 netbook/templates/404.html:10
+msgid "Page not found"
+msgstr "未发现页面"
+
+#: netbook/templates/404.html:12
+msgid "We're sorry, but the requested page could not be found."
+msgstr "很抱歉， 未找到所需页面。"
+
+#: netbook/templates/500.html:6
+msgid "Home"
+msgstr "主页"
+
+#: netbook/templates/500.html:7
+msgid "Server error"
+msgstr "服务器错误"
+
+#: netbook/templates/500.html:11
+msgid "Server error (500)"
+msgstr "服务器错误（500）"
+
+#: netbook/templates/500.html:14
+msgid "Server Error <em>(500)</em>"
+msgstr "服务器错误<em>（500）</em>"
+
+#: netbook/templates/500.html:15
+msgid ""
+"There's been an error. It's been reported to the site administrators via "
+"email and should be fixed shortly. Thanks for your patience."
+msgstr "发现一个错误。已通过电子邮件报告给站点管理员稍后修复。感谢支持。"
+
+#: netbook/templates/default/apps_config_edit.html:3
+msgid "Config"
+msgstr "设定"
+
+#: netbook/templates/default/apps_config_edit.html:3
+msgid "Add"
+msgstr "新增"
+
+#: netbook/templates/default/apps_config_edit.html:14
+#: netbook/templates/default/apps_item_edit.html:27
+msgid "Save"
+msgstr "保存"
+
+#: netbook/templates/default/apps_config_edit.html:14
+#: netbook/templates/default/apps_item_edit.html:27
+msgid "Save Data to System"
+msgstr "保存数据到系统"
+
+#: netbook/templates/default/apps_config_list.html:3
+#: netbook/templates/default/apps_config_list.html:10
+msgid "Config List"
+msgstr "设定清单"
+
+#: netbook/templates/default/apps_config_list.html:6
+msgid "Add Config Setting"
+msgstr "新增设定项"
+
+#: netbook/templates/default/apps_config_list.html:15
+msgid "Config Name"
+msgstr "设定项名称"
+
+#: netbook/templates/default/apps_config_list.html:16
+msgid "Config Value"
+msgstr "设定项赋值"
+
+#: netbook/templates/default/apps_config_list.html:17
+#: netbook/templates/default/apps_item.html:13
+msgid "Action"
+msgstr "操作"
+
+#: netbook/templates/default/apps_config_list.html:23
+#: netbook/templates/default/apps_config_list.html:24
+msgid "(N/A)"
+msgstr "(没有数据)"
+
+#: netbook/templates/default/apps_config_list.html:26
+#: netbook/templates/default/apps_config_list.html:27
+#: netbook/templates/default/apps_item.html:15
+#: netbook/templates/default/apps_item.html:16
+msgid "Remove"
+msgstr "删除"
+
+#: netbook/templates/default/apps_config_list.html:30
+#: netbook/templates/default/apps_item.html:19
+msgid "Edit"
+msgstr "修改"
+
+#: netbook/templates/default/apps_config_list.html:38
+msgid "No any config be defined now!"
+msgstr "暂时还没有定义设定喔！"
+
+#: netbook/templates/default/apps_generic.html:40
+msgid "Confirm"
+msgstr "请确认"
+
+#: netbook/templates/default/apps_generic.html:42
+msgid "Will processing below item(s):"
+msgstr "将要处理下列条目:"
+
+#: netbook/templates/default/apps_generic.html:50
+msgid "CANCEL"
+msgstr "放弃"
+
+#: netbook/templates/default/apps_generic.html:53
+msgid "OK"
+msgstr "确认"
+
+#: netbook/templates/default/apps_generic.html:79
+msgid "HOME"
+msgstr "主页"
+
+#: netbook/templates/default/apps_generic.html:82
+msgid "Enter Word What You Want To Searching"
+msgstr "输入想要搜索的单词"
+
+#: netbook/templates/default/apps_generic.html:88
+msgid "Search"
+msgstr "搜索"
+
+#: netbook/templates/default/apps_generic.html:93
+msgid "Back To Last Page"
+msgstr "返回之前访问的页面"
+
+#: netbook/templates/default/apps_generic.html:93
+msgid "BACK"
+msgstr "返回"
+
+#: netbook/templates/default/apps_item_edit.html:10
+msgid "Name"
+msgstr "名称"
+
+#: netbook/templates/default/apps_list.html:9
+msgid "APPs List"
+msgstr "应用列表"
+
+#: netbook/templates/default/apps_list.html:55
+msgid "Add Application To System"
+msgstr "加入应用到系统中"
+
+#: netbook/templates/default/apps_list.html:56
+msgid "Add App"
+msgstr "添加应用"
+
+#: netbook/templates/default/apps_list.html:66
+msgid "Apps List"
+msgstr "应用列表"
+
+#: netbook/templates/default/apps_list.html:71
+msgid "FIRST"
+msgstr ""
+
+#: netbook/templates/default/apps_list.html:72
+#: netbook/templates/default/apps_list.html:74
+msgid "PREV"
+msgstr "上一页"
+
+#: netbook/templates/default/apps_list.html:90
+#: netbook/templates/default/apps_list.html:93
+msgid "NEXT"
+msgstr "下一页"
+
+#: netbook/templates/default/apps_list.html:91
+msgid "LAST"
+msgstr "末页"
+
+#: netbook/templates/default/apps_list.html:109
+msgid "No any apps has been found!"
+msgstr "未发现任何应用！"
+
+#: netbook/templates/default/apps_list.html:116
+msgid "Add app To System"
+msgstr "加入应用到系统中"
+
+#: netbook/templates/default/apps_navi_sideleft.html:6
+msgid "Theme Select"
+msgstr "主题选择"
+
+#~ msgid "Thanks for visiting my site."
+#~ msgstr "感谢访问此站点."
+
+#~ msgid "Multi-Add"
+#~ msgstr "批量添加"
+
+#~ msgid "Multi-Remove"
+#~ msgstr "批量删除"
+
+#~ msgid "Back"
+#~ msgstr "返回"
+
+#~ msgid "Filter"
+#~ msgstr "条件过滤"
+
+#~ msgid "Location"
+#~ msgstr "位置"
+
+#~ msgid "Category"
+#~ msgstr "分类"
+
+#~ msgid "Tools"
+#~ msgstr "系统工具"
+
+#~ msgid "Statistic"
+#~ msgstr "统计"
+
+#~ msgid "Report"
+#~ msgstr "报表"
+
+#~ msgid "Add Report"
+#~ msgstr "新增报表"
+
+#~ msgid "Edit Report"
+#~ msgstr "编辑报表"
+
+#~ msgid "Report Detail"
+#~ msgstr "报表详情"
+
+#~ msgid "Report List"
+#~ msgstr "报表清单"
+
+#~ msgid "Setting"
+#~ msgstr "设定"
+
+#~ msgid "Template"
+#~ msgstr "模板"
+
+#~ msgid "No any report be defined now!"
+#~ msgstr "暂时还没有定义报表喔！"
+
+#~ msgid "Import"
+#~ msgstr "导入"
+
+#~ msgid "Export"
+#~ msgstr "导出"
+
+#~ msgid "%s not a digit"
+#~ msgstr "输入的值 '%s' 不完全是数字"
+
+#~ msgid "Tags"
+#~ msgstr "标签"
+
+#~ msgid "etc."
+#~ msgstr "范例:"
+
+#~ msgid "Result"
+#~ msgstr "处理结果"
+
+#~ msgid "Failed"
+#~ msgstr "失败"
+
+#~ msgid "No Error"
+#~ msgstr "没有错误"
+
+#~ msgid "No Action"
+#~ msgstr "没有操作"
+
+#~ msgid "Add Success"
+#~ msgstr "增加成功"
+
+#~ msgid "%s Exists"
+#~ msgstr "%s记录已经存在"
+
+#~ msgid "Jan"
+#~ msgstr "01月"
+
+#~ msgid "Feb"
+#~ msgstr "02月"
+
+#~ msgid "Mar"
+#~ msgstr "03月"
+
+#~ msgid "Apr"
+#~ msgstr "04月"
+
+#~ msgid "May"
+#~ msgstr "05月"
+
+#~ msgid "Jun"
+#~ msgstr "06月"
+
+#~ msgid "Jul"
+#~ msgstr "07月"
+
+#~ msgid "Aug"
+#~ msgstr "08月"
+
+#~ msgid "Sep"
+#~ msgstr "09月"
+
+#~ msgid "Oct"
+#~ msgstr "10月"
+
+#~ msgid "Nov"
+#~ msgstr "11月"
+
+#~ msgid "Dec"
+#~ msgstr "12月"
+
+#~ msgid "Sun"
+#~ msgstr "周日"
+
+#~ msgid "Mon"
+#~ msgstr "周一"
+
+#~ msgid "Tue"
+#~ msgstr "周二"
+
+#~ msgid "Wed"
+#~ msgstr "周三"
+
+#~ msgid "Thu"
+#~ msgstr "周四"
+
+#~ msgid "Fri"
+#~ msgstr "周五"
+
+#~ msgid "Sat"
+#~ msgstr "周六"
+
+#~ msgid "Su"
+#~ msgstr "周日"
+
+#~ msgid "Mo"
+#~ msgstr "一"
+
+#~ msgid "Tu"
+#~ msgstr "二"
+
+#~ msgid "We"
+#~ msgstr "三"
+
+#~ msgid "Th"
+#~ msgstr "四"
+
+#~ msgid "Fr"
+#~ msgstr "五"
+
+#~ msgid "Sa"
+#~ msgstr "六"
+
+#~ msgid "Theme"
+#~ msgstr "主题"
+
+#~ msgid "Theme Switcher"
+#~ msgstr "主题切换"

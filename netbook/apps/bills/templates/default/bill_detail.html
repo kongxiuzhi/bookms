@@ -1,0 +1,32 @@
+﻿{% extends "default/bills_generic.html" %}
+{% load i18n %}
+{% load markup %}
+
+{% if bill %}
+{% block title %}{{ bill.title }}{% endblock %}
+{% endif %}
+
+{% block navigator %}
+        <!--suppress ALL -->
+        <li class="action"><a href="/bills/add">{{ _("Add Bill") }}</a></li>
+    {% if bill %}
+        <li class="action"><a href="/bills/{{ bill.pk }}/edit">{{ _("Edit Bill") }}</a></li>
+        <li class="action"><a href="/bills/{{ bill.pk }}/remove" onclick="return remove_one($(this).attr('href'), '{{ bill.title }}', '{{ _("Remove") }}', '');">{{ _("Remove") }}{{ _("Bill") }}</a></li>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+<div class="list_title">{{ _("Bill Detail") }}</div>
+<div>
+    {% if bill %}
+    <table id="bill_detail" class="list_items">
+        <tbody>
+        </tbody>
+    </table>
+    {% endif %}
+</div>
+
+{% endblock %}
+
+

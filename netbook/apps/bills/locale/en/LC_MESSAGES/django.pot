@@ -1,0 +1,814 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-04 11:03+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\models.py:15 
+msgid "Key"
+msgstr ""
+
+#: .\models.py:16 .\models.py:36 
+msgid "Value"
+msgstr ""
+
+#: .\models.py:26 .\models.py:73 
+msgid "etc."
+msgstr ""
+
+#: .\models.py:28 
+msgid "Description"
+msgstr ""
+
+#: .\models.py:29 
+msgid "Real Estate Number"
+msgstr ""
+
+#: .\models.py:30 
+msgid "Land Use Number"
+msgstr ""
+
+#: .\models.py:32 
+ .\templates\default\bills_location_list.html.py:20
+msgid "Owner"
+msgstr ""
+
+#: .\models.py:33 
+msgid "ID Number"
+msgstr ""
+
+#: .\models.py:34 
+msgid "Bought Date"
+msgstr ""
+
+#: .\models.py:35 
+msgid "Bought Price"
+msgstr ""
+
+#: .\models.py:37 
+msgid "Country"
+msgstr ""
+
+#: .\models.py:38 
+msgid "Province"
+msgstr ""
+
+#: .\models.py:39 
+msgid "City"
+msgstr ""
+
+#: .\models.py:40 
+ .\templates\default\bills_location_list.html.py:21
+msgid "Address"
+msgstr ""
+
+#: .\models.py:41 
+msgid "Latitude"
+msgstr ""
+
+#: .\models.py:42 
+msgid "Longitude"
+msgstr ""
+
+#: .\models.py:43 
+msgid "Altitude"
+msgstr ""
+
+#: .\models.py:44 
+ .\templates\default\bills_location_list.html.py:22
+msgid "Acreage"
+msgstr ""
+
+#: .\models.py:45 
+msgid "Telephone"
+msgstr ""
+
+#: .\models.py:46 
+msgid "E-Mail"
+msgstr ""
+
+#: .\models.py:47 
+msgid "Postal"
+msgstr ""
+
+#: .\models.py:48 
+msgid "Note"
+msgstr ""
+
+#: .\models.py:50 
+ .\templates\default\bills_location_list.html.py:23
+msgid "Property Bank"
+msgstr ""
+
+#: .\models.py:51 
+ .\templates\default\bills_location_list.html.py:24
+msgid "Property Name"
+msgstr ""
+
+#: .\models.py:52 
+ .\templates\default\bills_location_list.html.py:25
+msgid "Property Account"
+msgstr ""
+
+#: .\models.py:53 
+ .\templates\default\bills_location_list.html.py:26
+msgid "Property Telephone"
+msgstr ""
+
+#: .\models.py:54 
+msgid "Property EMail"
+msgstr ""
+
+#: .\models.py:55 
+ .\templates\default\bills_location_list.html.py:27
+msgid "Property Contact"
+msgstr ""
+
+#: .\models.py:57 
+msgid "Property Unit Price"
+msgstr ""
+
+#: .\models.py:83 
+ .\templates\default\bill_item.html.py:19
+#: .\templates\default\bill_item_edit.html.py:11
+msgid "Asset Location"
+msgstr ""
+
+#: .\models.py:85 
+ .\templates\default\bill_item.html.py:25
+#: .\templates\default\bill_item.html.py:27
+#: .\templates\default\bill_item_edit.html.py:18
+msgid "Bill Date"
+msgstr ""
+
+#: .\models.py:87 
+msgid "Last Month Electricity Count"
+msgstr ""
+
+#: .\models.py:88 
+msgid "Current Month Electricity Count"
+msgstr ""
+
+#: .\models.py:89 
+msgid "Current Month Electricity Fee"
+msgstr ""
+
+#: .\models.py:91 
+msgid "Last Month Water Count"
+msgstr ""
+
+#: .\models.py:92 
+msgid "Current Month Water Count"
+msgstr ""
+
+#: .\models.py:93 
+msgid "Current Month Water Fee"
+msgstr ""
+
+#: .\models.py:95 
+ .\templates\default\bill_item.html.py:86
+#: .\templates\default\bill_item_edit.html.py:55
+msgid "Public Electricity Fee"
+msgstr ""
+
+#: .\models.py:96 
+ .\templates\default\bill_item.html.py:88
+#: .\templates\default\bill_item_edit.html.py:57
+msgid "Public Water Fee"
+msgstr ""
+
+#: .\models.py:97 
+ .\templates\default\bill_item.html.py:82
+#: .\templates\default\bill_item_edit.html.py:51
+msgid "Public Electricity Elevator Fee"
+msgstr ""
+
+#: .\models.py:98 
+ .\templates\default\bill_item.html.py:84
+#: .\templates\default\bill_item_edit.html.py:53
+msgid "Public Water Relay Fee"
+msgstr ""
+
+#: .\models.py:100 
+ .\templates\default\bill_item.html.py:39
+#: .\templates\default\bill_item.html.py:49
+#: .\templates\default\bill_item.html.py:94
+#: .\templates\default\bill_item_edit.html.py:20
+msgid "Property Fee"
+msgstr ""
+
+#: .\models.py:101 
+ .\templates\default\bill_item.html.py:96
+msgid "Last Property Balance"
+msgstr ""
+
+#: .\models.py:102 
+ .\templates\default\bill_item.html.py:98
+msgid "Current Property Balance"
+msgstr ""
+
+#: .\views.py:55 
+msgid "My Bills"
+msgstr ""
+
+#: .\views.py:146 .\views.py:525 .\views.py:616 
+msgid "Unknown"
+msgstr ""
+
+#: .\views.py:573 
+ .\templates\default\bill_item.html.py:119
+#: .\templates\default\bill_item.html.py:120
+msgid "Private Electricity"
+msgstr ""
+
+#: .\views.py:573 
+ .\templates\default\bill_item.html.py:119
+#: .\templates\default\bill_item.html.py:120
+msgid "Private Water"
+msgstr ""
+
+#: .\views.py:574 
+ .\templates\default\bill_item.html.py:119
+#: .\templates\default\bill_item.html.py:120
+msgid "Public Electricity"
+msgstr ""
+
+#: .\views.py:574 
+ .\templates\default\bill_item.html.py:119
+#: .\templates\default\bill_item.html.py:120
+msgid "Public Water"
+msgstr ""
+
+#: .\views.py:575 
+ .\templates\default\bill_item.html.py:119
+#: .\templates\default\bill_item.html.py:120
+msgid "Elevator"
+msgstr ""
+
+#: .\views.py:575 
+ .\templates\default\bill_item.html.py:119
+#: .\templates\default\bill_item.html.py:120
+msgid "Water Relay"
+msgstr ""
+
+#: .\views.py:575 
+ .\templates\default\bill_item.html.py:119
+#: .\templates\default\bill_item.html.py:120
+msgid "Property"
+msgstr ""
+
+#: .\views.py:576 
+msgid "Electricity Unitprice"
+msgstr ""
+
+#: .\views.py:576 
+msgid "Electricity Count"
+msgstr ""
+
+#: .\views.py:577 
+msgid "Water Unitprice"
+msgstr ""
+
+#: .\views.py:577 
+msgid "Water Count"
+msgstr ""
+
+#: .\templates\default\bill_detail.html.py:11 
+#: .\templates\default\bill_list.html.py:188
+#: .\templates\default\bill_list.html.py:190
+msgid "Add Bill"
+msgstr ""
+
+#: .\templates\default\bill_detail.html.py:13 
+msgid "Edit Bill"
+msgstr ""
+
+#: .\templates\default\bill_detail.html.py:14 
+#: .\templates\default\bill_item.html.py:6
+#: .\templates\default\bill_item.html.py:8
+#: .\templates\default\bills_config_list.html.py:26
+#: .\templates\default\bills_config_list.html.py:27
+#: .\templates\default\bills_location_list.html.py:46
+#: .\templates\default\bills_location_list.html.py:47
+msgid "Remove"
+msgstr ""
+
+#: .\templates\default\bill_detail.html.py:14 
+#: .\templates\default\bill_edit.html.py:6
+msgid "Bill"
+msgstr ""
+
+#: .\templates\default\bill_detail.html.py:20 
+msgid "Bill Detail"
+msgstr ""
+
+#: .\templates\default\bill_edit.html.py:6 
+#: .\templates\default\bills_config_edit.html.py:3
+#: .\templates\default\bills_location_edit.html.py:3
+#: .\templates\default\bills_location_list.html.py:6
+msgid "Add"
+msgstr ""
+
+#: .\templates\default\bill_edit.html.py:32 
+#: .\templates\default\bill_item_edit.html.py:65
+#: .\templates\default\bill_item_edit.html.py:66
+#: .\templates\default\bills_config_edit.html.py:14
+#: .\templates\default\bills_location_edit.html.py:18
+msgid "Save"
+msgstr ""
+
+#: .\templates\default\bill_edit.html.py:32 
+#: .\templates\default\bill_item_edit.html.py:65
+#: .\templates\default\bill_item_edit.html.py:66
+#: .\templates\default\bills_config_edit.html.py:14
+#: .\templates\default\bills_location_edit.html.py:18
+msgid "Save Data to System"
+msgstr ""
+
+#: .\templates\default\bill_item.html.py:4 
+#: .\templates\default\bills_config_list.html.py:17
+#: .\templates\default\bills_location_list.html.py:29
+#: .\templates\default\bills_report_item.html.py:3
+msgid "Action"
+msgstr ""
+
+#: .\templates\default\bill_item.html.py:12 
+#: .\templates\default\bills_config_list.html.py:30
+#: .\templates\default\bills_location_list.html.py:50
+msgid "Edit"
+msgstr ""
+
+#: .\templates\default\bill_item.html.py:31 
+msgid "Electricity&Water"
+msgstr ""
+
+#: .\templates\default\bill_item.html.py:35 
+#: .\templates\default\bill_item.html.py:81
+#: .\templates\default\bills_report_list.html.py:261
+msgid "Public"
+msgstr ""
+
+#: .\templates\default\bill_item.html.py:43 
+msgid "Total"
+msgstr ""
+
+#: .\templates\default\bill_item.html.py:47 
+#: .\templates\default\bill_item_edit.html.py:13
+msgid "Asset Acreage"
+msgstr ""
+
+#: .\templates\default\bill_item.html.py:50 
+#: .\templates\default\bill_item.html.py:64
+#: .\templates\default\bill_item.html.py:77
+msgid "UnitPrice"
+msgstr ""
+
+#: .\templates\default\bill_item.html.py:56 
+#: .\templates\default\bill_item_edit.html.py:27
+msgid "Last Electricity Count"
+msgstr ""
+
+#: .\templates\default\bill_item.html.py:58 
+#: .\templates\default\bill_item_edit.html.py:29
+msgid "Current Electricity Count"
+msgstr ""
+
+#: .\templates\default\bill_item.html.py:60 
+#: .\templates\default\bill_item_edit.html.py:31
+msgid "Real Electricity Usage"
+msgstr ""
+
+#: .\templates\default\bill_item.html.py:63 
+#: .\templates\default\bill_item_edit.html.py:33
+msgid "Real Electricity Fee"
+msgstr ""
+
+#: .\templates\default\bill_item.html.py:69 
+#: .\templates\default\bill_item_edit.html.py:39
+msgid "Last Water Count"
+msgstr ""
+
+#: .\templates\default\bill_item.html.py:71 
+#: .\templates\default\bill_item_edit.html.py:41
+msgid "Current Water Count"
+msgstr ""
+
+#: .\templates\default\bill_item.html.py:73 
+#: .\templates\default\bill_item_edit.html.py:43
+msgid "Real Water Usage"
+msgstr ""
+
+#: .\templates\default\bill_item.html.py:76 
+#: .\templates\default\bill_item_edit.html.py:45
+msgid "Real Water Fee"
+msgstr ""
+
+#: .\templates\default\bill_list.html.py:9 
+#: .\templates\default\bill_list.html.py:203
+#: .\templates\default\bills_report_list.html.py:9
+msgid "Bills List"
+msgstr ""
+
+#: .\templates\default\bill_list.html.py:187 
+#: .\templates\default\bill_list.html.py:260
+msgid "Add Bill To System"
+msgstr ""
+
+#: .\templates\default\bill_list.html.py:192 
+msgid "Export Highlighted Bills"
+msgstr ""
+
+#: .\templates\default\bill_list.html.py:193 
+#: .\templates\default\bills_navi_sideleft.html.py:61
+msgid "Export"
+msgstr ""
+
+#: .\templates\default\bill_list.html.py:193 
+msgid "Export Bills"
+msgstr ""
+
+#: .\templates\default\bill_list.html.py:208 
+msgid "FIRST"
+msgstr ""
+
+#: .\templates\default\bill_list.html.py:209 
+#: .\templates\default\bill_list.html.py:212
+#: .\templates\default\bills_generic.html.py:37
+msgid "PREV"
+msgstr ""
+
+#: .\templates\default\bill_list.html.py:228 
+#: .\templates\default\bill_list.html.py:231
+#: .\templates\default\bills_generic.html.py:36
+msgid "NEXT"
+msgstr ""
+
+#: .\templates\default\bill_list.html.py:229 
+msgid "LAST"
+msgstr ""
+
+#: .\templates\default\bill_list.html.py:245 
+#: .\templates\default\bills_report_list.html.py:272
+#: .\templates\default\bills_report_list.html.py:286
+#: .\templates\default\bills_report_list.html.py:300
+msgid "No any bills has been found!"
+msgstr ""
+
+#: .\templates\default\bill_list.html.py:254 
+#: .\templates\default\bills_navi_sideleft.html.py:37
+#: .\templates\default\bills_navi_sideleft.html.py:52
+msgid "Assets Location"
+msgstr ""
+
+#: .\templates\default\bills_config_edit.html.py:3 
+#: .\templates\default\bills_navi_sideleft.html.py:58
+msgid "Config"
+msgstr ""
+
+#: .\templates\default\bills_config_list.html.py:3 
+#: .\templates\default\bills_config_list.html.py:10
+msgid "Config List"
+msgstr ""
+
+#: .\templates\default\bills_config_list.html.py:6 
+msgid "Add Config Setting"
+msgstr ""
+
+#: .\templates\default\bills_config_list.html.py:15 
+msgid "Config Name"
+msgstr ""
+
+#: .\templates\default\bills_config_list.html.py:16 
+msgid "Config Value"
+msgstr ""
+
+#: .\templates\default\bills_config_list.html.py:23 
+#: .\templates\default\bills_config_list.html.py:24
+#: .\templates\default\bills_location_list.html.py:35
+#: .\templates\default\bills_location_list.html.py:36
+#: .\templates\default\bills_location_list.html.py:37
+#: .\templates\default\bills_location_list.html.py:38
+#: .\templates\default\bills_location_list.html.py:39
+#: .\templates\default\bills_location_list.html.py:40
+#: .\templates\default\bills_location_list.html.py:41
+#: .\templates\default\bills_location_list.html.py:42
+#: .\templates\default\bills_location_list.html.py:43
+msgid "(N/A)"
+msgstr ""
+
+#: .\templates\default\bills_config_list.html.py:38 
+msgid "No any config be defined now!"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:30 
+msgid "January"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:30 
+msgid "February"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:30 
+msgid "March"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:30 
+msgid "April"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:30 
+#: .\templates\default\bills_generic.html.py:31
+msgid "May"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:30 
+msgid "June"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:30 
+msgid "July"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:30 
+msgid "August"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:30 
+msgid "September"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:30 
+msgid "October"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:30 
+msgid "November"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:30 
+msgid "December"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:31 
+msgid "Jan"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:31 
+msgid "Feb"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:31 
+msgid "Mar"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:31 
+msgid "Apr"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:31 
+msgid "Jun"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:31 
+msgid "Jul"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:31 
+msgid "Aug"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:31 
+msgid "Sep"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:31 
+msgid "Oct"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:31 
+msgid "Nov"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:31 
+msgid "Dec"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:32 
+msgid "Sunday"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:32 
+msgid "Monday"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:32 
+msgid "Tuesday"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:32 
+msgid "Wednesday"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:32 
+msgid "Thursday"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:32 
+msgid "Friday"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:32 
+msgid "Saturday"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:33 
+msgid "Sun"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:33 
+msgid "Mon"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:33 
+msgid "Tue"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:33 
+msgid "Wed"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:33 
+msgid "Thu"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:33 
+msgid "Fri"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:33 
+msgid "Sat"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:34 
+msgid "Su"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:34 
+msgid "Mo"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:34 
+msgid "Tu"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:34 
+msgid "We"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:34 
+msgid "Th"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:34 
+msgid "Fr"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:34 
+msgid "Sa"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:35 
+msgid "Wk"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:40 
+msgid "CE"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:70 
+msgid "Confirm"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:72 
+msgid "Will processing below item(s):"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:80 
+msgid "CANCEL"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:83 
+msgid "OK"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:109 
+msgid "HOME"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:112 
+msgid "Enter Word What You Want To Searching"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:118 
+msgid "Search"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:123 
+msgid "Back To Last Page"
+msgstr ""
+
+#: .\templates\default\bills_generic.html.py:123 
+msgid "BACK"
+msgstr ""
+
+#: .\templates\default\bills_location_edit.html.py:3 
+#: .\templates\default\bills_location_list.html.py:6
+msgid "Bill Location"
+msgstr ""
+
+#: .\templates\default\bills_location_list.html.py:3 
+#: .\templates\default\bills_location_list.html.py:14
+msgid "Bill Locations List"
+msgstr ""
+
+#: .\templates\default\bills_location_list.html.py:19 
+msgid "Asset"
+msgstr ""
+
+#: .\templates\default\bills_location_list.html.py:58 
+msgid "No any location be defined now!"
+msgstr ""
+
+#: .\templates\default\bills_navi_sideleft.html.py:6 
+msgid "Filter"
+msgstr ""
+
+#: .\templates\default\bills_navi_sideleft.html.py:8 
+msgid "Last In 20 Bills"
+msgstr ""
+
+#: .\templates\default\bills_navi_sideleft.html.py:10 
+msgid "All Bills"
+msgstr ""
+
+#: .\templates\default\bills_navi_sideleft.html.py:13 
+msgid "Bill Year"
+msgstr ""
+
+#: .\templates\default\bills_navi_sideleft.html.py:25 
+msgid "Bill Month"
+msgstr ""
+
+#: .\templates\default\bills_navi_sideleft.html.py:29 
+#: .\templates\default\bills_navi_sideleft.html.py:31
+msgid "Month"
+msgstr ""
+
+#: .\templates\default\bills_navi_sideleft.html.py:50 
+msgid "Categories List"
+msgstr ""
+
+#: .\templates\default\bills_navi_sideleft.html.py:56 
+msgid "Tools"
+msgstr ""
+
+#: .\templates\default\bills_navi_sideleft.html.py:59 
+msgid "Report"
+msgstr ""
+
+#: .\templates\default\bills_navi_sideleft.html.py:62 
+msgid "Import"
+msgstr ""
+
+#: .\templates\default\bills_navi_sideleft.html.py:64 
+msgid "Theme Select"
+msgstr ""
+
+#: .\templates\default\bills_report_item.html.py:6 
+msgid "Refresh"
+msgstr ""
+
+#: .\templates\default\bills_report_list.html.py:254 
+#: .\templates\default\bills_report_list.html.py:259
+msgid "Bills Reports"
+msgstr ""
+
+#: .\templates\default\bills_report_list.html.py:260 
+msgid "Private"
+msgstr ""
+
+#: .\templates\default\bills_report_list.html.py:262 
+msgid "Other"
+msgstr ""
